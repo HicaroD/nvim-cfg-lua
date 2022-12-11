@@ -1,5 +1,13 @@
 local core_modules = {
+	-- Core configuration --
 	"core/plugins",
+	"core/keymaps",
+	"core/options",
+
+	-- Plugins configuration --
+	"config/colorscheme",
+	"config/lualine",
+	"config/nvimtree",
 }
 
 for _, module in ipairs(core_modules) do

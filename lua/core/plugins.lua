@@ -50,6 +50,7 @@ return packer.startup(function(use)
    			end
     }
 
+    use 'Mofiqul/vscode.nvim'
     use "wbthomason/packer.nvim"
     use "kyazdani42/nvim-web-devicons"
     use "kyazdani42/nvim-tree.lua"
