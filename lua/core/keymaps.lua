@@ -18,10 +18,10 @@ map("n", "<C-p>", ":NvimTreeToggle<CR>", {})
 map("n", "<C-f>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", {})
 
 -- Comment lines
-map("x", "<C-c>", ":'<,'>CommentToggle<CR>", {}) -- Comment Multiple Lines In Visual Mode
+map("x", "<Leader>c", ":'<,'>CommentToggle<CR>", {}) -- Comment Multiple Lines In Visual Mode
 
 -- Trouble
-map("n", "<leader>d", ":TroubleToggle<CR>", {})
+map("n", "<Leader>d", ":TroubleToggle<CR>", {})
 
 -- Tab navigation
 map("n", "<Leader>tn", ":tabnew<cr>", {})
