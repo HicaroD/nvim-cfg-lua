@@ -8,6 +8,10 @@ local core_modules = {
 	"config/colorscheme",
 	"config/lualine",
 	"config/nvimtree",
+	"config/treesitter",
+	"config/completion",
+	"config/gitsigns",
+	"config/commentary",
 }
 
 for _, module in ipairs(core_modules) do
