@@ -20,6 +20,9 @@ map("n", "<C-f>", "<cmd>lua require'telescope.builtin'.find_files(require('teles
 -- Comment lines
 map("x", "<C-c>", ":'<,'>CommentToggle<CR>", {}) -- Comment Multiple Lines In Visual Mode
 
+-- Trouble
+map("n", "<leader>d", ":TroubleToggle<CR>", {})
+
 -- Tab navigation
 map("n", "<Leader>tn", ":tabnew<cr>", {})
 map("n", "<Leader>tc", ":tabclose<cr>", {})

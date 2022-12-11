@@ -14,6 +14,7 @@ local core_modules = {
 	"config/commentary",
 	"config/colorizer",
 	"config/impatient",
+	"config/trouble",
 }
 
 for _, module in ipairs(core_modules) do
