@@ -12,6 +12,7 @@ local core_modules = {
 	"config/completion",
 	"config/gitsigns",
 	"config/commentary",
+	"config/colorizer",
 }
 
 for _, module in ipairs(core_modules) do
