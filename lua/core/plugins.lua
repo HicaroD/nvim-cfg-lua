@@ -65,6 +65,9 @@ return packer.startup(function(use)
     use "karb94/neoscroll.nvim"
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-lua/plenary.nvim'
+    use 'neovim/nvim-lspconfig'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()
