@@ -1,7 +1,6 @@
 --[[-------------------------------------]]--
 --            nvimtree - file tree         --
 --     	        Author: HícaroD 	   --
---              License: GPLv3             --
 --[[-------------------------------------]]--
 
 -- Credits: https://github.com/elairavi/luavim/blob/main/lua/configs/nvimtree.lua
