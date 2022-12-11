@@ -112,11 +112,6 @@ _G.packer_plugins = {
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["neoscroll.nvim"] = {
-    loaded = true,
-    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
-    url = "https://github.com/karb94/neoscroll.nvim"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -179,8 +174,8 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au CursorMoved * ++once lua require("packer.load")({'gitsigns.nvim'}, { event = "CursorMoved *" }, _G.packer_plugins)]]
 vim.cmd [[au CursorMovedI * ++once lua require("packer.load")({'gitsigns.nvim'}, { event = "CursorMovedI *" }, _G.packer_plugins)]]
+vim.cmd [[au CursorMoved * ++once lua require("packer.load")({'gitsigns.nvim'}, { event = "CursorMoved *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 

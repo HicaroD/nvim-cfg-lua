@@ -31,7 +31,6 @@ if not status_ok then
     return
 end
 
--- Have packer use a popup window
 packer.init {
     display = {
         open_fn = function()
@@ -40,7 +39,6 @@ packer.init {
     },
 }
 
--- Install your plugins here
 return packer.startup(function(use)
     use {
    			'lewis6991/gitsigns.nvim',
@@ -50,8 +48,8 @@ return packer.startup(function(use)
    			end
     }
 
-    use 'Mofiqul/vscode.nvim'
     use "wbthomason/packer.nvim"
+    use 'Mofiqul/vscode.nvim'
     use "kyazdani42/nvim-web-devicons"
     use "kyazdani42/nvim-tree.lua"
     use "nvim-treesitter/nvim-treesitter"
@@ -62,7 +60,6 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-buffer"
     use "hrsh7th/cmp-path"
     use "lewis6991/impatient.nvim"
-    use "karb94/neoscroll.nvim"
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'neovim/nvim-lspconfig'
