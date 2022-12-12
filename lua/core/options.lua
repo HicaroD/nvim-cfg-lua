@@ -7,6 +7,8 @@
 --[[------------------------------------]]--
 --             General settings           --
 --[[------------------------------------]]--
+
+-- TODO: refactor set commands with functions, loops and lists
 local set = vim.opt
 set.swapfile = false
 set.number = true

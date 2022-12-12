@@ -41,15 +41,15 @@ packer.init {
 
 return packer.startup(function(use)
     use {
-   			'lewis6991/gitsigns.nvim',
-   			event = { "CursorMoved", "CursorMovedI" },
-   			config = function()
-   				require("gitsigns")
-   			end
+   	'lewis6991/gitsigns.nvim',
+   	 event = { "CursorMoved", "CursorMovedI" },
+   	 config = function()
+   	 	require("gitsigns")
+   	 end
     }
-
     use "wbthomason/packer.nvim"
     use 'Mofiqul/vscode.nvim'
+    use { "ellisonleao/gruvbox.nvim" }
     use "kyazdani42/nvim-web-devicons"
     use "kyazdani42/nvim-tree.lua"
     use "nvim-treesitter/nvim-treesitter"
@@ -66,6 +66,8 @@ return packer.startup(function(use)
     use 'hrsh7th/cmp-nvim-lsp'
     use 'folke/lsp-trouble.nvim'
     use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
+    use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
+
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()
