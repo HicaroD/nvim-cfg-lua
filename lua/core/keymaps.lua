@@ -16,6 +16,7 @@ map("n", "<C-p>", ":NvimTreeToggle<CR>", {})
 
 -- Telescope
 map("n", "<C-f>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", {})
+map("n", "<C-g>", "<cmd>lua require'telescope.builtin'.live_grep(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", {})
 
 -- Comment lines
 map("x", "<Leader>c", ":'<,'>CommentToggle<CR>", {}) -- Comment Multiple Lines In Visual Mode
