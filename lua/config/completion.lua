@@ -165,3 +165,8 @@ require'lspconfig'.dartls.setup {
   capabilities = capabilities,
 }
 
+-- C / C++
+require'lspconfig'.clangd.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
