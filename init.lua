@@ -11,6 +11,7 @@ local core_modules = {
 	"config/treesitter",
 	"config/completion",
 	"config/commentary",
+	"config/telescope",
 	"config/impatient",
 }
 
