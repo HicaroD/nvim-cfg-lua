@@ -12,7 +12,6 @@ local core_modules = {
 	"config/completion",
 	"config/commentary",
 	"config/impatient",
-	"config/trouble",
 }
 
 for _, module in ipairs(core_modules) do
