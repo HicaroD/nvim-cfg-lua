@@ -10,9 +10,7 @@ local core_modules = {
 	"config/nvimtree",
 	"config/treesitter",
 	"config/completion",
-	"config/gitsigns",
 	"config/commentary",
-	"config/colorizer",
 	"config/impatient",
 	"config/trouble",
 }

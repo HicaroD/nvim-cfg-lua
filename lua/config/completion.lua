@@ -176,3 +176,9 @@ require'lspconfig'.gopls.setup{
   on_attach = on_attach,
   capabilities = capabilities,
 }
+
+-- Javascript
+require'lspconfig'.tsserver.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}

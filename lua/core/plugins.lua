@@ -40,13 +40,6 @@ packer.init {
 }
 
 return packer.startup(function(use)
-    use {
-	'lewis6991/gitsigns.nvim',
-	 event = { "CursorMoved", "CursorMovedI" },
-	 config = function()
-		require("gitsigns")
-	 end
-    }
     use "wbthomason/packer.nvim"
     use 'Mofiqul/vscode.nvim'
     use "kyazdani42/nvim-web-devicons"
@@ -54,7 +47,6 @@ return packer.startup(function(use)
     use "nvim-treesitter/nvim-treesitter"
     use "nvim-lualine/lualine.nvim"
     use "terrortylor/nvim-comment"
-    use "norcalli/nvim-colorizer.lua"
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-buffer"
     use "hrsh7th/cmp-path"

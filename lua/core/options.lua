@@ -45,3 +45,4 @@ set.timeoutlen = 500
 set.lazyredraw = true
 set.synmaxcol = 240
 set.updatetime = 700
+
