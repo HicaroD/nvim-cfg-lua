@@ -41,7 +41,7 @@ packer.init {
 
 return packer.startup(function(use)
     use "wbthomason/packer.nvim"
-    use 'Mofiqul/vscode.nvim'
+    use { "ellisonleao/gruvbox.nvim" }
     use "kyazdani42/nvim-web-devicons"
     use "kyazdani42/nvim-tree.lua"
     use "nvim-treesitter/nvim-treesitter"
