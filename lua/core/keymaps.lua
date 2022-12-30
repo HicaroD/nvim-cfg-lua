@@ -12,14 +12,12 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Nvim-tree
-map("n", "<Leader>p", ":NvimTreeToggle<CR>", {})
+map("n", "<C-p>", ":NvimTreeToggle<CR>", {})
 
 -- Telescope
-map("n", "<Leader>f", "<cmd>lua require'telescope.builtin'.find_files()<cr>", {})
-
-map("n", "<Leader>g", "<cmd>lua require'telescope.builtin'.live_grep()<cr>", {})
-
-map("n", "<Leader>d", "<cmd>lua require'telescope.builtin'.diagnostics()<cr>", {})
+map("n", "<C-f>", "<cmd>lua require'telescope.builtin'.find_files()<cr>", {})
+map("n", "<C-g>", "<cmd>lua require'telescope.builtin'.live_grep()<cr>", {})
+map("n", "<C-d>", "<cmd>lua require'telescope.builtin'.diagnostics()<cr>", {})
 
 -- Comment lines
 map("x", "<Leader>c", ":'<,'>CommentToggle<CR>", {}) -- Comment Multiple Lines In Visual Mode
