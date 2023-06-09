@@ -20,7 +20,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>c", ":bw<CR>")
 
 -- <leader>e for opening NvimTree
-vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Navigate between tab buffers
 vim.keymap.set("n", "<C-h>", ":tabprevious<CR>")
