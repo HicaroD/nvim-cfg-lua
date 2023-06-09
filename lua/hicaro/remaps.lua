@@ -23,6 +23,6 @@ vim.keymap.set("n", "<leader>c", ":bw<CR>")
 vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
 
 -- Navigate between tab buffers
-vim.keymap.set("n", "<C-h>", ":gT<CR>")
-vim.keymap.set("n", "<C-l>", ":gt<CR>")
+vim.keymap.set("n", "<C-h>", ":tabprevious<CR>")
+vim.keymap.set("n", "<C-l>", ":tabnext<CR>")
 
