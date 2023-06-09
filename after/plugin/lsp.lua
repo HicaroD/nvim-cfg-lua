@@ -8,6 +8,7 @@ lsp.ensure_installed({
   "gopls",
   "rust_analyzer",
   "marksman",
+  "clangd",
 })
 
 lsp.nvim_workspace()
