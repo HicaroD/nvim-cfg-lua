@@ -13,9 +13,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
--- Use <leader>f  for formatting with LSP formatter
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-
 -- Use <leader>s for opening a search and replace in the current word
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
@@ -23,8 +20,9 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>c", ":bw<CR>")
 
 -- <leader>e for opening NvimTree
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
 
+-- Navigate between tab buffers
 vim.keymap.set("n", "<C-h>", ":gT<CR>")
 vim.keymap.set("n", "<C-l>", ":gt<CR>")
 
