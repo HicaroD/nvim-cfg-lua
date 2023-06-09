@@ -5,6 +5,7 @@ notify.setup({
     render="compact",
     stages="slide",
     fps=60,
+    timeout=2500,
 })
 
 -- Setting notify as default notification system for others plugins

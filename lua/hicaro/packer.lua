@@ -69,7 +69,7 @@ return require('packer').startup(function(use)
     -- File searching (Tree and fuzzy finder)
     use {
         "nvim-telescope/telescope.nvim", tag = '0.1.1',
-        requires = { {"nvim-lua/plenary.nvim",} }
+        requires = { {"nvim-lua/plenary.nvim"}  }
     }
     use {
         "nvim-tree/nvim-tree.lua",
@@ -82,6 +82,8 @@ return require('packer').startup(function(use)
     use "rcarriga/nvim-notify"
     use "windwp/nvim-autopairs"
     use "numToStr/Comment.nvim"
+    use "tpope/vim-surround"
+    use "mbbill/undotree"
 
     -- Performance
     use "lewis6991/impatient.nvim"
