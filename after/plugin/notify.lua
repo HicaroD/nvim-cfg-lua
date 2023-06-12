@@ -8,6 +8,4 @@ notify.setup({
     timeout=2500,
 })
 
--- Setting notify as default notification system for others plugins
 vim.notify = notify
-notify("Welcome, Hícaro!")

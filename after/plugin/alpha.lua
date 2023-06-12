@@ -10,7 +10,10 @@ dashboard.section.header.val = {
     "  ███    ███   ███  ███    █▄    ███    ███ ▀███████████ ███    ███ ",
     "  ███    ███   ███  ███    ███   ███    ███   ███    ███ ███    ███ ",
     "  ███    █▀    █▀   ████████▀    ███    █▀    ███    ███  ▀██████▀  ",
-    "                                              ███    ███            "
+    "                                              ███    ███            ",
+    "                                                                     ",
+    "There is no reasonable excuse for doing anything less than your best.",
+    "                          Robert C. Martin                            ",
 }
 
 dashboard.section.buttons.val = {

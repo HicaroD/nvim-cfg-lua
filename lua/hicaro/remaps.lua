@@ -17,7 +17,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- <leader>c for closing current tab buffer
-vim.keymap.set("n", "<leader>c", ":bw<CR>")
+vim.keymap.set("n", "<leader>c", ":tabc<CR>")
 
 -- <leader>e for opening Neotree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
