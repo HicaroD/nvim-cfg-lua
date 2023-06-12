@@ -3,12 +3,24 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
+  -- Typescript
   "tsserver",
   "eslint",
+
+  -- Golang
   "gopls",
+
+  -- Rust
   "rust_analyzer",
+
+  -- Markdown
   "marksman",
+
+  -- C and C++
   "clangd",
+
+  -- Python
+  "pyright",
 })
 
 lsp.nvim_workspace()
