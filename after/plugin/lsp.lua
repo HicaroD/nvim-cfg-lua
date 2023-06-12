@@ -62,21 +62,40 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>rf", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+  vim.keymap.set("n", "<C-i>", function() vim.lsp.buf.format() end, opts)
 end)
 
 lsp.format_on_save({
   format_opts = {
     async = false,
-    timeout_ms = 500,
+    timeout_ms = 250,
   },
   servers = {
     ['tsserver'] = {'typescript'},
     ['rust_analyzer'] = {'rust'},
     ['dartls'] = {'dart'},
+    ['black'] = {'python'},
   }
 })
 
 lsp.setup()
+
+local null_ls = require('null-ls')
+local null_opts = lsp.build_options('null-ls', {})
+
+null_ls.setup({
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePost", {
+      callback = function()
+        vim.lsp.buf.format()
+      end,
+    })
+    null_opts.on_attach(client, bufnr)
+  end,
+  sources = {
+    null_ls.builtins.formatting.black,
+  }
+})
 
 vim.diagnostic.config({
     virtual_text = true
@@ -87,4 +106,3 @@ require("flutter-tools").setup {
         on_attach=on_attach,
     }
 }
-
