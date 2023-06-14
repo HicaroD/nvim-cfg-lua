@@ -1,9 +1,10 @@
 {
-  // "coc.preferences.formatOnSave": true,
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "python", "rust", "go", "typescript", "dart"],
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
   "snippets.ultisnips.directories": [
     "UltiSnips",
   ],
   "coc.preferences.jumpCommand": "tabe",
+  "flutter.provider.hot-reload": false,
 }
