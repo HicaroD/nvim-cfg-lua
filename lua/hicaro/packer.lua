@@ -29,7 +29,6 @@ return require('packer').startup(function(use)
         requires = { "nvim-tree/nvim-web-devicons", opt = true }
     }
     use "nvim-tree/nvim-web-devicons"
-    use "onsails/lspkind.nvim"
     use "stevearc/dressing.nvim"
     use "lukas-reineke/indent-blankline.nvim"
     use {
@@ -39,34 +38,9 @@ return require('packer').startup(function(use)
     use "navarasu/onedark.nvim" 
 
     -- LSP
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
-        requires = {
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},
-            {'williamboman/mason.nvim'},
-            {'williamboman/mason-lspconfig.nvim'},
+    use { "neoclide/coc.nvim", branch = "release" }
+    use { "fannheyward/telescope-coc.nvim" }
 
-            -- Autocompletion
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-buffer'},
-            {'hrsh7th/cmp-path'},
-            {'saadparwaiz1/cmp_luasnip'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'hrsh7th/cmp-nvim-lua'},
-
-            -- Snippets
-            {'L3MON4D3/LuaSnip'},
-            {'rafamadriz/friendly-snippets'},
-        }
-    }
-    use { 
-      "jose-elias-alvarez/null-ls.nvim",
-      requires = {
-        'nvim-lua/plenary.nvim',
-      },
-    }
 
     -- File searching (Tree and fuzzy finder)
     use {

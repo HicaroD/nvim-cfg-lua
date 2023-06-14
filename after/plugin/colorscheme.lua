@@ -1,5 +1,5 @@
 function setColorscheme(colorscheme)
-  vim.cmd("set termguicolors")
+  vim.o.termguicolors = true
   local colorscheme_name = colorscheme or "vscode"
   vim.cmd("colorscheme " .. colorscheme_name)
 end
