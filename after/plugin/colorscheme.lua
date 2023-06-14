@@ -1,24 +1,16 @@
-function configureGruvbox()
-  local gruvbox = require("gruvbox")
-  gruvbox.setup({
-    italic = {
-      strings = false,
-      comments = false,
-      operators = false,
-      folds = false,
-    },
-    transparent_mode = true,
-  })
-end
-
 function setColorscheme(colorscheme)
+  vim.cmd("set termguicolors")
   local colorscheme_name = colorscheme or "vscode"
-
-  if colorscheme_name == "gruvbox" then
-    configureGruvbox()
-  end
-
   vim.cmd("colorscheme " .. colorscheme_name)
 end
 
-setColorscheme()
+local c = require('vscode.colors').get_colors()
+require('vscode').setup({
+    disable_nvimtree_bg = true,
+    color_overrides = {
+      vscBack = "#181818"
+    },
+
+})
+require('vscode').load()
+setColorscheme("vscode")

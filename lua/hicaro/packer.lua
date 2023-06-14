@@ -1,3 +1,5 @@
+pcall(require, "impatient")
+
 local ensure_packer = function()
     local fn = vim.fn
     local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -31,10 +33,10 @@ return require('packer').startup(function(use)
     use "stevearc/dressing.nvim"
     use "lukas-reineke/indent-blankline.nvim"
     use {
-        'goolord/alpha-nvim',
+        "goolord/alpha-nvim",
         requires = { 'nvim-tree/nvim-web-devicons' }
     }
-    use { "ellisonleao/gruvbox.nvim" }
+    use "navarasu/onedark.nvim" 
 
     -- LSP
     use {
@@ -58,13 +60,6 @@ return require('packer').startup(function(use)
             {'L3MON4D3/LuaSnip'},
             {'rafamadriz/friendly-snippets'},
         }
-    }
-    use {
-        'akinsho/flutter-tools.nvim',
-        requires = {
-            'nvim-lua/plenary.nvim',
-            'stevearc/dressing.nvim',
-        },
     }
     use { 
       "jose-elias-alvarez/null-ls.nvim",

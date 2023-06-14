@@ -1,4 +1,7 @@
 local lsp = require("lsp-zero")
+local lspconfig = require("lspconfig")
+local null_ls = require("null-ls")
+local null_opts = lsp.build_options("null-ls", {})
 
 lsp.preset("recommended")
 
@@ -79,10 +82,15 @@ lsp.format_on_save({
   }
 })
 
-lsp.setup()
+lspconfig.dartls.setup({
+  init_options = {
+    outline = false,
+    flutterOutline = false,
+    flutterSdkPath = "~/Documentos/Development/flutter/",
+  },
+})
 
-local null_ls = require("null-ls")
-local null_opts = lsp.build_options("null-ls", {})
+lsp.setup()
 
 null_ls.setup({
   on_attach = function(client, bufnr)
@@ -95,15 +103,10 @@ null_ls.setup({
   end,
   sources = {
     null_ls.builtins.formatting.black,
+    null_ls.builtins.formatting.dart_format,
   }
 })
 
 vim.diagnostic.config({
     virtual_text = true
 })
-
-require("flutter-tools").setup {
-    lsp = {
-        on_attach=on_attach,
-    }
-}
