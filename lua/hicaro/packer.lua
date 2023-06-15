@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons' }
     }
     use { "nvim-tree/nvim-web-devicons" }
+    use { "loctvl842/breadcrumb.nvim", requires = { "nvim-tree/nvim-web-devicons" } }
 
     -- LSP
     use { "neoclide/coc.nvim", branch = "release" }

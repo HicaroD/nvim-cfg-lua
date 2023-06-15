@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
+  ["breadcrumb.nvim"] = {
+    loaded = true,
+    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/breadcrumb.nvim",
+    url = "https://github.com/loctvl842/breadcrumb.nvim"
+  },
   ["coc.nvim"] = {
     loaded = true,
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/coc.nvim",
