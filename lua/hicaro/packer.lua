@@ -1,5 +1,3 @@
-pcall(require, "impatient")
-
 local ensure_packer = function()
     local fn = vim.fn
     local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -13,29 +11,28 @@ end
 
 local packer_bootstrap = ensure_packer()
 
+pcall(require, "impatient")
+
 return require('packer').startup(function(use)
     -- Package manager
     use "wbthomason/packer.nvim"
 
     -- Style
-    use "norcalli/nvim-colorizer.lua"
     use "Mofiqul/vscode.nvim"
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate"
     }
     use {
-        "nvim-lualine/lualine.nvim",
-        requires = { "nvim-tree/nvim-web-devicons", opt = true }
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
-    use "nvim-tree/nvim-web-devicons"
-    use "stevearc/dressing.nvim"
     use "lukas-reineke/indent-blankline.nvim"
     use {
         "goolord/alpha-nvim",
         requires = { 'nvim-tree/nvim-web-devicons' }
     }
-    use "navarasu/onedark.nvim" 
+    use { "nvim-tree/nvim-web-devicons" }
 
     -- LSP
     use { "neoclide/coc.nvim", branch = "release" }
@@ -59,7 +56,6 @@ return require('packer').startup(function(use)
     use "windwp/nvim-autopairs"
     use "numToStr/Comment.nvim"
     use "tpope/vim-surround"
-    use "mbbill/undotree"
 
     -- Performance
     use "lewis6991/impatient.nvim"
