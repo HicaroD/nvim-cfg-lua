@@ -17,5 +17,8 @@ vim.api.nvim_exec([[
 vim.cmd([[nmap <silent> [d <Plug>(coc-diagnostic-next)]])
 vim.cmd([[nmap <silent> ]d <Plug>(coc-diagnostic-previous)]])
 vim.cmd([[nmap <silent> gd <Plug>(coc-definition)]])
+vim.cmd([[nmap <silent> gi <Plug>(coc-implementation)]])
+vim.cmd([[nmap <silent> gtd <Plug>(coc-type-definition)]])
 vim.cmd([[nmap <leader>rn <Plug>(coc-rename)]])
 vim.cmd([[nmap <leader>lr <Plug>(coc-references)]])
+

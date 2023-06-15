@@ -57,6 +57,14 @@ return require('packer').startup(function(use)
     use "windwp/nvim-autopairs"
     use "numToStr/Comment.nvim"
     use "tpope/vim-surround"
+    use {
+      "folke/which-key.nvim",
+      config = function()
+        vim.o.timeout = true
+        vim.o.timeoutlen = 500
+        require("which-key").setup({})
+      end
+    }
 
     -- Performance
     use "lewis6991/impatient.nvim"
