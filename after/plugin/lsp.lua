@@ -1,24 +1,106 @@
-vim.api.nvim_exec([[
-  inoremap <silent><expr> <TAB>
-        \ coc#pum#visible() ? coc#pum#next(1) :
-        \ CheckBackspace() ? "\<Tab>" :
-        \ coc#refresh()
-  inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+local lsp = require("lsp-zero")
+local lspconfig = require("lspconfig")
+local null_ls = require("null-ls")
+local null_opts = lsp.build_options("null-ls", {})
 
-  inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm()
-                                \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+lsp.preset("recommended")
 
-  function! CheckBackspace() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-  endfunction
-]], false)
+lsp.ensure_installed({
+  -- Typescript
+  "tsserver",
+  "eslint",
 
-vim.cmd([[nmap <silent> [d <Plug>(coc-diagnostic-next)]])
-vim.cmd([[nmap <silent> ]d <Plug>(coc-diagnostic-previous)]])
-vim.cmd([[nmap <silent> gd <Plug>(coc-definition)]])
-vim.cmd([[nmap <silent> gi <Plug>(coc-implementation)]])
-vim.cmd([[nmap <silent> gtd <Plug>(coc-type-definition)]])
-vim.cmd([[nmap <leader>rn <Plug>(coc-rename)]])
-vim.cmd([[nmap <leader>lr <Plug>(coc-references)]])
+  -- Golang
+  "gopls",
 
+  -- Rust
+  "rust_analyzer",
+
+  -- Markdown
+  "marksman",
+
+  -- C and C++
+  "clangd",
+
+  -- Python
+  "pyright",
+})
+
+lsp.nvim_workspace()
+
+local cmp = require("cmp")
+local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp_mappings = lsp.defaults.cmp_mappings({
+  ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
+  ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
+  ["<Tab>"] = cmp.mapping.confirm({ select = true }),
+  ["<C-Space>"] = cmp.mapping.complete(),
+})
+
+cmp_mappings["<S-Tab>"] = nil
+
+lsp.setup_nvim_cmp({
+  mapping = cmp_mappings
+})
+
+lsp.set_preferences({
+    suggest_lsp_servers = false,
+    sign_icons = {
+        error = "E",
+        warn = "W",
+        hint = "H",
+        info = "I"
+    }
+})
+
+lsp.on_attach(function(client, bufnr)
+  local opts = {buffer = bufnr, remap = false}
+  vim.keymap.set("n", "<leader>d", "<cmd>tab split | lua vim.lsp.buf.definition()<cr>", { noremap = true, silent = true })
+  vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+  vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+  vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+  vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+  vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+  vim.keymap.set("n", "<leader>lca", function() vim.lsp.buf.code_action() end, opts)
+  vim.keymap.set("n", "<leader>rf", function() vim.lsp.buf.references() end, opts)
+  vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.rename() end, opts)
+  vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+  vim.keymap.set("n", "<C-i>", function() vim.lsp.buf.format() end, opts)
+end)
+
+lsp.format_on_save({
+  format_opts = {
+    async = false,
+    timeout_ms = 10000,
+  },
+  servers = {
+    ["tsserver"] = {"typescript"},
+    ["rust_analyzer"] = {"rust"},
+    ["dartls"] = {"dart"},
+    ["black"] = {"python"},
+    ["gopls"] = {"go"},
+  }
+})
+
+lspconfig.dartls.setup({})
+
+lsp.setup()
+
+null_ls.setup({
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePost", {
+      callback = function()
+        vim.lsp.buf.format()
+      end,
+    })
+    null_opts.on_attach(client, bufnr)
+  end,
+  sources = {
+    null_ls.builtins.formatting.black,
+    null_ls.builtins.formatting.dart_format,
+  }
+})
+
+vim.diagnostic.config({
+    virtual_text = true
+})
