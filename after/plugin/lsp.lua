@@ -26,6 +26,9 @@ lsp.ensure_installed({
   "pyright",
 })
 
+-- Dart
+lspconfig.dartls.setup({})
+
 lsp.nvim_workspace()
 
 local cmp = require("cmp")
@@ -82,7 +85,6 @@ lsp.format_on_save({
   }
 })
 
-lspconfig.dartls.setup({})
 
 lsp.setup()
 
@@ -97,7 +99,6 @@ null_ls.setup({
   end,
   sources = {
     null_ls.builtins.formatting.black,
-    null_ls.builtins.formatting.dart_format,
   }
 })
 
