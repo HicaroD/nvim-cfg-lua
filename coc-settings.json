@@ -1,9 +1,11 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "html", "markdown", "python", "rust", "go", "typescript"],
+  "coc.preferences.formatOnSaveFiletypes": ["css", "html", "markdown", "python", "rust", "go", "typescript", "dart"],
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
   "snippets.ultisnips.directories": [
-    "UltiSnips",
+    "UltiSnips"
   ],
   "coc.preferences.jumpCommand": "tabe",
+  "eslint.autoFixOnSave": true,
+  "snippets.ultisnips.pythonPrompt": false
 }

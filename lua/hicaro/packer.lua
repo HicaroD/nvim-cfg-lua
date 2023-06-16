@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
 
     -- Style
     use "Mofiqul/vscode.nvim"
+    use "lifepillar/vim-gruvbox8"
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate"
@@ -53,18 +54,9 @@ return require('packer').startup(function(use)
     }
 
     -- Others
-    use "rcarriga/nvim-notify"
     use "windwp/nvim-autopairs"
     use "numToStr/Comment.nvim"
     use "tpope/vim-surround"
-    use {
-      "folke/which-key.nvim",
-      config = function()
-        vim.o.timeout = true
-        vim.o.timeoutlen = 500
-        require("which-key").setup({})
-      end
-    }
 
     -- Performance
     use "lewis6991/impatient.nvim"
