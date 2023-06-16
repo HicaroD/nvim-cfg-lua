@@ -19,7 +19,6 @@ return require('packer').startup(function(use)
 
     -- Style
     use "Mofiqul/vscode.nvim"
-    use "lifepillar/vim-gruvbox8"
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate"
