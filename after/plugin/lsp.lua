@@ -79,12 +79,13 @@ lsp.format_on_save({
   servers = {
     ["tsserver"] = {"typescript"},
     ["rust_analyzer"] = {"rust"},
-    ["dartls"] = {"dart"},
     ["black"] = {"python"},
     ["gopls"] = {"go"},
   }
 })
 
+-- Dart / Flutter LSP
+require("flutter-tools").setup {}
 
 lsp.setup()
 
@@ -99,6 +100,7 @@ null_ls.setup({
   end,
   sources = {
     null_ls.builtins.formatting.black,
+    null_ls.builtins.formatting.dart_format,
   }
 })
 
