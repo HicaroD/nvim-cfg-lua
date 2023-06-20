@@ -34,7 +34,7 @@ return require('packer').startup(function(use)
     }
     use { "nvim-tree/nvim-web-devicons" }
     use { "loctvl842/breadcrumb.nvim", requires = { "nvim-tree/nvim-web-devicons" } }
-    use {'stevearc/dressing.nvim'}
+    use { "stevearc/dressing.nvim" }
 
     -- LSP
     use {
@@ -70,6 +70,10 @@ return require('packer').startup(function(use)
         "nvim-lua/plenary.nvim",
         "stevearc/dressing.nvim",
       },
+    }
+    use {
+      "folke/trouble.nvim",
+      requires = { "nvim-tree/nvim-web-devicons" },
     }
 
     -- File searching (Tree and fuzzy finder)
