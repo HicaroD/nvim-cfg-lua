@@ -26,9 +26,6 @@ lsp.ensure_installed({
   "pyright",
 })
 
--- Dart
-lspconfig.dartls.setup({})
-
 lsp.nvim_workspace()
 
 local cmp = require("cmp")
@@ -47,30 +44,30 @@ lsp.setup_nvim_cmp({
 })
 
 lsp.set_preferences({
-    suggest_lsp_servers = false,
-    sign_icons = {
-        error = "E",
-        warn = "W",
-        hint = "H",
-        info = "I"
-    }
+  suggest_lsp_servers = false,
+  sign_icons = {
+    error = "E",
+    warn = "W",
+    hint = "H",
+    info = "I"
+  }
 })
 
-lsp.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr, remap = false}
-  vim.keymap.set("n", "<leader>d", "<cmd>tab split | lua vim.lsp.buf.definition()<cr>", { noremap = true, silent = true })
-  vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-  vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-  vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-  vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-  vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-  vim.keymap.set("n", "<leader>lca", function() vim.lsp.buf.code_action() end, opts)
-  vim.keymap.set("n", "<leader>rf", function() vim.lsp.buf.references() end, opts)
-  vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.rename() end, opts)
-  vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-  vim.keymap.set("n", "<C-i>", function() vim.lsp.buf.format() end, opts)
-end)
+-- Global LSP keymaps
+local opts = {buffer = bufnr, remap = false}
+vim.keymap.set("n", "<leader>d", "<cmd>tab split | lua vim.lsp.buf.definition()<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+vim.keymap.set("n", "<leader>lca", function() vim.lsp.buf.code_action() end, opts)
+vim.keymap.set("n", "<leader>rf", function() vim.lsp.buf.references() end, opts)
+vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
+vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+vim.keymap.set("n", "<C-i>", function() vim.lsp.buf.format() end, opts)
 
+-- Format on save configuration
 lsp.format_on_save({
   format_opts = {
     async = false,
@@ -81,11 +78,9 @@ lsp.format_on_save({
     ["rust_analyzer"] = {"rust"},
     ["black"] = {"python"},
     ["gopls"] = {"go"},
+    ["dartls"] = {"dart"},
   }
 })
-
--- Dart / Flutter LSP
-require("flutter-tools").setup {}
 
 lsp.setup()
 
@@ -100,7 +95,6 @@ null_ls.setup({
   end,
   sources = {
     null_ls.builtins.formatting.black,
-    null_ls.builtins.formatting.dart_format,
     null_ls.builtins.diagnostics.spectral
   }
 })
@@ -108,3 +102,5 @@ null_ls.setup({
 vim.diagnostic.config({
     virtual_text = true
 })
+
+lspconfig.dartls.setup {}
