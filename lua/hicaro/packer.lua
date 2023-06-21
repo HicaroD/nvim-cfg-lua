@@ -71,10 +71,6 @@ return require('packer').startup(function(use)
         "stevearc/dressing.nvim",
       },
     }
-    use {
-      "folke/trouble.nvim",
-      requires = { "nvim-tree/nvim-web-devicons" },
-    }
 
     -- File searching (Tree and fuzzy finder)
     use {
