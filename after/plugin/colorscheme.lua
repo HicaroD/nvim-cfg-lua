@@ -19,4 +19,4 @@ function setColorscheme(colorscheme)
   vim.cmd("colorscheme " .. colorscheme_name)
 end
 
-setColorscheme("vscode")
+setColorscheme("github_dark_dimmed")
