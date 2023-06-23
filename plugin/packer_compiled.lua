@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/breadcrumb.nvim",
     url = "https://github.com/loctvl842/breadcrumb.nvim"
   },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/cmp-buffer",
