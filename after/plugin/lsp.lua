@@ -74,9 +74,7 @@ lsp.format_on_save({
     timeout_ms = 10000,
   },
   servers = {
-    ["tsserver"] = {"typescript"},
     ["rust_analyzer"] = {"rust"},
-    ["black"] = {"python"},
     ["gopls"] = {"go"},
     ["dartls"] = {"dart"},
   }
@@ -95,7 +93,7 @@ null_ls.setup({
   end,
   sources = {
     null_ls.builtins.formatting.black,
-    null_ls.builtins.diagnostics.spectral
+    null_ls.builtins.formatting.prettier
   }
 })
 
