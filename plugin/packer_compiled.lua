@@ -224,6 +224,11 @@ _G.packer_plugins = {
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["vim-floaterm"] = {
+    loaded = true,
+    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/vim-floaterm",
+    url = "https://github.com/voldikss/vim-floaterm"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/vim-surround",

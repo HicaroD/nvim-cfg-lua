@@ -22,7 +22,10 @@ vim.keymap.set("n", "<leader>c", ":tabc<CR>")
 -- <leader>e for opening Neotree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
--- Navigate between tab buffers
-vim.keymap.set("n", "<C-h>", ":tabprevious<CR>")
-vim.keymap.set("n", "<C-l>", ":tabnext<CR>")
+-- Navigate between buffers
+vim.keymap.set("n", "<C-h>", ":bprevious<CR>")
+vim.keymap.set("n", "<C-l>", ":bnext<CR>")
 
+-- Floating terminal
+local float_term_command = ":FloatermNew --height=0.35 --wintype=split --position=botright --autoclose=2<CR>"
+vim.keymap.set("n", "<leader>nt", float_term_command)

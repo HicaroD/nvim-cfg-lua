@@ -90,6 +90,7 @@ return require('packer').startup(function(use)
     use "windwp/nvim-autopairs"
     use "numToStr/Comment.nvim"
     use "tpope/vim-surround"
+    use 'voldikss/vim-floaterm'
 
     -- Performance
     use "lewis6991/impatient.nvim"
