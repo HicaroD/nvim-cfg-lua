@@ -1,1 +1,1 @@
--- require("breadcrumb").init()
+require("breadcrumb").init()
