@@ -39,40 +39,7 @@ return require('packer').startup(function(use)
     use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 
     -- LSP
-    use {
-      'VonHeikemen/lsp-zero.nvim',
-      branch = 'v1.x',
-      requires = {
-        -- LSP Support
-        {'neovim/nvim-lspconfig'},
-        {'williamboman/mason.nvim'},
-        {'williamboman/mason-lspconfig.nvim'},
-
-        -- Autocompletion
-        {'hrsh7th/nvim-cmp'},
-        {'hrsh7th/cmp-buffer'},
-        {'hrsh7th/cmp-path'},
-        {'saadparwaiz1/cmp_luasnip'},
-        {'hrsh7th/cmp-nvim-lsp'},
-        {'hrsh7th/cmp-nvim-lua'},
-        -- Snippets
-        {'L3MON4D3/LuaSnip'},
-        {'rafamadriz/friendly-snippets'},
-      }
-    }
-    use { 
-      "jose-elias-alvarez/null-ls.nvim",
-      requires = {
-        'nvim-lua/plenary.nvim',
-      },
-    }
-    use {
-      "akinsho/flutter-tools.nvim",
-      requires = {
-        "nvim-lua/plenary.nvim",
-        "stevearc/dressing.nvim",
-      },
-    }
+    use { "neoclide/coc.nvim", branch = "release" }
 
     -- File searching (Tree and fuzzy finder)
     use {
