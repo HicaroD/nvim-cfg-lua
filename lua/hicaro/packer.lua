@@ -40,6 +40,11 @@ return require('packer').startup(function(use)
 
     -- LSP
     use { "neoclide/coc.nvim", branch = "release" }
+    use({
+      "L3MON4D3/LuaSnip",
+      tag = "v<CurrentMajor>.*",
+      run = "make install_jsregexp"
+    })
 
     -- File searching (Tree and fuzzy finder)
     use {
