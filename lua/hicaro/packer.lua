@@ -45,6 +45,10 @@ return require('packer').startup(function(use)
       tag = "v<CurrentMajor>.*",
       run = "make install_jsregexp"
     })
+    use {
+      "jose-elias-alvarez/null-ls.nvim",
+      requires = { "nvim-lua/plenary.nvim" }
+    }
 
     -- File searching (Tree and fuzzy finder)
     use {
