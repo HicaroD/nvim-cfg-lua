@@ -16,11 +16,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 -- Use <leader>s for opening a search and replace in the current word
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
--- <leader>c for closing current tab buffer
--- vim.keymap.set("n", "<leader>c", ":tabc<CR>")
-
--- HACK
--- If tree is open, close it with the buffer
+-- Use <leader>c for closing current tab buffer
 vim.keymap.set("n", "<leader>c", function()
   local tree = require("nvim-tree.view")
   if tree.is_visible() then
@@ -28,17 +24,6 @@ vim.keymap.set("n", "<leader>c", function()
   end
   vim.cmd("bwipeout")
 end)
-
--- Close tree when it is the last buffer
-vim.api.nvim_create_autocmd("BufEnter", {
-    nested = true,
-    callback = function()
-        if #vim.api.nvim_list_wins() == 1 and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil then
-            vim.cmd "NvimTreeClose"
-            vim.cmd "quit"
-        end
-  end
-})
 
 -- <leader>e for opening Neotree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
