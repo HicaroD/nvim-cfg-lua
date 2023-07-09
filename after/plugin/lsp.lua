@@ -63,6 +63,3 @@ keyset("n", "<leader>lca", "<Plug>(coc-codeaction-cursor)", opts)
 
 -- `:OR` command for organizing imports of the current buffer
 vim.api.nvim_create_user_command("OI", "call CocActionAsync('runCommand', 'editor.action.organizeImport')", {})
-
-local opts = {silent = true, nowait = true}
-keyset("n", "<leader>ld", ":<C-u>CocList diagnostics<cr>", opts)
