@@ -31,7 +31,7 @@ function setColorscheme(args)
   elseif colorscheme == "github" then
     setupGithub(transparent)
   else
-    vim.cmd("colorscheme " .. colorscheme_name)
+    vim.cmd("colorscheme " .. colorscheme)
   end
 end
 
