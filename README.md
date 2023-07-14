@@ -24,6 +24,16 @@ My Neovim configuration built from scratch with Lua.
 
 ![dart](images/dart.png)
 
+## Configuration
+
+1. CoC
+
+I use CoC for autocompletion. To install all my extensions, use the following command:
+
+```
+:CocInstall coc-pyright coc-xml coc-snippets coc-java coc-tsserver coc-go coc-prisma coc-flutter-tools coc-json coc-clangd coc-markdownlint coc-prettier coc-eslint
+```
+
 ## License
 
 This project is licensed under the MIT license. See [LICENSE](./LICENSE).
