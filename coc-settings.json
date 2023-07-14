@@ -2,5 +2,5 @@
   "coc.preferences.formatOnSave": true,
   "snippets.ultisnips.pythonPrompt": false,
   "diagnostic.enable": true,
-  "jedi.diagnostics.enable": true
+  "java.compile.nullAnalysis.mode": "automatic"
 }
