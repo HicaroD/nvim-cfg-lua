@@ -35,4 +35,4 @@ function setColorscheme(args)
   end
 end
 
-setColorscheme { name="github", transparent=false }
+setColorscheme { name="vscode", transparent=false }
