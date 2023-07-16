@@ -2,5 +2,8 @@
   "coc.preferences.formatOnSave": true,
   "snippets.ultisnips.pythonPrompt": false,
   "diagnostic.enable": true,
-  "java.compile.nullAnalysis.mode": "automatic"
+  "java.compile.nullAnalysis.mode": "automatic",
+  "codeLens.enable": true,
+  "java.jdt.ls.vmargs": "-noverify -Xmx2G -XX:+UseG1GC -XX:+UseStringDeduplication",
+  "java.jdt.ls.java.home": "/usr/lib/jvm/java-20-openjdk"
 }
