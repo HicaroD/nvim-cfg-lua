@@ -40,12 +40,9 @@ return require('packer').startup(function(use)
 
     -- LSP
     use { "neoclide/coc.nvim", branch = "release" }
-    use({
-      "L3MON4D3/LuaSnip",
-      tag = "v<CurrentMajor>.*",
-      run = "make install_jsregexp"
-    })
-    use { 'mhartington/formatter.nvim' }
+    use { "mhartington/formatter.nvim" }
+    use { "SirVer/ultisnips" }
+    use { "honza/vim-snippets" }
 
     -- File searching (Tree and fuzzy finder)
     use {

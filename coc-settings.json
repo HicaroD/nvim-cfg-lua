@@ -5,5 +5,7 @@
   "java.compile.nullAnalysis.mode": "automatic",
   "codeLens.enable": true,
   "java.jdt.ls.vmargs": "-noverify -Xmx2G -XX:+UseG1GC -XX:+UseStringDeduplication",
-  "java.jdt.ls.java.home": "/usr/lib/jvm/java-20-openjdk"
+  "java.jdt.ls.java.home": "/usr/lib/jvm/java-20-openjdk",
+  "flutter.trace.server": "verbose",
+  "snippets.priority": 100
 }
