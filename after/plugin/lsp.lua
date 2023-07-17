@@ -107,6 +107,9 @@ require("formatter").setup {
     rust = {
       require("formatter.filetypes.rust").rustfmt,
     },
+    java = {
+      require("formatter.filetypes.java").clangformat,
+    },
     ["*"] = {
       require("formatter.filetypes.any").remove_trailing_whitespace
     }
