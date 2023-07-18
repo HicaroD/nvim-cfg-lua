@@ -65,8 +65,7 @@ vim.api.nvim_create_user_command("OI", "call CocActionAsync('runCommand', 'edito
 local util = require "formatter.util"
 
 require("formatter").setup {
-  logging = true,
-  log_level = vim.log.levels.WARN,
+  logging = false,
   filetype = {
     dart = {
       require("formatter.filetypes.dart").dartformat,
