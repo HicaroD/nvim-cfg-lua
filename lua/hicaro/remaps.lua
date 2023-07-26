@@ -35,3 +35,5 @@ vim.keymap.set("n", "<C-l>", ":bnext<CR>")
 -- Floating terminal
 local float_term_command = ":FloatermNew --height=0.35 --wintype=split --position=botright --autoclose=2<CR>"
 vim.keymap.set("n", "<leader>nt", float_term_command)
+
+-- TODO: build remap for changing name of current file using the command :CocCommand workspace.renameCurrentFile
