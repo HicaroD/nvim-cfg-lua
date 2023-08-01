@@ -10,16 +10,6 @@ function setupVscode(transparent)
   require("vscode").load()
 end
 
-
-function setupGithub(transparent)
-  require('github-theme').setup({
-    options = {
-      transparent = transparent,
-    },
-  })
-  vim.cmd("colorscheme " .. "github_dark_dimmed")
-end
-
 function setColorscheme(args)
   vim.o.termguicolors = true
 
@@ -28,8 +18,6 @@ function setColorscheme(args)
 
   if colorscheme == "vscode" then
     setupVscode(transparent)
-  elseif colorscheme == "github" then
-    setupGithub(transparent)
   else
     vim.cmd("colorscheme " .. colorscheme)
   end

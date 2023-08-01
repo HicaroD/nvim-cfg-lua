@@ -19,7 +19,6 @@ return require('packer').startup(function(use)
 
     -- Style
     use "Mofiqul/vscode.nvim"
-    use "projekt0n/github-nvim-theme"
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate"
