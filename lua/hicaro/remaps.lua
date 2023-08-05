@@ -38,3 +38,6 @@ vim.keymap.set("n", "<leader>nt", float_term_command)
 
 -- <leader>rcf for renaming current file
 vim.keymap.set("n", "<leader>rcf", ":CocCommand workspace.renameCurrentFile<CR>")
+
+-- <leader>suc for showing highlight group using Treesitter Playground plugin
+vim.keymap.set("n", "<leader>suc", ":TSHighlightCapturesUnderCursor<CR>")
