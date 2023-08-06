@@ -31,7 +31,7 @@ My Neovim configuration built from scratch with Lua.
 I use CoC for autocompletion. To install all my extensions, use the following command:
 
 ```
-:CocInstall coc-pyright coc-xml coc-snippets coc-java coc-tsserver coc-go coc-prisma coc-flutter-tools coc-json coc-clangd coc-markdownlint coc-prettier coc-eslint coc-floatinput coc-html coc-css coc-emmet
+:CocInstall coc-pyright coc-xml coc-snippets coc-java coc-tsserver coc-go coc-prisma coc-flutter-tools coc-json coc-clangd coc-markdownlint coc-prettier coc-eslint coc-floatinput coc-html coc-css coc-emmet @yaegassy/coc-tailwindcss3
 ```
 
 2. Telescope
