@@ -6,5 +6,7 @@
   "java.jdt.ls.vmargs": "-noverify -Xmx2G -XX:+UseG1GC -XX:+UseStringDeduplication",
   "java.jdt.ls.java.home": "/usr/lib/jvm/java-20-openjdk",
   "flutter.trace.server": "off",
-  "tsserver.useLocalTsdk": true
+  "tsserver.useLocalTsdk": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
