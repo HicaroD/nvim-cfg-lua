@@ -13,9 +13,6 @@ keyset("n", "[d", "<Plug>(coc-diagnostic-prev)", { silent = true })
 keyset("n", "]d", "<Plug>(coc-diagnostic-next)", { silent = true })
 
 keyset("n", "gd", "<Plug>(coc-definition)", { silent = true })
-keyset("n", "gy", "<Plug>(coc-type-definition)", { silent = true })
-keyset("n", "gi", "<Plug>(coc-implementation)", { silent = true })
-keyset("n", "gr", "<Plug>(coc-references)", { silent = true })
 
 function _G.show_docs()
   local cw = vim.fn.expand('<cword>')
