@@ -34,6 +34,12 @@ I use CoC for autocompletion. To install all my extensions, use the following co
 :CocInstall coc-pyright coc-xml coc-snippets coc-java coc-tsserver coc-go coc-prisma coc-flutter-tools coc-json coc-clangd coc-markdownlint coc-prettier coc-eslint coc-floatinput coc-html coc-css coc-emmet
 ```
 
+2. Telescope
+
+I use Telescope for fuzzy finder.
+
+Remember to install [ripgrep](https://github.com/BurntSushi/ripgrep) for being faster and automatically ignore files inside `.gitignore`.
+
 ## License
 
 This project is licensed under the MIT license. See [LICENSE](./LICENSE).
