@@ -23,4 +23,4 @@ function setColorscheme(args)
   end
 end
 
-setColorscheme { name="vscode", transparent=false }
+setColorscheme { name = "alice", transparent = false }
