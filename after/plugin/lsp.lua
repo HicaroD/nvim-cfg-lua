@@ -60,8 +60,6 @@ vim.api.nvim_create_autocmd("User", {
 vim.api.nvim_create_user_command("OI", "call CocActionAsync('runCommand', 'editor.action.organizeImport')", {})
 
 -- Code formatting
-local util = require "formatter.util"
-
 require("formatter").setup {
   logging = false,
   filetype = {
@@ -73,6 +71,9 @@ require("formatter").setup {
     },
     typescript = {
       require("formatter.filetypes.typescript").prettier,
+    },
+    typescriptreact = {
+      require("formatter.filetypes.typescriptreact").prettier,
     },
     c = {
       require("formatter.filetypes.c").clangformat,
