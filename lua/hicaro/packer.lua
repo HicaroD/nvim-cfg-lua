@@ -16,7 +16,6 @@ pcall(require, "impatient")
 return require('packer').startup(function(use)
   -- Package manager
   use "wbthomason/packer.nvim"
-  use "tjdevries/colorbuddy.nvim"
 
   -- Style
   use "Mofiqul/vscode.nvim"
