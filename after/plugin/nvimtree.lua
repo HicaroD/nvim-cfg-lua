@@ -51,10 +51,14 @@ nvimtree.setup({
         },
       },
     },
+    highlight_opened_files = "name",
+    indent_markers = {
+      enable = true,
+    }
   },
   diagnostics = {
     enable = true,
-    show_on_dirs = false,
+    show_on_dirs = true,
     icons = {
       hint = "",
       info = "",
@@ -66,10 +70,4 @@ nvimtree.setup({
     width = 30,
     side = "left",
   },
-  renderer = {
-    highlight_opened_files = "name",
-    indent_markers = {
-      enable = true,
-    }
-  }
 })
