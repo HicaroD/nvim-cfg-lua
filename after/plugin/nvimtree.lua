@@ -1,12 +1,9 @@
 local nvimtree = require("nvim-tree")
 
-
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
+local config_status_ok, _ = pcall(require, "nvim-tree.config")
 if not config_status_ok then
   return
 end
-
-local tree_cb = nvim_tree_config.nvim_tree_callback
 
 local function my_on_attach(bufnr)
   local api = require("nvim-tree.api")
