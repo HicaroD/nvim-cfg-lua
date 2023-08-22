@@ -6,13 +6,22 @@ function _G.check_back_space()
 end
 
 local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
+
 keyset("i", "<Tab>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 keyset("i", "<c-j>", "<Plug>(coc-snippets-expand-jump)")
-
 keyset("n", "[d", "<Plug>(coc-diagnostic-prev)", { silent = true })
 keyset("n", "]d", "<Plug>(coc-diagnostic-next)", { silent = true })
-
 keyset("n", "gd", "<Plug>(coc-definition)", { silent = true })
+keyset("n", "<leader>ld", "<Plug>(coc-diagnostics)", { silent = true })
+keyset("n", "<leader>lr", "<Plug>(coc-references)", { silent = true })
+keyset("n", "<leader>gi", "<Plug>(coc-implementations)", { silent = true })
+keyset("n", "<leader>gi", "<Plug>(coc-type-definitions)", { silent = true })
+-- vim.keymap.set('n', '<leader>lad', ":Telescope coc workspace_diagnostics<CR>", {})
+keyset("n", "<leader>lca", "<Plug>(coc-codeaction-cursor)", { silent = true })
+keyset("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true })
+keyset("x", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
+keyset("n", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
+
 
 function _G.show_docs()
   local cw = vim.fn.expand('<cword>')
@@ -27,7 +36,6 @@ end
 
 keyset("n", "K", '<CMD>lua _G.show_docs()<CR>', { silent = true })
 
-
 -- Highlight the symbol and its references on a CursorHold event(cursor is idle)
 vim.api.nvim_create_augroup("CocGroup", {})
 vim.api.nvim_create_autocmd("CursorHold", {
@@ -35,11 +43,6 @@ vim.api.nvim_create_autocmd("CursorHold", {
   command = "silent call CocActionAsync('highlight')",
   desc = "Highlight symbol under cursor on CursorHold"
 })
-
-keyset("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true })
-
-keyset("x", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
-keyset("n", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
 
 vim.api.nvim_create_autocmd("FileType", {
   group = "CocGroup",

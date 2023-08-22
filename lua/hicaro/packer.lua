@@ -18,13 +18,11 @@ return require('packer').startup(function(use)
   use "wbthomason/packer.nvim"
 
   -- Style
-  use "Mofiqul/vscode.nvim"
   use "HicaroD/alice.nvim"
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate"
   }
-  use { "nvim-treesitter/playground" }
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -35,8 +33,6 @@ return require('packer').startup(function(use)
     requires = { 'nvim-tree/nvim-web-devicons' }
   }
   use { "nvim-tree/nvim-web-devicons" }
-  use { "loctvl842/breadcrumb.nvim", requires = { "nvim-tree/nvim-web-devicons" } }
-  use { "stevearc/dressing.nvim" }
   use { "akinsho/bufferline.nvim", tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
   use { "norcalli/nvim-colorizer.lua" }
 
@@ -51,7 +47,6 @@ return require('packer').startup(function(use)
     "nvim-telescope/telescope.nvim", tag = '0.1.1',
     requires = { { "nvim-lua/plenary.nvim" } }
   }
-  use "fannheyward/telescope-coc.nvim"
   use {
     "nvim-tree/nvim-tree.lua",
     requires = {
@@ -63,6 +58,8 @@ return require('packer').startup(function(use)
   use "windwp/nvim-autopairs"
   use "numToStr/Comment.nvim"
   use "tpope/vim-surround"
+
+  -- TODO: remove
   use 'voldikss/vim-floaterm'
 
   -- Performance

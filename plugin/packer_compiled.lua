@@ -89,11 +89,6 @@ _G.packer_plugins = {
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
-  ["breadcrumb.nvim"] = {
-    loaded = true,
-    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/breadcrumb.nvim",
-    url = "https://github.com/loctvl842/breadcrumb.nvim"
-  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -103,11 +98,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
-  },
-  ["dressing.nvim"] = {
-    loaded = true,
-    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/dressing.nvim",
-    url = "https://github.com/stevearc/dressing.nvim"
   },
   ["formatter.nvim"] = {
     loaded = true,
@@ -159,20 +149,10 @@ _G.packer_plugins = {
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
-  playground = {
-    loaded = true,
-    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/playground",
-    url = "https://github.com/nvim-treesitter/playground"
-  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["telescope-coc.nvim"] = {
-    loaded = true,
-    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/telescope-coc.nvim",
-    url = "https://github.com/fannheyward/telescope-coc.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -198,11 +178,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
-  },
-  ["vscode.nvim"] = {
-    loaded = true,
-    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/vscode.nvim",
-    url = "https://github.com/Mofiqul/vscode.nvim"
   }
 }
 
