@@ -1,7 +1,7 @@
 local nvimtree = require("nvim-tree")
 
 nvimtree.setup({
-  on_attach = function ()
+  on_attach = function (bufnr)
     local api = require("nvim-tree.api")
 
     local function opts(desc)
@@ -59,5 +59,8 @@ nvimtree.setup({
   view = {
     width = 30,
     side = "left",
+    float = {
+      quit_on_focus_loss = true,
+    }
   },
 })
