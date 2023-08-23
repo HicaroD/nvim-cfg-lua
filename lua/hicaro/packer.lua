@@ -11,8 +11,6 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-pcall(require, "impatient")
-
 return require('packer').startup(function(use)
   -- Package manager
   use "wbthomason/packer.nvim"
@@ -59,12 +57,6 @@ return require('packer').startup(function(use)
   use "windwp/nvim-autopairs"
   use "numToStr/Comment.nvim"
   use "tpope/vim-surround"
-
-  -- TODO: remove
-  use 'voldikss/vim-floaterm'
-
-  -- Performance
-  use "lewis6991/impatient.nvim"
 
   if packer_bootstrap then
     require('packer').sync()
