@@ -108,6 +108,9 @@ require("formatter").setup {
   }
 }
 
+-- TODO: add formatter for XML
+-- I found a Vim command for formatting it: :%!xmllint --format %
+
 vim.api.nvim_exec([[
 augroup FormatAutogroup
   autocmd!
