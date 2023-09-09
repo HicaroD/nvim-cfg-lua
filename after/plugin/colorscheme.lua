@@ -1,5 +1,4 @@
 function setupVscode(transparent)
-  local c = require('vscode.colors').get_colors()
   require('vscode').setup({
     disable_nvimtree_bg = true,
     transparent = transparent,
@@ -23,4 +22,4 @@ function setColorscheme(args)
   end
 end
 
-setColorscheme { name = "alice", transparent = false }
+setColorscheme { name = "vscode", transparent = false }
