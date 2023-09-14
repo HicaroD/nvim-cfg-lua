@@ -33,13 +33,24 @@ formatter.setup({
 				local clang_format_executable_path = ""
 
 				if version == "1" then
-					clang_format_executable_path = "~/Documentos/Development/clang_llvm_9.0.0/bin/clang-format"
+					clang_format_executable_path =
+						"/home/hicaro/Documentos/Development/clang_llvm_9.0.0/bin/clang-format"
+
+					local clang_format_file = io.open(clang_format_executable_path, "r")
+
+					if clang_format_file == nil then
+						print(clang_format_executable_path .. " is an invalid path for an executable")
+						return
+					end
+
+					io.close(clang_format_file)
 				else
-          -- TODO: identify the version avaiable in the OS
-          -- TODO: check for errors, such as cases where "clang-format" is not available
-          clang_format_executable_path = "clang-format"
+					-- TODO: identify the version avaiable in the OS
+					-- TODO: check for errors, such as cases where "clang-format" is not available
+					clang_format_executable_path = "clang-format"
 				end
 
+				print("Formatting...")
 				return {
 					exe = clang_format_executable_path,
 					stdin = true,
