@@ -1,9 +1,9 @@
 function setupVscode(transparent)
-  require('vscode').setup({
+  require("vscode").setup({
     disable_nvimtree_bg = true,
     transparent = transparent,
     color_overrides = {
-      vscBack = "#181818"
+      vscBack = "#181818",
     },
   })
   require("vscode").load()
@@ -22,4 +22,4 @@ function setColorscheme(args)
   end
 end
 
-setColorscheme { name = "vscode", transparent = false }
+setColorscheme({ name = "vscode", transparent = false })

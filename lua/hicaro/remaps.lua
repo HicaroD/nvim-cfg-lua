@@ -1,5 +1,5 @@
 -- Leader key to ','
-vim.g.mapleader=","
+vim.g.mapleader = ","
 
 -- Move lines selected in visual mode with J or K
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

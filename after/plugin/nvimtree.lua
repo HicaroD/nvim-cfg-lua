@@ -1,14 +1,14 @@
 local nvimtree = require("nvim-tree")
 
 nvimtree.setup({
-  on_attach = function (bufnr)
+  on_attach = function(bufnr)
     local api = require("nvim-tree.api")
 
     local function opts(desc)
       return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
     end
     api.config.mappings.default_on_attach(bufnr)
-    vim.keymap.set('n', '<space>', api.node.open.edit, opts("Open"))
+    vim.keymap.set("n", "<space>", api.node.open.edit, opts("Open"))
   end,
   update_focused_file = {
     enable = true,
@@ -44,7 +44,7 @@ nvimtree.setup({
     highlight_opened_files = "name",
     indent_markers = {
       enable = true,
-    }
+    },
   },
   diagnostics = {
     enable = true,
@@ -61,6 +61,6 @@ nvimtree.setup({
     side = "left",
     float = {
       quit_on_focus_loss = true,
-    }
+    },
   },
 })

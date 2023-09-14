@@ -1,11 +1,11 @@
-require('lualine').setup({
+require("lualine").setup({
   sections = {
     lualine_a = {
       {
-        'filename',
+        "filename",
         file_status = true,
-        path = 1
-      }
-    }
-  }
+        path = 1,
+      },
+    },
+  },
 })
