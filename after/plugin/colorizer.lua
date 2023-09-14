@@ -1,3 +1,9 @@
 local colorizer = require("colorizer")
 
-colorizer.setup()
+colorizer.setup({
+  "css",
+  "javascript",
+  html = {
+    mode = "foreground",
+  },
+})
