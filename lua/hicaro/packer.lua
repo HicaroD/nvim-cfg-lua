@@ -56,7 +56,6 @@ return require("packer").startup(function(use)
   })
 
   -- Others
-  use("windwp/nvim-autopairs")
   use("numToStr/Comment.nvim")
   use("tpope/vim-surround")
 
