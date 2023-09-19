@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/formatter.nvim",
     url = "https://github.com/mhartington/formatter.nvim"
   },
+  ["fzf.vim"] = {
+    loaded = true,
+    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/fzf.vim",
+    url = "https://github.com/junegunn/fzf.vim"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
@@ -138,21 +143,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
-  },
-  ["plenary.nvim"] = {
-    loaded = true,
-    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/plenary.nvim",
-    url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["telescope-coc.nvim"] = {
-    loaded = true,
-    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/telescope-coc.nvim",
-    url = "https://github.com/fannheyward/telescope-coc.nvim"
-  },
-  ["telescope.nvim"] = {
-    loaded = true,
-    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/telescope.nvim",
-    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ultisnips = {
     loaded = true,
