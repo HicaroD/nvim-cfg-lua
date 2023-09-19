@@ -1,4 +1,4 @@
-function setupVscode(transparent)
+local function setupVscode(transparent)
   require("vscode").setup({
     disable_nvimtree_bg = true,
     transparent = transparent,
@@ -9,7 +9,7 @@ function setupVscode(transparent)
   require("vscode").load()
 end
 
-function setColorscheme(args)
+local function setColorscheme(args)
   vim.o.termguicolors = true
 
   local colorscheme = args.name
