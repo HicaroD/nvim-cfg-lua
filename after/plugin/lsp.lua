@@ -13,12 +13,6 @@ keyset("n", "[d", "<Plug>(coc-diagnostic-prev)", { silent = true })
 keyset("n", "]d", "<Plug>(coc-diagnostic-next)", { silent = true })
 keyset("n", "gd", "<Plug>(coc-definition)", { silent = true })
 keyset("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true })
-keyset("n", "<leader>gtd", "<Plug>(type-definition)", {})
-
-local opts_for_lists = { silent = true, nowait = true }
-keyset("n", "<leader>lad", ":<C-u>CocList diagnostics<cr>", opts_for_lists)
-keyset("n", "<leader>lca", "<Plug>(coc-codeaction-cursor)", opts_for_lists)
-keyset("n", "<leader>lr", "<Plug>(coc-references)", opts_for_lists)
 
 function _G.show_docs()
   local cw = vim.fn.expand("<cword>")

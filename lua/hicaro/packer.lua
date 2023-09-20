@@ -44,6 +44,12 @@ return require("packer").startup(function(use)
   -- File searching (Tree and fuzzy finder)
   use("junegunn/fzf.vim")
   use({
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.3",
+    requires = { { "nvim-lua/plenary.nvim" } },
+  })
+  use("fannheyward/telescope-coc.nvim")
+  use({
     "nvim-tree/nvim-tree.lua",
     requires = {
       "nvim-tree/nvim-web-devicons",
