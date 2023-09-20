@@ -42,9 +42,10 @@ return require("packer").startup(function(use)
   use({ "honza/vim-snippets" })
 
   -- File searching (Tree and fuzzy finder)
+  use("junegunn/fzf.vim")
   use({
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.1",
+    tag = "0.1.3",
     requires = { { "nvim-lua/plenary.nvim" } },
   })
   use("fannheyward/telescope-coc.nvim")

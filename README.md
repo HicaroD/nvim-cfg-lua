@@ -2,6 +2,11 @@
 
 My Neovim configuration built from scratch with Lua.
 
+## Tools
+
+1. FZF as fuzzy finder
+2. Ripgrep as search in files tool
+
 ## Front screen
 
 ![front](images/front.png)
