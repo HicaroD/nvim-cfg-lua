@@ -49,7 +49,7 @@ formatter.setup({
           clang_format_executable_path = "clang-format"
         end
 
-        print("Formatting...")
+        print("\nFormatting...")
         return {
           exe = clang_format_executable_path,
           stdin = true,
