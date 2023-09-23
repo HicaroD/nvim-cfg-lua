@@ -27,10 +27,6 @@ return require("packer").startup(function(use)
     requires = { "nvim-tree/nvim-web-devicons", opt = true },
   })
   use("lukas-reineke/indent-blankline.nvim")
-  use({
-    "goolord/alpha-nvim",
-    requires = { "nvim-tree/nvim-web-devicons" },
-  })
   use({ "nvim-tree/nvim-web-devicons" })
   use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
   use({ "norcalli/nvim-colorizer.lua" })
@@ -38,6 +34,8 @@ return require("packer").startup(function(use)
   -- LSP
   use({ "neoclide/coc.nvim", branch = "release" })
   use({ "mhartington/formatter.nvim" })
+
+  -- Snippets
   use({ "SirVer/ultisnips" })
   use({ "honza/vim-snippets" })
 
