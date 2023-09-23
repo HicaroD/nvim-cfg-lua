@@ -75,5 +75,5 @@ vim.api.nvim_create_autocmd("User", {
   desc = "Update signature help on jump placeholder",
 })
 
--- `:OR` command for organizing imports of the current buffer
+-- `:OI` command for organizing imports of the current buffer
 vim.api.nvim_create_user_command("OI", "call CocActionAsync('runCommand', 'editor.action.organizeImport')", {})
