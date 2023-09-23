@@ -1,3 +1,28 @@
+--[=====[ 
+Here is my list of CoC plugins:
+
+- coc-sumneko-lua
+- coc-snippets
+- coc-prettier
+- coc-html
+- coc-floatinput
+- coc-eslint
+- coc-emmet
+- coc-xml
+- coc-tsserver
+- coc-pyright
+- coc-prisma
+- coc-markdownlint
+- coc-json
+- coc-java
+- coc-go
+- coc-flutter-tools
+- coc-css
+- coc-clangd
+- @yaegassy/coc-tailwindcss3
+
+--]=====]
+
 local keyset = vim.keymap.set
 -- Autocomplete
 function _G.check_back_space()
