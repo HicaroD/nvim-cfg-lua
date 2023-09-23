@@ -57,7 +57,6 @@ return require("packer").startup(function(use)
   })
 
   -- Others
-  use("numToStr/Comment.nvim")
   use("tpope/vim-surround")
 
   if packer_bootstrap then
