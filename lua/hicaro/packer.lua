@@ -17,22 +17,22 @@ return require("packer").startup(function(use)
 
   -- Style
   use("HicaroD/alice.nvim")
+  use("nvim-lualine/lualine.nvim")
+
+  -- use({ "nvim-tree/nvim-web-devicons" })
   use({
-    "nvim-lualine/lualine.nvim",
-    requires = { "nvim-tree/nvim-web-devicons", opt = true },
+    "akinsho/bufferline.nvim",
+    tag = "*",
   })
-  use("lukas-reineke/indent-blankline.nvim")
-  use({ "nvim-tree/nvim-web-devicons" })
-  use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
-  use({ "norcalli/nvim-colorizer.lua" })
+  use("norcalli/nvim-colorizer.lua")
 
   -- LSP
   use({ "neoclide/coc.nvim", branch = "release" })
-  use({ "mhartington/formatter.nvim" })
+  use("mhartington/formatter.nvim")
 
   -- Snippets
-  use({ "SirVer/ultisnips" })
-  use({ "honza/vim-snippets" })
+  use("SirVer/ultisnips")
+  use("honza/vim-snippets")
 
   -- File searching (Tree and fuzzy finder)
   use("junegunn/fzf.vim")
@@ -42,12 +42,7 @@ return require("packer").startup(function(use)
     requires = { { "nvim-lua/plenary.nvim" } },
   })
   use("fannheyward/telescope-coc.nvim")
-  use({
-    "nvim-tree/nvim-tree.lua",
-    requires = {
-      "nvim-tree/nvim-web-devicons",
-    },
-  })
+  use("nvim-tree/nvim-tree.lua")
 
   -- Others
   use("tpope/vim-surround")
