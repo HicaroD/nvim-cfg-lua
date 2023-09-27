@@ -18,6 +18,7 @@ return require("packer").startup(function(use)
   -- Style
   use("HicaroD/alice.nvim")
   use("Mofiqul/vscode.nvim")
+  use("nikolvs/vim-sunbather")
   use({
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",

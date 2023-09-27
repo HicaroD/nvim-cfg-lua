@@ -22,4 +22,5 @@ local function setColorscheme(args)
   end
 end
 
+-- setColorscheme({ name = "sunbather", transparent = false })
 setColorscheme({ name = "vscode", transparent = false })
