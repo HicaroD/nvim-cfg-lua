@@ -119,11 +119,6 @@ _G.packer_plugins = {
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
-  ["nvim-treesitter"] = {
-    loaded = true,
-    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter"
-  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -159,20 +154,10 @@ _G.packer_plugins = {
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/vim-snippets",
     url = "https://github.com/honza/vim-snippets"
   },
-  ["vim-sunbather"] = {
-    loaded = true,
-    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/vim-sunbather",
-    url = "https://github.com/nikolvs/vim-sunbather"
-  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
-  },
-  ["vscode.nvim"] = {
-    loaded = true,
-    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/vscode.nvim",
-    url = "https://github.com/Mofiqul/vscode.nvim"
   }
 }
 
