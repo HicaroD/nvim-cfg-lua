@@ -11,6 +11,9 @@
 " https://github.com/reedes/vim-colors-off
 "
 """
+
+" This is a fork of the original colorscheme 'paramount.vim'
+" I made my own changes based on my taste
 hi clear
 
 if exists('syntax on')
@@ -47,33 +50,17 @@ let s:yellow          = { "gui": "#F3E430", "cterm": "11"  }
 let s:light_yellow    = { "gui": "#ffff87", "cterm": "228"   }
 let s:dark_yellow     = { "gui": "#A89C14", "cterm": "3"   }
 
-let s:background = &background
-
-if &background == "dark"
-  let s:bg              = s:black
-  let s:bg_subtle       = s:lighter_black
-  let s:bg_very_subtle  = s:subtle_black
-  let s:norm            = s:lighter_gray
-  let s:norm_subtle     = s:medium_gray
-  let s:purple          = s:light_purple
-  let s:cyan            = s:light_cyan
-  let s:green           = s:light_green
-  let s:red             = s:light_red
-  let s:visual          = s:light_purple
-  let s:yellow          = s:light_yellow
-else
-  let s:bg              = s:actual_white
-  let s:bg_subtle       = s:light_gray
-  let s:bg_very_subtle  = s:lightest_gray
-  let s:norm            = s:light_black
-  let s:norm_subtle     = s:medium_gray
-  let s:purple          = s:dark_purple
-  let s:cyan            = s:dark_cyan
-  let s:green           = s:dark_green
-  let s:red             = s:dark_red
-  let s:visual          = s:dark_purple
-  let s:yellow          = s:dark_yellow
-endif
+let s:bg              = s:black
+let s:bg_subtle       = s:lighter_black
+let s:bg_very_subtle  = s:subtle_black
+let s:norm            = s:lighter_gray
+let s:norm_subtle     = s:medium_gray
+let s:purple          = s:light_purple
+let s:cyan            = s:light_cyan
+let s:green           = s:light_green
+let s:red             = s:light_red
+let s:visual          = s:light_purple
+let s:yellow          = s:light_yellow
 
 " https://github.com/noahfrederick/vim-hemisu/
 function! s:h(group, style)
@@ -88,14 +75,8 @@ function! s:h(group, style)
 endfunction
 
 call s:h("Normal",        {"bg": s:bg, "fg": s:norm})
-
-" restore &background's value in case changing Normal changed &background (:help :hi-normal-cterm)
-if &background != s:background
-   execute "set background=" . s:background
-endif
-
 call s:h("Cursor",        {"bg": s:purple, "fg": s:norm })
-call s:h("Comment",       {"fg": s:bg_subtle, "gui": "italic"})
+call s:h("Comment",       {"fg": s:bg_subtle })
 
 call s:h("Constant",      {"fg": s:purple})
 hi! link Character        Constant
@@ -128,7 +109,7 @@ hi! link StorageClass     Type
 hi! link Structure        Type
 hi! link Typedef          Type
 
-call s:h("Special",       {"fg": s:norm_subtle, "gui": "italic"})
+call s:h("Special",       {"fg": s:norm_subtle })
 hi! link SpecialChar      Special
 hi! link Tag              Special
 hi! link Delimiter        Special
