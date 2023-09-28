@@ -21,6 +21,7 @@ return require("packer").startup(function(use)
   use("nvim-tree/nvim-web-devicons")
   use("Mofiqul/vscode.nvim")
   use("nvim-treesitter/nvim-treesitter")
+  use("lukas-reineke/indent-blankline.nvim")
 
   -- use({ "nvim-tree/nvim-web-devicons" })
   use({
