@@ -23,7 +23,6 @@ return require("packer").startup(function(use)
   use("nvim-treesitter/nvim-treesitter")
   use("lukas-reineke/indent-blankline.nvim")
 
-  -- use({ "nvim-tree/nvim-web-devicons" })
   use({
     "akinsho/bufferline.nvim",
     tag = "*",
