@@ -9,6 +9,6 @@ telescope.setup({
 })
 telescope.load_extension("coc")
 
-vim.keymap.set("n", "<leader>lad", ":Telescope coc diagnostics<CR>", {})
-vim.keymap.set("n", "<leader>ld", ":Telescope coc references<CR>", {})
+vim.keymap.set("n", "<leader>ld", ":Telescope coc workspace_diagnostics<CR>", {})
+vim.keymap.set("n", "<leader>lr", ":Telescope coc references<CR>", {})
 vim.keymap.set("n", "<leader>gtd", "Telescope coc type-definitions<CR>", {})
