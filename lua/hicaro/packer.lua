@@ -21,12 +21,6 @@ return require("packer").startup(function(use)
   use("nvim-tree/nvim-web-devicons")
   use("Mofiqul/vscode.nvim")
   use("nvim-treesitter/nvim-treesitter")
-  use("lukas-reineke/indent-blankline.nvim")
-
-  use({
-    "akinsho/bufferline.nvim",
-    tag = "*",
-  })
   use("norcalli/nvim-colorizer.lua")
 
   -- LSP
@@ -39,7 +33,7 @@ return require("packer").startup(function(use)
 
   -- File searching (Tree and fuzzy finder)
   use("junegunn/fzf.vim")
-  use({
+  use({ -- TODO: remove this plugin
     "nvim-telescope/telescope.nvim",
     tag = "0.1.3",
     requires = { { "nvim-lua/plenary.nvim" } },

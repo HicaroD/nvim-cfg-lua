@@ -32,8 +32,8 @@ end)
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Navigate between buffers
-vim.keymap.set("n", "<C-h>", ":bprevious<CR>")
-vim.keymap.set("n", "<C-l>", ":bnext<CR>")
+vim.keymap.set("n", "<C-h>", ":tabp<CR>")
+vim.keymap.set("n", "<C-l>", ":tabn<CR>")
 
 -- <leader>rcf for renaming current file
 vim.keymap.set("n", "<leader>rcf", ":CocCommand workspace.renameCurrentFile<CR>")

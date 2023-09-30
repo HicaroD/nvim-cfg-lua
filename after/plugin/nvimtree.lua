@@ -63,4 +63,9 @@ nvimtree.setup({
       quit_on_focus_loss = true,
     },
   },
+  actions = {
+    open_file = {
+      quit_on_open = true,
+    }
+  },
 })
