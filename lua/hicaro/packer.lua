@@ -31,7 +31,7 @@ return require("packer").startup(function(use)
   use("SirVer/ultisnips")
   use("honza/vim-snippets")
 
-  -- File searching (Tree and fuzzy finder)
+  -- File searching (Tree and fuzzy finder) and code navigation
   use("junegunn/fzf.vim")
   use({ -- TODO: remove this plugin
     "nvim-telescope/telescope.nvim",
@@ -39,6 +39,7 @@ return require("packer").startup(function(use)
     requires = { { "nvim-lua/plenary.nvim" } },
   })
   use("fannheyward/telescope-coc.nvim")
+  use("akinsho/bufferline.nvim")
   use("nvim-tree/nvim-tree.lua")
 
   -- Others
