@@ -33,12 +33,6 @@ return require("packer").startup(function(use)
 
   -- File searching (Tree and fuzzy finder) and code navigation
   use("junegunn/fzf.vim")
-  use({ -- TODO: remove this plugin
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.3",
-    requires = { { "nvim-lua/plenary.nvim" } },
-  })
-  use("fannheyward/telescope-coc.nvim")
   use("akinsho/bufferline.nvim")
   use("nvim-tree/nvim-tree.lua")
 
