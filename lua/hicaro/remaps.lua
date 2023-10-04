@@ -20,20 +20,22 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Use <leader>c for closing current tab buffer
-vim.keymap.set("n", "<leader>c", function()
-  local tree = require("nvim-tree.view")
-  if tree.is_visible() then
-    vim.cmd("bwipeout")
-  end
-  vim.cmd("bwipeout")
-end)
+-- vim.keymap.set("n", "<leader>c", function()
+--   local tree = require("nvim-tree.view")
+--   if tree.is_visible() then
+--     vim.cmd("bwipeout")
+--   end
+--   vim.cmd("bwipeout")
+-- end)
+vim.keymap.set("n", "<leader>c", ":tabclose<CR>")
 
 -- <leader>e for opening Neotree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
--- Navigate between buffers
-vim.keymap.set("n", "<C-h>", ":bprevious<CR>")
-vim.keymap.set("n", "<C-l>", ":bnext<CR>")
+-- Navigate between tabs
+-- NOTE: it won't properly if I'm using bufferline plugin
+vim.keymap.set("n", "<C-h>", ":tabp<CR>")
+vim.keymap.set("n", "<C-l>", ":tabn<CR>")
 
 -- <leader>rcf for renaming current file
 vim.keymap.set("n", "<leader>rcf", ":CocCommand workspace.renameCurrentFile<CR>")

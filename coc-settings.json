@@ -7,5 +7,6 @@
   "java.jdt.ls.java.home": "/usr/lib/jvm/java-20-openjdk",
   "flutter.trace.server": "off",
   "tsserver.useLocalTsdk": true,
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "coc.preferences.jumpCommand": "tabe"
 }
