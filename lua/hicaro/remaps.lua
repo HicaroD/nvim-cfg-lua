@@ -22,7 +22,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- Use <leader>c for closing current tab buffer
 vim.keymap.set("n", "<leader>c", function()
   local num_windows = vim.fn.winnr("$")
-  print(num_windows)
   if num_windows > 1 then
     vim.api.nvim_command("q")
   else
