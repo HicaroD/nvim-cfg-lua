@@ -33,8 +33,10 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Navigate between tabs
 -- NOTE: it won't properly if I'm using bufferline plugin
-vim.keymap.set("n", "<C-h>", ":tabp<CR>")
-vim.keymap.set("n", "<C-l>", ":tabn<CR>")
+-- vim.keymap.set("n", "<C-h>", ":tabp<CR>")
+-- vim.keymap.set("n", "<C-l>", ":tabn<CR>")
+vim.keymap.set("n", "<C-h>", ":bp<CR>")
+vim.keymap.set("n", "<C-l>", ":bn<CR>")
 
 -- <leader>rcf for renaming current file
 vim.keymap.set("n", "<leader>rcf", ":CocCommand workspace.renameCurrentFile<CR>")
