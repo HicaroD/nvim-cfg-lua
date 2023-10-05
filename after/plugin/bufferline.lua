@@ -1,2 +1,2 @@
-local bufferline = require("bufferline")
-bufferline.setup({})
+-- local bufferline = require("bufferline")
+-- bufferline.setup({})

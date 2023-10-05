@@ -33,8 +33,8 @@ return require("packer").startup(function(use)
 
   -- File searching (Tree and fuzzy finder) and code navigation
   use("junegunn/fzf.vim")
-  use("akinsho/bufferline.nvim")
   use("nvim-tree/nvim-tree.lua")
+  -- use("akinsho/bufferline.nvim")
 
   -- Others
   use("tpope/vim-surround")
