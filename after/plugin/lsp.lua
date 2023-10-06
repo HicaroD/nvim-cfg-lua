@@ -1,4 +1,4 @@
---[=====[ 
+--[=====[
 Here is my list of CoC plugins:
 
 - coc-sumneko-lua
@@ -30,7 +30,7 @@ function _G.check_back_space()
   return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
 end
 
-local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
+local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false, nowait = true }
 
 keyset("i", "<Tab>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 keyset("i", "<c-j>", "<Plug>(coc-snippets-expand-jump)")
@@ -40,7 +40,7 @@ keyset("n", "gd", "<Plug>(coc-definition)", { silent = true })
 keyset("n", "<leader>lca", "<Plug>(coc-codeaction-cursor)", { silent = true })
 keyset("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true })
 keyset("n", "<leader>lr", "<Plug>(coc-references)", { silent = true })
-keyset("n", "<leader>ld", "<Plug>(coc-workspace-diagnostics)", { silent = true })
+keyset("n", "<leader>ld", ":CocList diagnostics<CR>", { silent = true, nowait = true })
 
 function _G.show_docs()
   local cw = vim.fn.expand("<cword>")
