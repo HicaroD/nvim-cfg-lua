@@ -22,6 +22,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- Use <leader>c for closing current tab buffer
 vim.keymap.set("n", "<leader>c", function()
   local buffers = vim.fn.getbufinfo({ buflisted = 1 })
+
   local number_of_buffers = 0
   for _ in pairs(buffers) do
     number_of_buffers = number_of_buffers + 1
