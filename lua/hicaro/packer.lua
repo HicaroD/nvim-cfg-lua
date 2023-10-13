@@ -24,8 +24,13 @@ return require("packer").startup(function(use)
   use("norcalli/nvim-colorizer.lua")
 
   -- LSP
-  use({ "neoclide/coc.nvim", branch = "release" })
   use("mhartington/formatter.nvim")
+  use("neovim/nvim-lspconfig")
+  use("hrsh7th/cmp-nvim-lsp")
+  use("hrsh7th/cmp-buffer")
+  use("hrsh7th/cmp-path")
+  use("hrsh7th/cmp-cmdline")
+  use("hrsh7th/nvim-cmp")
 
   -- Snippets
   use("SirVer/ultisnips")
@@ -34,6 +39,7 @@ return require("packer").startup(function(use)
   -- File searching (Tree and fuzzy finder) and code navigation
   use("junegunn/fzf.vim")
   use("nvim-tree/nvim-tree.lua")
+  use({ "akinsho/bufferline.nvim", tag = "*" })
 
   -- Others
   use("tpope/vim-surround")

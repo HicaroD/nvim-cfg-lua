@@ -37,23 +37,23 @@ vim.keymap.set("n", "<leader>c", ":q<CR>")
 -- end)
 
 -- NOTE: This code below is useful for when I'm using bufferline plugin
--- vim.keymap.set("n", "<leader>c", function()
---   local tree = require("nvim-tree.view")
---   if tree.is_visible() then
---     vim.cmd("bwipeout")
---   end
---   vim.cmd("bwipeout")
--- end)
+vim.keymap.set("n", "<leader>c", function()
+  local tree = require("nvim-tree.view")
+  if tree.is_visible() then
+    vim.cmd("bwipeout")
+  end
+  vim.cmd("bwipeout")
+end)
 
 -- <leader>e for opening Neotree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Navigate between tabs
-vim.keymap.set("n", "<C-h>", ":tabp<CR>")
-vim.keymap.set("n", "<C-l>", ":tabn<CR>")
+-- vim.keymap.set("n", "<C-h>", ":tabp<CR>")
+-- vim.keymap.set("n", "<C-l>", ":tabn<CR>")
 -- NOTE: This code below is useful for when I'm using bufferline plugin
--- vim.keymap.set("n", "<C-h>", ":bp<CR>")
--- vim.keymap.set("n", "<C-l>", ":bn<CR>")
+vim.keymap.set("n", "<C-h>", ":bp<CR>")
+vim.keymap.set("n", "<C-l>", ":bn<CR>")
 
 -- <leader>rcf for renaming current file
 vim.keymap.set("n", "<leader>rcf", ":CocCommand workspace.renameCurrentFile<CR>")
