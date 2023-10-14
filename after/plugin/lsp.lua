@@ -25,9 +25,14 @@ cmp.setup({
 -- Setting up LSP config
 local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local lsp_servers = { "pyright", "dartls", "jdtls", "gopls", "tsserver" }
+local lsp_servers =
+  { "pyright", "dartls", "jdtls", "gopls", "tsserver", "hls", "clangd", "html", "cssls", "emmet_language_server" }
 
 for _, lsp_server in ipairs(lsp_servers) do
+  if capabilities == "html" or capabilities == "cssls" then
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
+  end
+
   lspconfig[lsp_server].setup({
     capabilities = capabilities,
   })
