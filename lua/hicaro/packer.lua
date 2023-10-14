@@ -23,7 +23,7 @@ return require("packer").startup(function(use)
   use("nvim-treesitter/nvim-treesitter")
   use("norcalli/nvim-colorizer.lua")
 
-  -- LSP
+  -- LSP (WHY SO MANY PLUGINS FOR HAVING A NICE NATIVE LSP SETUP??)
   use("mhartington/formatter.nvim")
   use("neovim/nvim-lspconfig")
   use("hrsh7th/cmp-nvim-lsp")
@@ -31,10 +31,6 @@ return require("packer").startup(function(use)
   use("hrsh7th/cmp-path")
   use("hrsh7th/cmp-cmdline")
   use("hrsh7th/nvim-cmp")
-
-  -- Snippets
-  use("SirVer/ultisnips")
-  use("honza/vim-snippets")
 
   -- File searching (Tree and fuzzy finder) and code navigation
   use("junegunn/fzf.vim")

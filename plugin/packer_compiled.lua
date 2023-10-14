@@ -160,16 +160,6 @@ local no_errors, error_msg = pcall(function()
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/packer.nvim",
       url = "https://github.com/wbthomason/packer.nvim",
     },
-    ultisnips = {
-      loaded = true,
-      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/ultisnips",
-      url = "https://github.com/SirVer/ultisnips",
-    },
-    ["vim-snippets"] = {
-      loaded = true,
-      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/vim-snippets",
-      url = "https://github.com/honza/vim-snippets",
-    },
     ["vim-surround"] = {
       loaded = true,
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/vim-surround",
