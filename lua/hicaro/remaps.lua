@@ -56,4 +56,5 @@ vim.keymap.set("n", "<C-h>", ":bp<CR>")
 vim.keymap.set("n", "<C-l>", ":bn<CR>")
 
 -- <leader>rcf for renaming current file
-vim.keymap.set("n", "<leader>rcf", ":CocCommand workspace.renameCurrentFile<CR>")
+-- TODO: fix that command (not using COC anymore)
+-- vim.keymap.set("n", "<leader>rcf", ":CocCommand workspace.renameCurrentFile<CR>")
