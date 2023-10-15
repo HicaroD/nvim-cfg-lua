@@ -2,7 +2,11 @@ local cmp = require("cmp")
 local keyset = vim.keymap.set
 
 cmp.setup({
-  snippet = false,
+  snippet = {
+    expand = function(args)
+      require("luasnip").lsp_expand(args.body)
+    end,
+  },
   mapping = cmp.mapping.preset.insert({
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
@@ -12,6 +16,7 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
+    { name = "luasnip" },
   }, {
     { name = "buffer" },
   }),
@@ -20,8 +25,19 @@ cmp.setup({
 -- Setting up LSP config
 local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local lsp_servers =
-  { "pyright", "dartls", "jdtls", "gopls", "tsserver", "hls", "clangd", "html", "cssls", "emmet_language_server" }
+local lsp_servers = {
+  "pyright",
+  "dartls",
+  "jdtls",
+  "gopls",
+  "tsserver",
+  "hls",
+  "clangd",
+  "html",
+  "cssls",
+  "emmet_language_server",
+  "rust_analyzer",
+}
 
 for _, lsp_server in ipairs(lsp_servers) do
   if capabilities == "html" or capabilities == "cssls" then

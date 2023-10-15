@@ -32,6 +32,13 @@ return require("packer").startup(function(use)
   use("hrsh7th/cmp-cmdline")
   use("hrsh7th/nvim-cmp")
 
+  -- Snippet engine (I don't actually feel it is necessary, but nvim-cmp requires one)
+  use({
+    "L3MON4D3/LuaSnip",
+    tag = "v2.*",
+    run = "make install_jsregexp",
+  })
+
   -- File searching (Tree and fuzzy finder) and code navigation
   use("junegunn/fzf.vim")
   use("nvim-tree/nvim-tree.lua")

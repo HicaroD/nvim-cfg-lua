@@ -80,6 +80,11 @@ local no_errors, error_msg = pcall(function()
   time([[try_loadstring definition]], false)
   time([[Defining packer_plugins]], true)
   _G.packer_plugins = {
+    LuaSnip = {
+      loaded = true,
+      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/LuaSnip",
+      url = "https://github.com/L3MON4D3/LuaSnip",
+    },
     ["alice.nvim"] = {
       loaded = true,
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/alice.nvim",
