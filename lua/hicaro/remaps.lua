@@ -20,21 +20,22 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Use <leader>c for closing current tab buffer
-vim.keymap.set("n", "<leader>c", ":q<CR>")
--- vim.keymap.set("n", "<leader>c", function()
-  -- local buffers = vim.fn.getbufinfo({ buflisted = 1 })
+-- vim.keymap.set("n", "<leader>c", ":q<CR>")
+vim.keymap.set("n", "<leader>c", function()
+  local buffers = vim.fn.getbufinfo({ buflisted = 1 })
 
-  -- local number_of_buffers = 0
-  -- for _ in pairs(buffers) do
-  --   number_of_buffers = number_of_buffers + 1
-  -- end
+  local number_of_buffers = 0
+  for buffer in pairs(buffers) do
+    print(buffer)
+    number_of_buffers = number_of_buffers + 1
+  end
 
-  -- if number_of_buffers == 1 then
-  --   vim.api.nvim_command("bd!")
-  -- else
-  --   vim.api.nvim_command("q")
-  -- end
--- end)
+  if number_of_buffers == 1 then
+    vim.api.nvim_command("bd!")
+  else
+    vim.api.nvim_command("q")
+  end
+end)
 
 -- NOTE: This code below is useful for when I'm using bufferline plugin
 -- vim.keymap.set("n", "<leader>c", function()
@@ -56,4 +57,5 @@ vim.keymap.set("n", "<C-l>", ":tabn<CR>")
 -- vim.keymap.set("n", "<C-l>", ":bn<CR>")
 
 -- <leader>rcf for renaming current file
-vim.keymap.set("n", "<leader>rcf", ":CocCommand workspace.renameCurrentFile<CR>")
+-- TODO: fix that command (not using COC anymore)
+-- vim.keymap.set("n", "<leader>rcf", ":CocCommand workspace.renameCurrentFile<CR>")

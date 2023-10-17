@@ -23,17 +23,30 @@ return require("packer").startup(function(use)
   use("nvim-treesitter/nvim-treesitter")
   use("norcalli/nvim-colorizer.lua")
 
-  -- LSP
-  use({ "neoclide/coc.nvim", branch = "release" })
+  -- LSP (WHY SO MANY PLUGINS FOR HAVING A NICE NATIVE LSP SETUP??)
   use("mhartington/formatter.nvim")
+  use("neovim/nvim-lspconfig")
+  use("hrsh7th/cmp-nvim-lsp")
+  use("hrsh7th/cmp-buffer")
+  use("hrsh7th/cmp-path")
+  use("hrsh7th/cmp-cmdline")
+  use("hrsh7th/nvim-cmp")
 
-  -- Snippets
-  use("SirVer/ultisnips")
-  use("honza/vim-snippets")
+  -- Snippet engine (I don't actually feel it is necessary, but nvim-cmp requires one)
+  use({
+    "L3MON4D3/LuaSnip",
+    tag = "v2.*",
+    run = "make install_jsregexp",
+  })
 
   -- File searching (Tree and fuzzy finder) and code navigation
-  use("junegunn/fzf.vim")
   use("nvim-tree/nvim-tree.lua")
+  -- use({ "akinsho/bufferline.nvim", tag = "*" })
+  use({
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.4",
+    requires = { { "nvim-lua/plenary.nvim" } },
+  })
 
   -- Others
   use("tpope/vim-surround")
