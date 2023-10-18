@@ -16,3 +16,4 @@ vim.opt.updatetime = 50
 vim.cmd([[set undodir=$HOME/.undodir]])
 vim.opt.undofile = true
 vim.opt.signcolumn = "yes"
+vim.opt.mouse = ""

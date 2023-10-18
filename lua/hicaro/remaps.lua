@@ -20,41 +20,40 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Use <leader>c for closing current tab buffer
--- vim.keymap.set("n", "<leader>c", ":q<CR>")
-vim.keymap.set("n", "<leader>c", function()
-  local buffers = vim.fn.getbufinfo({ buflisted = 1 })
-
-  local number_of_buffers = 0
-  for buffer in pairs(buffers) do
-    print(buffer)
-    number_of_buffers = number_of_buffers + 1
-  end
-
-  if number_of_buffers == 1 then
-    vim.api.nvim_command("bd!")
-  else
-    vim.api.nvim_command("q")
-  end
-end)
+-- vim.keymap.set("n", "<leader>c", function()
+--   local buffers = vim.fn.getbufinfo({ buflisted = 1 })
+-- 
+--   local number_of_buffers = 0
+--   for buffer in pairs(buffers) do
+--     print(buffer)
+--     number_of_buffers = number_of_buffers + 1
+--   end
+-- 
+--   if number_of_buffers == 1 then
+--     vim.api.nvim_command("bd!")
+--   else
+--     vim.api.nvim_command("q")
+--   end
+-- end)
 
 -- NOTE: This code below is useful for when I'm using bufferline plugin
--- vim.keymap.set("n", "<leader>c", function()
---   local tree = require("nvim-tree.view")
---   if tree.is_visible() then
---     vim.cmd("bwipeout")
---   end
---   vim.cmd("bwipeout")
--- end)
+vim.keymap.set("n", "<leader>c", function()
+  local tree = require("nvim-tree.view")
+  if tree.is_visible() then
+    vim.cmd("bwipeout")
+  end
+  vim.cmd("bwipeout")
+end)
 
 -- <leader>e for opening Neotree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Navigate between tabs
-vim.keymap.set("n", "<C-h>", ":tabp<CR>")
-vim.keymap.set("n", "<C-l>", ":tabn<CR>")
+-- vim.keymap.set("n", "<C-h>", ":tabp<CR>")
+-- vim.keymap.set("n", "<C-l>", ":tabn<CR>")
 -- NOTE: This code below is useful for when I'm using bufferline plugin
--- vim.keymap.set("n", "<C-h>", ":bp<CR>")
--- vim.keymap.set("n", "<C-l>", ":bn<CR>")
+vim.keymap.set("n", "<C-h>", ":bp<CR>")
+vim.keymap.set("n", "<C-l>", ":bn<CR>")
 
 -- <leader>rcf for renaming current file
 -- TODO: fix that command (not using COC anymore)
