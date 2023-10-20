@@ -74,11 +74,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  LuaSnip = {
-    loaded = true,
-    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/LuaSnip",
-    url = "https://github.com/L3MON4D3/LuaSnip"
-  },
   ["alice.nvim"] = {
     loaded = true,
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/alice.nvim",
@@ -98,6 +93,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-nvim-ultisnips"] = {
+    loaded = true,
+    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/cmp-nvim-ultisnips",
+    url = "https://github.com/quangnguyen30192/cmp-nvim-ultisnips"
   },
   ["cmp-path"] = {
     loaded = true,
@@ -158,6 +158,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ultisnips = {
+    loaded = true,
+    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/ultisnips",
+    url = "https://github.com/SirVer/ultisnips"
+  },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/vim-snippets",
+    url = "https://github.com/honza/vim-snippets"
   },
   ["vim-surround"] = {
     loaded = true,

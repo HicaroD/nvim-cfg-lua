@@ -31,13 +31,11 @@ return require("packer").startup(function(use)
   use("hrsh7th/cmp-path")
   use("hrsh7th/cmp-cmdline")
   use("hrsh7th/nvim-cmp")
+  use("quangnguyen30192/cmp-nvim-ultisnips")
 
   -- Snippet engine (I don't actually feel it is necessary, but nvim-cmp requires one)
-  use({
-    "L3MON4D3/LuaSnip",
-    tag = "v2.*",
-    run = "make install_jsregexp",
-  })
+  use("SirVer/ultisnips")
+  use("honza/vim-snippets")
 
   -- File searching (Tree and fuzzy finder) and code navigation
   use("nvim-tree/nvim-tree.lua")

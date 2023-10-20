@@ -4,7 +4,7 @@ local keyset = vim.keymap.set
 cmp.setup({
   snippet = {
     expand = function(args)
-      require("luasnip").lsp_expand(args.body)
+      vim.fn["UltiSnips#Anon"](args.body)
     end,
   },
   completion = {
@@ -18,8 +18,8 @@ cmp.setup({
     ["<Tab>"] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
+    { name = 'ultisnips' },
     { name = "nvim_lsp" },
-    { name = "luasnip" },
   }, {
     { name = "buffer" },
   }),
@@ -28,6 +28,7 @@ cmp.setup({
 -- Setting up LSP config
 local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 local lsp_servers = {
   "pyright",
   "dartls",
