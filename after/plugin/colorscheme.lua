@@ -14,12 +14,21 @@ local function setColorscheme(args)
 
   local colorscheme = args.name
   local transparent = args.transparent
+  local dark = args.dark
+
+  if colorscheme == "nocolors" then
+    return
+  end
 
   if colorscheme == "vscode" then
     setupVscode(transparent)
   end
 
+  if dark == "true" then
+    vim.cmd("set background=dark")
+  end
+
   vim.cmd("colorscheme " .. colorscheme)
 end
 
-setColorscheme({ name = "vscode", transparent = false })
+setColorscheme({ name = "vscode", transparent = false, dark = "true" })
