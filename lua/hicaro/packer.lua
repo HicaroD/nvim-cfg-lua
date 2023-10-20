@@ -41,7 +41,6 @@ return require("packer").startup(function(use)
 
   -- File searching (Tree and fuzzy finder) and code navigation
   use("nvim-tree/nvim-tree.lua")
-  -- use({ "akinsho/bufferline.nvim", tag = "*" })
   use({
     "nvim-telescope/telescope.nvim",
     tag = "0.1.4",
