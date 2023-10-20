@@ -8,7 +8,7 @@ nvimtree.setup({
       return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
     end
     api.config.mappings.default_on_attach(bufnr)
-    vim.keymap.set("n", "<space>", api.node.open.edit, opts("Open"))
+    vim.keymap.set("n", "<space>", api.node.open.tab_drop, opts("Open"))
   end,
   update_focused_file = {
     enable = true,

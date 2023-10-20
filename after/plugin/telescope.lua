@@ -1,11 +1,23 @@
--- vim.keymap.set("n", "<leader>ff", ":GFiles<CR>", {})
--- vim.keymap.set("n", "<leader>ps", ":Rg<CR>", {})
--- vim.keymap.set("n", "<leader>lb", ":Buffers<CR>", {})
+local telescope = require("telescope")
+
+telescope.setup({
+  defaults = {
+    mappings = {
+      i = {
+        ["<cr>"] = function(bufnr)
+          require("telescope.actions.set").edit(bufnr, "tab drop")
+        end,
+      },
+    },
+  },
+})
 
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-vim.keymap.set("n", "<leader>ps", builtin.live_grep, {})
-vim.keymap.set("n", "<leader>lb", builtin.buffers, {})
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
-vim.keymap.set("n", "<leader>ld", builtin.diagnostics, {})
-vim.keymap.set("n", "<leader>lr", builtin.lsp_references, {})
+local keyset = vim.keymap.set
+
+keyset("n", "<leader>ff", builtin.find_files, {})
+keyset("n", "<leader>ps", builtin.live_grep, {})
+keyset("n", "<leader>lb", builtin.buffers, {})
+keyset("n", "<leader>fh", builtin.help_tags, {})
+keyset("n", "<leader>ld", builtin.diagnostics, {})
+keyset("n", "<leader>lr", builtin.lsp_references, {})
