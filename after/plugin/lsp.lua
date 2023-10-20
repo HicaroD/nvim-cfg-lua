@@ -18,7 +18,7 @@ cmp.setup({
     ["<Tab>"] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
-    { name = 'ultisnips' },
+    { name = "ultisnips" },
     { name = "nvim_lsp" },
   }, {
     { name = "buffer" },
