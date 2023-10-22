@@ -34,6 +34,7 @@ return require("packer").startup(function(use)
   use("quangnguyen30192/cmp-nvim-ultisnips")
 
   -- Snippet engine (I don't actually feel it is necessary, but nvim-cmp requires one)
+  -- Soon I'll be switching over to the native snippet engine that was added to Neovim
   use("SirVer/ultisnips")
   use("honza/vim-snippets")
 
