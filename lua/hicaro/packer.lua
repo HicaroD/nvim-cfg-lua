@@ -40,9 +40,13 @@ return require("packer").startup(function(use)
 
   -- File searching (Tree and fuzzy finder) and code navigation
   use("nvim-tree/nvim-tree.lua")
+  -- use({
+  --   "nvim-telescope/telescope.nvim",
+  --   tag = "0.1.4",
+  --   requires = { { "nvim-lua/plenary.nvim" } },
+  -- })
   use({
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.4",
+    "~/Documentos/Projects/Others/telescope.nvim",
     requires = { { "nvim-lua/plenary.nvim" } },
   })
 
