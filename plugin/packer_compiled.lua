@@ -157,7 +157,7 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/telescope.nvim",
-    url = "/home/hicaro/Documentos/Projects/Others/telescope.nvim"
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ultisnips = {
     loaded = true,
