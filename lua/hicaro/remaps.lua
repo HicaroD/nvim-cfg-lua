@@ -21,3 +21,5 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 -- Navigate between tabs
 vim.keymap.set("n", "<C-h>", ":tabp<CR>")
 vim.keymap.set("n", "<C-l>", ":tabn<CR>")
+
+-- @@@ TODO: keybindings for moving tabs to left and right
