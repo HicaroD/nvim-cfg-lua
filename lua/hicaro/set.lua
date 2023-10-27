@@ -19,3 +19,4 @@ vim.opt.signcolumn = "yes"
 vim.opt.ignorecase = true
 vim.opt.showmode = false
 vim.opt.smartcase = true
+vim.opt.mouse = ""
