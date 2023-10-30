@@ -17,9 +17,10 @@ return require("packer").startup(function(use)
 
   -- Style
   use("HicaroD/alice.nvim")
+  use("Mofiqul/vscode.nvim")
+  use("sainnhe/gruvbox-material")
   use("nvim-lualine/lualine.nvim")
   use("nvim-tree/nvim-web-devicons")
-  use("Mofiqul/vscode.nvim")
   use("nvim-treesitter/nvim-treesitter")
   use("norcalli/nvim-colorizer.lua")
 
@@ -40,9 +41,13 @@ return require("packer").startup(function(use)
 
   -- File searching (Tree and fuzzy finder) and code navigation
   use("nvim-tree/nvim-tree.lua")
+  -- use({
+  --   "nvim-telescope/telescope.nvim",
+  --   tag = "master",
+  --   requires = { { "nvim-lua/plenary.nvim" } },
+  -- })
   use({
-    "nvim-telescope/telescope.nvim",
-    tag = "master",
+    "~/Documentos/Projects/Others/telescope.nvim",
     requires = { { "nvim-lua/plenary.nvim" } },
   })
 
