@@ -9,13 +9,6 @@ local function setupVscode(transparent)
   require("vscode").load()
 end
 
-local function setupGruvboxMaterial()
-  vim.api.nvim_exec([[
-    let g:gruvbox_material_background = "medium"
-    let g:gruvbox_material_disable_italic_comment = 1
-  ]], false)
-end
-
 local function setColorscheme(args)
   vim.o.termguicolors = true
 
@@ -29,8 +22,6 @@ local function setColorscheme(args)
 
   if colorscheme == "vscode" then
     setupVscode(transparent)
-  elseif colorscheme == "gruvbox-material" then
-    setupGruvboxMaterial()
   end
 
   if dark == "true" then
@@ -40,4 +31,4 @@ local function setColorscheme(args)
   vim.cmd("colorscheme " .. colorscheme)
 end
 
-setColorscheme({ name = "gruvbox-material", transparent = false, dark = "true" })
+setColorscheme({ name = "vscode", transparent = false, dark = "true" })
