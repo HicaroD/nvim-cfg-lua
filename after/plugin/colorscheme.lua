@@ -40,4 +40,4 @@ local function setColorscheme(args)
   end
 end
 
-setColorscheme({ name = "gruvbox", transparent = false, dark = "true" })
+setColorscheme({ name = "vscode", transparent = false, dark = "true" })
