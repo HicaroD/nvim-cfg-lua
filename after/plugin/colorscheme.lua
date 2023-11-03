@@ -40,5 +40,4 @@ local function setColorscheme(args)
   end
 end
 
--- setColorscheme({ name = "sitrunna", transparent = false, dark = "true" })
-vim.cmd("colorscheme codedark")
+setColorscheme({ name = "vscode", transparent = false, dark = "true" })

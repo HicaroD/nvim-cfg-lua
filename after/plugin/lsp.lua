@@ -53,17 +53,13 @@ for _, lsp_server in ipairs(lsp_servers) do
   })
 end
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-  virtual_text = false,
-  signs = true,
-  update_in_insert = false,
-  underline = true,
-})
-
-vim.keymap.set("n", "<leader>de", vim.diagnostic.open_float)
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
+keyset("n", "<leader>de", vim.diagnostic.open_float)
+keyset("n", "[d", vim.diagnostic.goto_prev)
+keyset("n", "]d", vim.diagnostic.goto_next)
+keyset("n", "<leader>q", vim.diagnostic.setloclist)
+keyset("n", "<leader>z", function()
+  local diags = vim.diagnostic.show()
+end)
 
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -72,10 +68,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     local opts = { buffer = ev.buf }
 
-    -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-    vim.keymap.set({ "n", "v" }, "<leader>lca", vim.lsp.buf.code_action, opts)
+    keyset("n", "K", vim.lsp.buf.hover, opts)
+    keyset("n", "gi", vim.lsp.buf.implementation, opts)
+    keyset("n", "<leader>rn", vim.lsp.buf.rename, opts)
+    keyset({ "n", "v" }, "<leader>lca", vim.lsp.buf.code_action, opts)
   end,
 })
+
