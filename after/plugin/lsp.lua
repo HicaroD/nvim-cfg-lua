@@ -57,9 +57,6 @@ keyset("n", "<leader>de", vim.diagnostic.open_float)
 keyset("n", "[d", vim.diagnostic.goto_prev)
 keyset("n", "]d", vim.diagnostic.goto_next)
 keyset("n", "<leader>q", vim.diagnostic.setloclist)
-keyset("n", "<leader>z", function()
-  local diags = vim.diagnostic.show()
-end)
 
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -74,4 +71,3 @@ vim.api.nvim_create_autocmd("LspAttach", {
     keyset({ "n", "v" }, "<leader>lca", vim.lsp.buf.code_action, opts)
   end,
 })
-
