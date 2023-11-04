@@ -44,7 +44,7 @@ local lsp_servers = {
 }
 
 for _, lsp_server in ipairs(lsp_servers) do
-  if capabilities == "html" or capabilities == "cssls" then
+  if lsp_server == "html" or lsp_server == "cssls" then
     capabilities.textDocument.completion.completionItem.snippetSupport = true
   end
 
@@ -70,4 +70,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
     keyset("n", "<leader>rn", vim.lsp.buf.rename, opts)
     keyset({ "n", "v" }, "<leader>lca", vim.lsp.buf.code_action, opts)
   end,
+})
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+  virtual_text = true,
+  signs = true,
+  update_in_insert = true,
 })
