@@ -21,6 +21,7 @@ return require("packer").startup(function(use)
   use("nvim-tree/nvim-web-devicons")
   use("nvim-treesitter/nvim-treesitter")
   use("norcalli/nvim-colorizer.lua")
+  use("nvim-lualine/lualine.nvim")
 
   -- LSP (WHY SO MANY PLUGINS FOR HAVING A NICE NATIVE LSP SETUP??)
   use("mhartington/formatter.nvim")
@@ -39,13 +40,9 @@ return require("packer").startup(function(use)
 
   -- File searching (Tree and fuzzy finder) and code navigation
   use("nvim-tree/nvim-tree.lua")
-  -- use({
-  --   "nvim-telescope/telescope.nvim",
-  --   tag = "master",
-  --   requires = { { "nvim-lua/plenary.nvim" } },
-  -- })
   use({
-    "~/Documentos/Projects/Others/telescope.nvim",
+    "nvim-telescope/telescope.nvim",
+    tag = "master",
     requires = { { "nvim-lua/plenary.nvim" } },
   })
 
