@@ -21,8 +21,6 @@ return require("packer").startup(function(use)
   use("nvim-tree/nvim-web-devicons")
   use("nvim-treesitter/nvim-treesitter")
   use("norcalli/nvim-colorizer.lua")
-  -- NOTE: I'm testing my own configuration for the default status line
-  -- use("nvim-lualine/lualine.nvim")
 
   -- LSP (WHY SO MANY PLUGINS FOR HAVING A NICE NATIVE LSP SETUP??)
   use("mhartington/formatter.nvim")
