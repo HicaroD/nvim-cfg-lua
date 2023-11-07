@@ -10,5 +10,5 @@ autocmd TermClose * if !v:event.status | exe 'bdelete! '..expand('<abuf>') | end
 autocmd TermOpen * startinsert
 
 " Using <ESC> for going to NORMAL mode in terminal
-tnoremap <C-w> <C-\><C-n>
+tnoremap <S-w> <C-\><C-n>
 ]])
