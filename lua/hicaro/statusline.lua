@@ -1,4 +1,3 @@
--- NOTE: using Lualine
 vim.cmd([[
 fun! GitBranch(file)
     let l:dir = fnamemodify(system('readlink -f ' . a:file), ':h')

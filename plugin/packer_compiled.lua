@@ -109,11 +109,6 @@ _G.packer_plugins = {
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/formatter.nvim",
     url = "https://github.com/mhartington/formatter.nvim"
   },
-  ["lualine.nvim"] = {
-    loaded = true,
-    path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/nvim-cmp",
