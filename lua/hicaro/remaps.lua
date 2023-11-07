@@ -19,12 +19,7 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 vim.keymap.set("n", "<C-h>", ":tabp<CR>")
 vim.keymap.set("n", "<C-l>", ":tabn<CR>")
 
--- <leader>t for opening the terminal
-vim.cmd("autocmd TermOpen * startinsert")
-vim.cmd([[
-tnoremap <Esc> <C-\><C-n>
-]])
-vim.cmd("set splitbelow")
+-- <leader>t for opening the terminal (see terminal settings at lua/hicaro/term.lua)
 vim.keymap.set("n", "<leader>t", ":split<CR>:resize -5<CR>:term<CR>")
 
 -- @@@ TODO: keybindings for moving tabs to left and right
