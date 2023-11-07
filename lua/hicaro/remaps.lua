@@ -1,7 +1,8 @@
 -- Leader key to ','
 vim.g.mapleader = ","
 
--- Take the line below and append to the current line with J
+-- J for taking the line below and append to the current line with an
+-- additional whitespace
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- <leader>y can copy to the system clipboard
@@ -17,5 +18,8 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 -- Navigate between tabs
 vim.keymap.set("n", "<C-h>", ":tabp<CR>")
 vim.keymap.set("n", "<C-l>", ":tabn<CR>")
+
+-- <leader>t for opening terminal at the bottom
+vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>")
 
 -- @@@ TODO: keybindings for moving tabs to left and right
