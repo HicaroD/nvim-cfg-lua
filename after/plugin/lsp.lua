@@ -1,3 +1,4 @@
+-- TODO: build a lsp folder and separate this config in files
 local cmp = require("cmp")
 local keyset = vim.keymap.set
 
@@ -43,6 +44,7 @@ local lsp_servers = {
   "rust_analyzer",
 }
 
+-- Standard LSP servers
 for _, lsp_server in ipairs(lsp_servers) do
   if lsp_server == "html" or lsp_server == "cssls" then
     capabilities.textDocument.completion.completionItem.snippetSupport = true
