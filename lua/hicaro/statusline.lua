@@ -11,8 +11,9 @@ lualine.setup({
   sections = {
     lualine_a = {
       {
-        "diagnostics",
-        update_in_insert = true,
+        "filename",
+        file_status = true,
+        path = 1,
       },
     },
   },
