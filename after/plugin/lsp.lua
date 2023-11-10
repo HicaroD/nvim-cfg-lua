@@ -55,7 +55,7 @@ for _, lsp_server in ipairs(lsp_servers) do
   })
 end
 
-keyset("n", "<leader>de", vim.diagnostic.open_float)
+keyset("n", "<C-e>", vim.diagnostic.open_float)
 keyset("n", "[d", vim.diagnostic.goto_prev)
 keyset("n", "]d", vim.diagnostic.goto_next)
 keyset("n", "<leader>q", vim.diagnostic.setloclist)
@@ -75,7 +75,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-  virtual_text = true,
+  virtual_text = false,
   signs = true,
   update_in_insert = true,
 })
