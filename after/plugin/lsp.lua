@@ -16,14 +16,11 @@ cmp.setup({
       vim.fn["UltiSnips#Anon"](args.body)
     end,
   },
-  -- completion = {
-  --   autocomplete = false,
-  -- },
   mapping = cmp.mapping.preset.insert({
     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<Tab>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.abort(),
+    ["<Tab>"] = cmp.mapping.complete(),
     ["<Tab>"] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
