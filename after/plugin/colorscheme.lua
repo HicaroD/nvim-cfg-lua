@@ -1,18 +1,21 @@
+local utils = require("hicaro.utils")
+
 local function setupVscode(transparent)
-  require("vscode").setup({
+  local ok = utils.prequire("vscode")
+  if not ok then
+    print("Unable to import VSCode colorscheme")
+    return
+  end
+  local vscode = require("vscode")
+
+  vscode.setup({
     disable_nvimtree_bg = true,
     transparent = transparent,
     color_overrides = {
       vscBack = "#181818",
     },
   })
-  require("vscode").load()
-end
-
-local function setupGruvbox()
-  vim.cmd("let g:gruvbox_material_disable_italic_comment = 1")
-  vim.cmd("let g:gruvbox_material_background = 'hard'")
-  vim.cmd("colorscheme gruvbox-material")
+  vscode.load()
 end
 
 local function setColorscheme(args)
@@ -28,8 +31,6 @@ local function setColorscheme(args)
 
   if colorscheme == "vscode" then
     setupVscode(transparent)
-  elseif colorscheme == "gruvbox" then
-    setupGruvbox()
   else
     print("No colorscheme were set")
     return

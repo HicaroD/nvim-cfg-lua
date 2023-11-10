@@ -1,7 +1,12 @@
-local formatter = require("formatter")
+local utils = require("hicaro.utils")
 
----@diagnostic disable-next-line: undefined-global
-local vim = vim
+local ok = utils.prequire("formatter")
+if not ok then
+  print("Unable to import formatter module")
+  return
+end
+
+local formatter = require("formatter")
 
 formatter.setup({
   logging = false,
@@ -91,6 +96,4 @@ formatter.setup({
 
 -- TODO: add formatter for XML
 -- I found a Vim command for formatting it: :%!xmllint --format %
-
-local keyset = vim.keymap.set
-keyset("n", "<C-S-i>", ":FormatWrite<CR>", { silent = true, noremap = true })
+utils.keyset("n", "<C-S-i>", ":FormatWrite<CR>", { silent = true, noremap = true })

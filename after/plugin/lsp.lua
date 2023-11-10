@@ -1,6 +1,14 @@
 -- TODO: build a lsp folder and separate this config in files
+
+local utils = require("hicaro.utils")
+
+local ok = utils.prequire("cmp")
+if not ok then
+  print("Unable to import CMP module")
+  return
+end
+
 local cmp = require("cmp")
-local keyset = vim.keymap.set
 
 cmp.setup({
   snippet = {
@@ -55,10 +63,10 @@ for _, lsp_server in ipairs(lsp_servers) do
   })
 end
 
-keyset("n", "<C-e>", vim.diagnostic.open_float)
-keyset("n", "[d", vim.diagnostic.goto_prev)
-keyset("n", "]d", vim.diagnostic.goto_next)
-keyset("n", "<leader>q", vim.diagnostic.setloclist)
+utils.keyset("n", "<C-e>", vim.diagnostic.open_float)
+utils.keyset("n", "[d", vim.diagnostic.goto_prev)
+utils.keyset("n", "]d", vim.diagnostic.goto_next)
+utils.keyset("n", "<leader>q", vim.diagnostic.setloclist)
 
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -67,10 +75,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     local opts = { buffer = ev.buf }
 
-    keyset("n", "K", vim.lsp.buf.hover, opts)
-    keyset("n", "gi", vim.lsp.buf.implementation, opts)
-    keyset("n", "<leader>rn", vim.lsp.buf.rename, opts)
-    keyset({ "n", "v" }, "<leader>lca", vim.lsp.buf.code_action, opts)
+    utils.keyset("n", "K", vim.lsp.buf.hover, opts)
+    utils.keyset("n", "gi", vim.lsp.buf.implementation, opts)
+    utils.keyset("n", "<leader>rn", vim.lsp.buf.rename, opts)
+    utils.keyset({ "n", "v" }, "<leader>lca", vim.lsp.buf.code_action, opts)
   end,
 })
 
