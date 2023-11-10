@@ -4,7 +4,7 @@ My Neovim configuration built from scratch with Lua.
 
 ## Tools
 
-1. Telescope as fuzzy finder for nice LSP integration
+1. Telescope as fuzzy finder (it integrates nicely with the native LSP config)
 2. Ripgrep for recursively searches directories for a regex pattern efficiently
    while respecting my `.gitignore`.
 3. Native LSP with `nvim-cmp`
