@@ -16,5 +16,12 @@ lualine.setup({
         path = 1,
       },
     },
+    lualine_c = {
+      {
+        "diagnostics",
+        sources = { "nvim_workspace_diagnostic" },
+        update_in_insert = true,
+      },
+    },
   },
 })
