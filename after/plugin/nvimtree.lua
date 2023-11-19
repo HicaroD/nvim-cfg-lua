@@ -54,26 +54,11 @@ nvimtree.setup({
       enable = true,
     },
   },
-  diagnostics = {
-    enable = true,
-    show_on_dirs = true,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    },
-  },
   view = {
     width = 30,
     side = "left",
     float = {
       quit_on_focus_loss = true,
-    },
-  },
-  actions = {
-    open_file = {
-      quit_on_open = true,
     },
   },
 })
