@@ -17,7 +17,7 @@ return require("packer").startup(function(use)
 
   -- Style
   -- -- Colorschemes
-  use("HicaroD/alice.nvim")
+  -- use("HicaroD/alice.nvim")
   use("Mofiqul/vscode.nvim")
 
   use("nvim-tree/nvim-web-devicons")
