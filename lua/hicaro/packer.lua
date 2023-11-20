@@ -28,7 +28,7 @@ return require("packer").startup(function(use)
   })
 
   -- LSP (WHY SO MANY PLUGINS FOR HAVING A NICE NATIVE LSP SETUP??)
-  use("mhartington/formatter.nvim")
+  -- use("mhartington/formatter.nvim")
   use("neovim/nvim-lspconfig")
   use("hrsh7th/cmp-nvim-lsp")
   use("hrsh7th/cmp-buffer")
