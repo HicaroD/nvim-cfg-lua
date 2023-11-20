@@ -1,13 +1,13 @@
 -- local utils = require("hicaro.utils")
--- 
+--
 -- local ok = utils.prequire("formatter")
 -- if not ok then
 --   print("Unable to import formatter module")
 --   return
 -- end
--- 
+--
 -- local formatter = require("formatter")
--- 
+--
 -- formatter.setup({
 --   logging = false,
 --   filetype = {
@@ -34,26 +34,26 @@
 --         local version = vim.fn.input(
 --           "Which clang-format version?\n(1) 9.0.0\n\n(2 or else): Any version available in my OS\n\nChoice: "
 --         )
--- 
+--
 --         local clang_format_executable_path = ""
--- 
+--
 --         if version == "1" then
 --           clang_format_executable_path = "/home/hicaro/Documentos/Development/clang_llvm_9.0.0/bin/clang-format"
--- 
+--
 --           local clang_format_file = io.open(clang_format_executable_path, "r")
--- 
+--
 --           if clang_format_file == nil then
 --             print(clang_format_executable_path .. " is an invalid path for an executable")
 --             return
 --           end
--- 
+--
 --           io.close(clang_format_file)
 --         else
 --           -- TODO: identify the version avaiable in the OS
 --           -- TODO: check for errors, such as cases where "clang-format" is not available
 --           clang_format_executable_path = "clang-format"
 --         end
--- 
+--
 --         print("\nFormatting...")
 --         return {
 --           exe = clang_format_executable_path,
@@ -93,7 +93,7 @@
 --     },
 --   },
 -- })
--- 
+--
 -- -- TODO: add formatter for XML
 -- -- I found a Vim command for formatting it: :%!xmllint --format %
 -- utils.keyset("n", "<C-S-i>", ":FormatWrite<CR>", { silent = true, noremap = true })
