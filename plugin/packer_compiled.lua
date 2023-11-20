@@ -80,11 +80,6 @@ local no_errors, error_msg = pcall(function()
   time([[try_loadstring definition]], false)
   time([[Defining packer_plugins]], true)
   _G.packer_plugins = {
-    ["alice.nvim"] = {
-      loaded = true,
-      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/alice.nvim",
-      url = "https://github.com/HicaroD/alice.nvim",
-    },
     ["cmp-buffer"] = {
       loaded = true,
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -110,11 +105,6 @@ local no_errors, error_msg = pcall(function()
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/cmp-path",
       url = "https://github.com/hrsh7th/cmp-path",
     },
-    ["formatter.nvim"] = {
-      loaded = true,
-      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/formatter.nvim",
-      url = "https://github.com/mhartington/formatter.nvim",
-    },
     ["lualine.nvim"] = {
       loaded = true,
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -139,11 +129,6 @@ local no_errors, error_msg = pcall(function()
       loaded = true,
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
       url = "https://github.com/nvim-tree/nvim-tree.lua",
-    },
-    ["nvim-treesitter"] = {
-      loaded = true,
-      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
-      url = "https://github.com/nvim-treesitter/nvim-treesitter",
     },
     ["nvim-web-devicons"] = {
       loaded = true,
