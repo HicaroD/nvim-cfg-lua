@@ -41,8 +41,4 @@ local function setColorscheme(args)
   end
 end
 
--- setColorscheme({ name = "vscode", transparent = false, dark = "true" })
-vim.cmd([[
-set termguicolors
-colorscheme codedark
-]])
+setColorscheme({ name = "vscode", transparent = false, dark = "true" })
