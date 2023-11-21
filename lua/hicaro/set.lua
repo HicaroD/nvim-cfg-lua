@@ -22,4 +22,4 @@ vim.opt.smartcase = true
 vim.opt.mouse = ""
 vim.opt.colorcolumn = "80"
 -- For enabling mouse:
--- vim.opt.mouse = "a"
+vim.opt.mouse = "a"
