@@ -17,11 +17,9 @@ return require("packer").startup(function(use)
 
   -- Style
   -- -- Colorschemes
-  -- use("HicaroD/alice.nvim")
   use("Mofiqul/vscode.nvim")
 
   use("nvim-tree/nvim-web-devicons")
-  -- use("nvim-treesitter/nvim-treesitter")
   use("norcalli/nvim-colorizer.lua")
   use({
     "nvim-lualine/lualine.nvim",
