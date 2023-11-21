@@ -51,6 +51,7 @@ return require("packer").startup(function(use)
 
   -- Others
   use("tpope/vim-surround")
+  use("mhartington/formatter.nvim")
 
   if packer_bootstrap then
     require("packer").sync()

@@ -105,6 +105,11 @@ local no_errors, error_msg = pcall(function()
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/cmp-path",
       url = "https://github.com/hrsh7th/cmp-path",
     },
+    ["formatter.nvim"] = {
+      loaded = true,
+      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/formatter.nvim",
+      url = "https://github.com/mhartington/formatter.nvim",
+    },
     ["lualine.nvim"] = {
       loaded = true,
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/lualine.nvim",
