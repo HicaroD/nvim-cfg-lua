@@ -18,10 +18,6 @@ return require("packer").startup(function(use)
   -- Style
   -- -- Colorschemes
   use("Mofiqul/vscode.nvim")
-  -- use({
-  --   "nvim-treesitter/nvim-treesitter",
-  --   run = ":TSUpdate",
-  -- })
 
   use("nvim-tree/nvim-web-devicons")
   use("norcalli/nvim-colorizer.lua")
