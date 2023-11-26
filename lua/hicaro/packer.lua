@@ -16,7 +16,6 @@ return require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
 
   -- Style
-  -- -- Colorschemes
   use("Mofiqul/vscode.nvim")
 
   use("nvim-tree/nvim-web-devicons")
@@ -26,7 +25,6 @@ return require("packer").startup(function(use)
   })
 
   -- LSP (WHY SO MANY PLUGINS FOR HAVING A NICE NATIVE LSP SETUP??)
-  -- use("mhartington/formatter.nvim")
   use("neovim/nvim-lspconfig")
   use("hrsh7th/cmp-nvim-lsp")
   use("hrsh7th/cmp-buffer")
