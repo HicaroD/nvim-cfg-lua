@@ -12,7 +12,7 @@ utils.keyset({ "n", "v" }, "<leader>y", [["+y]])
 utils.keyset("n", "<leader>Y", [["+Y]])
 
 -- Use <leader>c for closing current tab buffer
-utils.keyset("n", "<leader>c", ":q<CR>")
+utils.keyset("n", "<leader>c", ":bdelete<CR>")
 
 -- <leader>e for opening Neotree
 utils.keyset("n", "<leader>e", ":NvimTreeToggle<CR>")
@@ -23,5 +23,3 @@ utils.keyset("n", "<C-l>", ":tabn<CR>")
 
 -- <leader>t for opening the terminal (see terminal settings at lua/hicaro/term.lua)
 utils.keyset("n", "<leader>t", ":split<CR>:resize -5<CR>:term<CR>")
-
--- @@@ TODO: keybindings for moving tabs to left and right
