@@ -11,8 +11,14 @@ utils.keyset("n", "J", "mzJ`z")
 utils.keyset({ "n", "v" }, "<leader>y", [["+y]])
 utils.keyset("n", "<leader>Y", [["+Y]])
 
--- Use <leader>c for closing current tab buffer
-utils.keyset("n", "<leader>c", ":bdelete<CR>")
+vim.keymap.set("n", "<leader>c", function()
+  local tree = require("nvim-tree.view")
+
+  if tree.is_visible() then
+    vim.cmd(":NvimTreeToggle")
+  end
+  vim.cmd(":q")
+end)
 
 -- <leader>e for opening Neotree
 utils.keyset("n", "<leader>e", ":NvimTreeToggle<CR>")
