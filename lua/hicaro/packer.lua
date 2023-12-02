@@ -19,7 +19,6 @@ return require("packer").startup(function(use)
   use("Mofiqul/vscode.nvim")
 
   use("nvim-tree/nvim-web-devicons")
-  use("norcalli/nvim-colorizer.lua")
   use({
     "nvim-lualine/lualine.nvim",
   })
