@@ -15,7 +15,7 @@ vim.keymap.set("n", "<leader>c", function()
   local tree = require("nvim-tree.view")
 
   if tree.is_visible() then
-    vim.cmd(":NvimTreeToggle")
+    tree.close()
   end
   vim.cmd(":q")
 end)

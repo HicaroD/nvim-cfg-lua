@@ -13,6 +13,11 @@ telescope.setup({
     mappings = {
       i = {
         ["<cr>"] = function(bufnr)
+          local tree = require("nvim-tree.view")
+
+          if tree.is_visible() then
+            tree.close()
+          end
           require("telescope.actions.set").edit(bufnr, "tab drop")
         end,
       },
