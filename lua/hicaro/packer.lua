@@ -17,10 +17,13 @@ return require("packer").startup(function(use)
 
   -- Style
   use("Mofiqul/vscode.nvim")
-
   use("nvim-tree/nvim-web-devicons")
   use({
     "nvim-lualine/lualine.nvim",
+  })
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
   })
 
   -- LSP (WHY SO MANY PLUGINS FOR HAVING A NICE NATIVE LSP SETUP??)
