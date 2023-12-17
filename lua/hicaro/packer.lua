@@ -17,10 +17,13 @@ return require("packer").startup(function(use)
 
   -- Style
   use("Mofiqul/vscode.nvim")
-
   use("nvim-tree/nvim-web-devicons")
   use({
     "nvim-lualine/lualine.nvim",
+  })
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
   })
 
   -- LSP (WHY SO MANY PLUGINS FOR HAVING A NICE NATIVE LSP SETUP??)
@@ -45,6 +48,7 @@ return require("packer").startup(function(use)
     tag = "master",
     requires = { "nvim-lua/plenary.nvim" },
   })
+  use({ "akinsho/bufferline.nvim", tag = "*" })
 
   -- Others
   use("tpope/vim-surround")

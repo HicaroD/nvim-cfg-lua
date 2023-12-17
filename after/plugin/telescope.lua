@@ -13,12 +13,18 @@ telescope.setup({
     mappings = {
       i = {
         ["<cr>"] = function(bufnr)
-          local tree = require("nvim-tree.view")
+          local has_bufferline = utils.prequire("bufferline")
 
+          local tree = require("nvim-tree.view")
           if tree.is_visible() then
             tree.close()
           end
-          require("telescope.actions.set").edit(bufnr, "tab drop")
+
+          local jump_type = "tab drop"
+          if has_bufferline then
+            jump_type = "e"
+          end
+          require("telescope.actions.set").edit(bufnr, jump_type)
         end,
       },
     },
