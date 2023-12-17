@@ -21,10 +21,10 @@ return require("packer").startup(function(use)
   use({
     "nvim-lualine/lualine.nvim",
   })
-  use({
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  })
+  -- use({
+  --   "nvim-treesitter/nvim-treesitter",
+  --   run = ":TSUpdate",
+  -- })
 
   -- LSP (WHY SO MANY PLUGINS FOR HAVING A NICE NATIVE LSP SETUP??)
   use("neovim/nvim-lspconfig")
