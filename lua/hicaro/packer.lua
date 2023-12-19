@@ -48,7 +48,6 @@ return require("packer").startup(function(use)
     tag = "master",
     requires = { "nvim-lua/plenary.nvim" },
   })
-  use({ "akinsho/bufferline.nvim", tag = "*" })
 
   -- Others
   use("tpope/vim-surround")
