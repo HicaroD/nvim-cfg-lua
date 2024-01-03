@@ -14,12 +14,6 @@ telescope.setup({
       i = {
         ["<cr>"] = function(bufnr)
           local has_bufferline = utils.prequire("bufferline")
-
-          local tree = require("nvim-tree.view")
-          if tree.is_visible() then
-            tree.close()
-          end
-
           local jump_type = "tab drop"
           if has_bufferline then
             jump_type = "e"
