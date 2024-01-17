@@ -1,32 +1,3 @@
-local plugins = {
-  -- Style
-  "Mofiqul/vscode.nvim",
-  "nvim-tree/nvim-web-devicons",
-  "nvim-lualine/lualine.nvim",
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-  },
-  {
-    "neoclide/coc.nvim",
-    branch = "release",
-  },
-
-  -- File searching (Tree and fuzzy finder) and code navigation
-  "nvim-tree/nvim-tree.lua",
-  {
-    "nvim-telescope/telescope.nvim",
-    branch = "master",
-    dependencies = { "nvim-lua/plenary.nvim", "fannheyward/telescope-coc.nvim" },
-    lazy = false,
-  },
-  "akinsho/bufferline.nvim",
-
-  -- Others
-  "tpope/vim-surround",
-  "mhartington/formatter.nvim",
-}
-
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
