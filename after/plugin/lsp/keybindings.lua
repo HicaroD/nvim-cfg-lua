@@ -2,6 +2,7 @@ local utils = require("hicaro.utils")
 
 -- General keybindings
 utils.keyset("n", "gd", "<Plug>(coc-definition)", { silent = true })
+utils.keyset("n", "<leader>lca", "<Plug>(coc-codeaction-cursor)", { silent = true })
 utils.keyset("n", "[d", "<Plug>(coc-diagnostic-prev)", { silent = true })
 utils.keyset("n", "]d", "<Plug>(coc-diagnostic-next)", { silent = true })
 

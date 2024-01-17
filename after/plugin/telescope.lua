@@ -10,11 +10,6 @@ end
 local telescope = require("telescope")
 
 telescope.setup({
-  extensions = {
-    coc = {
-      prefer_locations = true,
-    },
-  },
   defaults = {
     layout_config = {
       horizontal = { width = 0.9 },
@@ -50,4 +45,3 @@ utils.keyset("n", "gi", ":Telescope coc implementations<CR>")
 utils.keyset("n", "<leader>lr", ":Telescope coc references<CR>")
 utils.keyset("n", "<leader>gi", ":Telescope coc implementations<CR>", {})
 utils.keyset("n", "<leader>ld", ":Telescope coc diagnostics<CR>", {})
-utils.keyset("n", "<leader>lca", ":Telescope coc code_actions<CR>", {})
