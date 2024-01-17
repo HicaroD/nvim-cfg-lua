@@ -37,7 +37,6 @@ utils.keyset("n", "<leader>ff", builtin.find_files, {})
 utils.keyset("n", "<leader>ps", builtin.live_grep, {})
 utils.keyset("n", "<leader>lb", builtin.buffers, {})
 utils.keyset("n", "<leader>fh", builtin.help_tags, {})
-utils.keyset("n", "gd", builtin.lsp_definitions, {})
 
 -- Related to telescope-coc.nvim extension
 telescope.load_extension("coc")
