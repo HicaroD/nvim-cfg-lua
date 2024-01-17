@@ -1,32 +1,23 @@
-local lspconfig = require("lspconfig")
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+--[[
+List of LSP servers I use with coc.nvim:
 
-local lsp_servers = {
-  "pyright", -- Python
-  "dartls", -- Dart / Flutter
-  "jdtls", -- Java
-  "gopls", -- Golang
-  "tsserver", -- Typescript
-  "hls", -- Haskell
-  "clangd", -- Clang (C / C++)
-  "html", -- HTML
-  "cssls", -- CSS
-  "emmet_language_server", -- HTML / CSS
-  "rust_analyzer", -- Rust
-}
-
--- Standard LSP servers
-for _, lsp_server in ipairs(lsp_servers) do
-  if lsp_server == "html" or lsp_server == "cssls" then
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
-  end
-  lspconfig[lsp_server].setup({
-    capabilities = capabilities,
-  })
-end
-
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-  virtual_text = true,
-  signs = true,
-  update_in_insert = true,
-})
+-  coc-json
+-  coc-tsserver
+-  coc-eslint
+-  coc-prettier
+-  coc-flutter-tools
+-  coc-go
+-  coc-clangd
+-  coc-prisma
+-  coc-markdownlint
+-  coc-pyright
+-  coc-xml
+-  coc-floatinput
+-  coc-java
+-  coc-html
+-  coc-css
+-  coc-emmet
+-  coc-sumneko-lua
+-  @yaegassy/coc-tailwindcss3
+-  coc-rust-analyzer
+--]]

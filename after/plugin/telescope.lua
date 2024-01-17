@@ -8,10 +8,16 @@ end
 
 -- General configuration
 local telescope = require("telescope")
+
 telescope.setup({
+  extensions = {
+    coc = {
+      prefer_locations = true,
+    },
+  },
   defaults = {
     layout_config = {
-      horizontal = { width = 0.9 }
+      horizontal = { width = 0.9 },
     },
     preview = false,
     mappings = {
@@ -36,8 +42,12 @@ utils.keyset("n", "<leader>ff", builtin.find_files, {})
 utils.keyset("n", "<leader>ps", builtin.live_grep, {})
 utils.keyset("n", "<leader>lb", builtin.buffers, {})
 utils.keyset("n", "<leader>fh", builtin.help_tags, {})
-utils.keyset("n", "<leader>ld", builtin.diagnostics, {})
-utils.keyset("n", "<leader>gtd", builtin.lsp_type_definitions, {})
-utils.keyset("n", "<leader>gi", builtin.lsp_implementations, {})
-utils.keyset("n", "<leader>lr", builtin.lsp_references, {})
 utils.keyset("n", "gd", builtin.lsp_definitions, {})
+
+-- Related to telescope-coc.nvim extension
+telescope.load_extension("coc")
+utils.keyset("n", "gi", ":Telescope coc implementations<CR>")
+utils.keyset("n", "<leader>lr", ":Telescope coc references<CR>")
+utils.keyset("n", "<leader>gi", ":Telescope coc implementations<CR>", {})
+utils.keyset("n", "<leader>ld", ":Telescope coc diagnostics<CR>", {})
+utils.keyset("n", "<leader>lca", ":Telescope coc code_actions<CR>", {})

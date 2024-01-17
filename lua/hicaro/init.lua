@@ -1,3 +1,4 @@
+require("hicaro.plugins")
 require("hicaro.remaps")
 require("hicaro.set")
 require("hicaro.term")
