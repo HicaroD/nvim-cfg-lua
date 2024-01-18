@@ -33,3 +33,7 @@ end)
 
 -- <leader>t for opening the terminal (see terminal settings at lua/hicaro/term.lua)
 utils.keyset("n", "<leader>t", ":split<CR>:resize -5<CR>:term<CR>")
+
+-- Move selected lines up with K and down with J
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
