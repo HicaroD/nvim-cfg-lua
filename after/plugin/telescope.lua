@@ -18,11 +18,7 @@ telescope.setup({
     mappings = {
       i = {
         ["<cr>"] = function(bufnr)
-          local has_bufferline = utils.prequire("bufferline")
-          local jump_type = "tab drop"
-          if has_bufferline then
-            jump_type = "e"
-          end
+          local jump_type = "e"
           require("telescope.actions.set").edit(bufnr, jump_type)
         end,
       },

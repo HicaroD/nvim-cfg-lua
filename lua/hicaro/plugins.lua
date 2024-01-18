@@ -32,7 +32,6 @@ return packer.startup(function(use)
     branch = "master",
     requires = { "nvim-lua/plenary.nvim", "fannheyward/telescope-coc.nvim" },
   })
-  use("akinsho/bufferline.nvim")
   use("tpope/vim-surround")
   use("mhartington/formatter.nvim")
 

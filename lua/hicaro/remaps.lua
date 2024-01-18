@@ -11,19 +11,13 @@ utils.keyset("n", "J", "mzJ`z")
 utils.keyset({ "n", "v" }, "<leader>y", [["+y]])
 utils.keyset("n", "<leader>Y", [["+Y]])
 
-local has_bufferline = utils.prequire("bufferline")
-
 vim.keymap.set("n", "<leader>c", function()
   local tree = require("nvim-tree.view")
   if tree.is_visible() then
     tree.close()
   end
 
-  if has_bufferline then
-    vim.cmd(":bwipeout!")
-  else
-    vim.cmd(":q")
-  end
+  vim.cmd(":bwipeout!")
 end)
 
 -- <leader>e for opening Neotree
@@ -31,18 +25,10 @@ utils.keyset("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Navigate between tabs
 utils.keyset("n", "<C-h>", function()
-  if has_bufferline then
-    vim.cmd(":bp")
-  else
-    vim.cmd(":tabp")
-  end
+  vim.cmd(":bp")
 end)
 utils.keyset("n", "<C-l>", function()
-  if has_bufferline then
-    vim.cmd(":bn")
-  else
-    vim.cmd(":tabn")
-  end
+  vim.cmd(":bn")
 end)
 
 -- <leader>t for opening the terminal (see terminal settings at lua/hicaro/term.lua)

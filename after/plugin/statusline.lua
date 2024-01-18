@@ -2,12 +2,15 @@ local utils = require("hicaro.utils")
 
 local ok = utils.prequire("lualine")
 if not ok then
-  print("Unable to import Lualine module")
+  print("Unable to import lualine module")
   return
 end
 
 local lualine = require("lualine")
 lualine.setup({
+  tabline = {
+    lualine_a = { "buffers" },
+  },
   sections = {
     lualine_a = {
       {
