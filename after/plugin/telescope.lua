@@ -15,14 +15,6 @@ telescope.setup({
       horizontal = { width = 0.9 },
     },
     preview = false,
-    mappings = {
-      i = {
-        ["<cr>"] = function(bufnr)
-          local jump_type = "e"
-          require("telescope.actions.set").edit(bufnr, jump_type)
-        end,
-      },
-    },
   },
 })
 
@@ -40,3 +32,4 @@ utils.keyset("n", "gi", ":Telescope coc implementations<CR>")
 utils.keyset("n", "<leader>lr", ":Telescope coc references<CR>")
 utils.keyset("n", "<leader>gi", ":Telescope coc implementations<CR>", {})
 utils.keyset("n", "<leader>ld", ":Telescope coc workspace_diagnostics<CR>", {})
+utils.keyset("n", "<leader>ls", ":Telescope coc document_symbols<CR>", {})
