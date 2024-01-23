@@ -15,6 +15,7 @@ local packer = require("packer")
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
 
+  -- Style
   use("Mofiqul/vscode.nvim")
   use("nvim-tree/nvim-web-devicons")
   use("nvim-lualine/lualine.nvim")
@@ -22,17 +23,22 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   })
+
+  -- LSP
   use({
     "neoclide/coc.nvim",
     branch = "release",
   })
+
+  -- File navigation
   use("nvim-tree/nvim-tree.lua")
   use({
     "nvim-telescope/telescope.nvim",
     branch = "master",
     requires = { "nvim-lua/plenary.nvim", "fannheyward/telescope-coc.nvim" },
   })
-  use("tpope/vim-surround")
+
+  -- Others
   use("mhartington/formatter.nvim")
 
   if packer_bootstrap then

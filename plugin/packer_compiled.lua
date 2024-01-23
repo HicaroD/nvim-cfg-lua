@@ -130,11 +130,6 @@ local no_errors, error_msg = pcall(function()
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/telescope.nvim",
       url = "https://github.com/nvim-telescope/telescope.nvim",
     },
-    ["vim-surround"] = {
-      loaded = true,
-      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/vim-surround",
-      url = "https://github.com/tpope/vim-surround",
-    },
     ["vscode.nvim"] = {
       loaded = true,
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/vscode.nvim",
