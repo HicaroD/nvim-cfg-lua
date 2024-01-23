@@ -15,6 +15,14 @@ telescope.setup({
       horizontal = { width = 0.9 },
     },
     preview = false,
+    file_ignore_patterns = {
+      "^.git/",
+    },
+  },
+  pickers = {
+    find_files = {
+      hidden = true,
+    },
   },
 })
 
