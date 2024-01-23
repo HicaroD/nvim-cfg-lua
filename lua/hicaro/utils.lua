@@ -1,6 +1,6 @@
 local utils = {}
 
--- Nice variable to simply the method for adding a new keybinding
+-- Nice variable to simplify the method for adding a new keybinding
 utils.keyset = vim.keymap.set
 
 -- Handy method for getting a module and catch errors during it
