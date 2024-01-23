@@ -21,6 +21,7 @@ List of LSP servers I use with coc.nvim:
 - @yaegassy/coc-tailwindcss3
 - coc-rust-analyzer
 - coc-snippets
+- coc-sh
 --]]
 
 -- TODO: create command for installing all extensions with CocInstall In case I
