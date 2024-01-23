@@ -29,6 +29,8 @@ return packer.startup(function(use)
     "neoclide/coc.nvim",
     branch = "release",
   })
+  use("SirVer/ultisnips")
+  use("honza/vim-snippets")
 
   -- File navigation
   use("nvim-tree/nvim-tree.lua")

@@ -130,6 +130,16 @@ local no_errors, error_msg = pcall(function()
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/telescope.nvim",
       url = "https://github.com/nvim-telescope/telescope.nvim",
     },
+    ultisnips = {
+      loaded = true,
+      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/ultisnips",
+      url = "https://github.com/SirVer/ultisnips",
+    },
+    ["vim-snippets"] = {
+      loaded = true,
+      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/vim-snippets",
+      url = "https://github.com/honza/vim-snippets",
+    },
     ["vscode.nvim"] = {
       loaded = true,
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/vscode.nvim",
