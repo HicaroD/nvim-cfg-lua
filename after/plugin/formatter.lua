@@ -88,6 +88,9 @@ formatter.setup({
     java = {
       require("formatter.filetypes.java").clangformat,
     },
+    sh = {
+      require("formatter.filetypes.sh").shfmt,
+    },
     ["*"] = {
       require("formatter.filetypes.any").remove_trailing_whitespace,
     },
