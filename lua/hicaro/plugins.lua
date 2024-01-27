@@ -44,6 +44,6 @@ return packer.startup(function(use)
   use("mhartington/formatter.nvim")
 
   if packer_bootstrap then
-    require("packer").sync()
+    packer.sync()
   end
 end)
