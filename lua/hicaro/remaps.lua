@@ -12,11 +12,7 @@ utils.keyset({ "n", "v" }, "<leader>y", [["+y]])
 utils.keyset("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set("n", "<leader>c", function()
-  local tree = require("nvim-tree.view")
-  if tree.is_visible() then
-    tree.close()
-  end
-
+  utils.close_tree_if_open()
   vim.cmd(":bwipeout!")
 end)
 
@@ -24,16 +20,12 @@ end)
 utils.keyset("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Navigate between tabs
-utils.keyset("n", "<C-h>", function()
-  vim.cmd(":bp")
-end)
-utils.keyset("n", "<C-l>", function()
-  vim.cmd(":bn")
-end)
+utils.keyset("n", "<C-h>", ":bp<CR>")
+utils.keyset("n", "<C-l>", ":bn<CR>")
 
 -- <leader>t for opening the terminal (see terminal settings at lua/hicaro/term.lua)
 utils.keyset("n", "<leader>t", ":split<CR>:resize -5<CR>:term<CR>")
 
 -- Move selected lines up with K and down with J
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+utils.keyset("v", "J", ":m '>+1<CR>gv=gv")
+utils.keyset("v", "K", ":m '<-2<CR>gv=gv")

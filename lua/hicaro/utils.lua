@@ -12,4 +12,11 @@ function utils.prequire(m)
   return err
 end
 
+function utils.close_tree_if_open()
+  local tree = require("nvim-tree.view")
+  if tree.is_visible() then
+    tree.close()
+  end
+end
+
 return utils
