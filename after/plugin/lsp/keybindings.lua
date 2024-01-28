@@ -6,6 +6,7 @@ utils.keyset("n", "<leader>lca", "<Plug>(coc-codeaction-cursor)", { silent = tru
 utils.keyset("n", "[d", "<Plug>(coc-diagnostic-prev)", { silent = true })
 utils.keyset("n", "]d", "<Plug>(coc-diagnostic-next)", { silent = true })
 
+-- Press <TAB> for confirm completion
 local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
 utils.keyset("i", "<TAB>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 
@@ -28,5 +29,4 @@ function _G.show_docs()
     vim.api.nvim_command("!" .. vim.o.keywordprg .. " " .. cw)
   end
 end
-
 utils.keyset("n", "K", "<CMD>lua _G.show_docs()<CR>", { silent = true })

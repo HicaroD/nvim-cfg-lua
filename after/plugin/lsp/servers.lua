@@ -24,5 +24,6 @@ List of LSP servers I use with coc.nvim:
 - coc-sh
 --]]
 
--- TODO: create command for installing all extensions with CocInstall In case I
--- switch to another computer, I wouldn't need to install each LSP server above
+-- TODO: Install every coc package automatically
+-- Probably, when I build a script for boostraping my setup, I build this
+-- command
