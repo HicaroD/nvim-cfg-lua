@@ -88,6 +88,9 @@ formatter.setup({
     java = {
       require("formatter.filetypes.java").clangformat,
     },
+    sh = {
+      require("formatter.filetypes.sh").shfmt,
+    },
     ["*"] = {
       require("formatter.filetypes.any").remove_trailing_whitespace,
     },
@@ -96,4 +99,4 @@ formatter.setup({
 
 -- TODO: add formatter for XML
 -- I found a Vim command for formatting it: :%!xmllint --format %
-utils.keyset("n", "<C-S-i>", ":FormatWrite<CR>", { silent = true, noremap = true })
+utils.keyset("n", "<C-i>", ":FormatWrite<CR>", { silent = true, noremap = true })

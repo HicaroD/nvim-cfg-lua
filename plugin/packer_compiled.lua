@@ -80,35 +80,10 @@ local no_errors, error_msg = pcall(function()
   time([[try_loadstring definition]], false)
   time([[Defining packer_plugins]], true)
   _G.packer_plugins = {
-    ["bufferline.nvim"] = {
+    ["coc.nvim"] = {
       loaded = true,
-      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-      url = "https://github.com/akinsho/bufferline.nvim",
-    },
-    ["cmp-buffer"] = {
-      loaded = true,
-      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/cmp-buffer",
-      url = "https://github.com/hrsh7th/cmp-buffer",
-    },
-    ["cmp-cmdline"] = {
-      loaded = true,
-      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
-      url = "https://github.com/hrsh7th/cmp-cmdline",
-    },
-    ["cmp-nvim-lsp"] = {
-      loaded = true,
-      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
-      url = "https://github.com/hrsh7th/cmp-nvim-lsp",
-    },
-    ["cmp-nvim-ultisnips"] = {
-      loaded = true,
-      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/cmp-nvim-ultisnips",
-      url = "https://github.com/quangnguyen30192/cmp-nvim-ultisnips",
-    },
-    ["cmp-path"] = {
-      loaded = true,
-      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/cmp-path",
-      url = "https://github.com/hrsh7th/cmp-path",
+      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/coc.nvim",
+      url = "https://github.com/neoclide/coc.nvim",
     },
     ["formatter.nvim"] = {
       loaded = true,
@@ -119,16 +94,6 @@ local no_errors, error_msg = pcall(function()
       loaded = true,
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/lualine.nvim",
       url = "https://github.com/nvim-lualine/lualine.nvim",
-    },
-    ["nvim-cmp"] = {
-      loaded = true,
-      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/nvim-cmp",
-      url = "https://github.com/hrsh7th/nvim-cmp",
-    },
-    ["nvim-lspconfig"] = {
-      loaded = true,
-      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
-      url = "https://github.com/neovim/nvim-lspconfig",
     },
     ["nvim-tree.lua"] = {
       loaded = true,
@@ -155,6 +120,11 @@ local no_errors, error_msg = pcall(function()
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/plenary.nvim",
       url = "https://github.com/nvim-lua/plenary.nvim",
     },
+    ["telescope-coc.nvim"] = {
+      loaded = true,
+      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/telescope-coc.nvim",
+      url = "https://github.com/fannheyward/telescope-coc.nvim",
+    },
     ["telescope.nvim"] = {
       loaded = true,
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -169,11 +139,6 @@ local no_errors, error_msg = pcall(function()
       loaded = true,
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/vim-snippets",
       url = "https://github.com/honza/vim-snippets",
-    },
-    ["vim-surround"] = {
-      loaded = true,
-      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/vim-surround",
-      url = "https://github.com/tpope/vim-surround",
     },
     ["vscode.nvim"] = {
       loaded = true,

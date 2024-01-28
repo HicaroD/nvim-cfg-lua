@@ -1,41 +1,49 @@
-return {
-  -- Package manager
-  "wbthomason/packer.nvim",
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+    vim.cmd([[packadd packer.nvim]])
+    return true
+  end
+  return false
+end
+
+local packer_bootstrap = ensure_packer()
+
+local packer = require("packer")
+return packer.startup(function(use)
+  use("wbthomason/packer.nvim")
 
   -- Style
-  "Mofiqul/vscode.nvim",
-  "nvim-tree/nvim-web-devicons",
-  "nvim-lualine/lualine.nvim",
-  {
+  use("Mofiqul/vscode.nvim")
+  use("nvim-tree/nvim-web-devicons")
+  use("nvim-lualine/lualine.nvim")
+  use({
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-  },
+    run = ":TSUpdate",
+  })
 
-  -- LSP (WHY SO MANY PLUGINS FOR HAVING A NICE NATIVE LSP SETUP??)
-  "neovim/nvim-lspconfig",
-  "hrsh7th/cmp-nvim-lsp",
-  "hrsh7th/cmp-buffer",
-  "hrsh7th/cmp-path",
-  "hrsh7th/cmp-cmdline",
-  "hrsh7th/nvim-cmp",
-  "quangnguyen30192/cmp-nvim-ultisnips",
+  -- LSP
+  use({
+    "neoclide/coc.nvim",
+    branch = "release",
+  })
+  use("SirVer/ultisnips")
+  use("honza/vim-snippets")
 
-  -- Snippet engine (I don't actually feel it is necessary, but nvim-cmp
-  -- requires one) Soon I'll be switching over to the native snippet engine
-  -- that was added to Neovim
-  "SirVer/ultisnips",
-  "honza/vim-snippets",
-
-  -- File searching (Tree and fuzzy finder) and code navigation
-  "nvim-tree/nvim-tree.lua",
-  {
+  -- File navigation
+  use("nvim-tree/nvim-tree.lua")
+  use({
     "nvim-telescope/telescope.nvim",
     branch = "master",
-    dependencies = { "nvim-lua/plenary.nvim" },
-  },
-  { "akinsho/bufferline.nvim", version = "*" },
+    requires = { "nvim-lua/plenary.nvim", "fannheyward/telescope-coc.nvim" },
+  })
 
   -- Others
-  "tpope/vim-surround",
-  "mhartington/formatter.nvim",
-}
+  use("mhartington/formatter.nvim")
+
+  if packer_bootstrap then
+    packer.sync()
+  end
+end)

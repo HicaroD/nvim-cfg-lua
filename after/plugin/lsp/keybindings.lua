@@ -1,20 +1,32 @@
 local utils = require("hicaro.utils")
 
-utils.keyset("n", "<C-e>", vim.diagnostic.open_float)
-utils.keyset("n", "[d", vim.diagnostic.goto_prev)
-utils.keyset("n", "]d", vim.diagnostic.goto_next)
-utils.keyset("n", "<leader>q", vim.diagnostic.setloclist)
+-- General keybindings
+utils.keyset("n", "gd", "<Plug>(coc-definition)", { silent = true })
+utils.keyset("n", "<leader>lca", "<Plug>(coc-codeaction-cursor)", { silent = true })
+utils.keyset("n", "[d", "<Plug>(coc-diagnostic-prev)", { silent = true })
+utils.keyset("n", "]d", "<Plug>(coc-diagnostic-next)", { silent = true })
 
-vim.api.nvim_create_autocmd("LspAttach", {
-  group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-  callback = function(ev)
-    vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+-- Press <TAB> for confirm completion
+local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
+utils.keyset("i", "<TAB>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 
-    local opts = { buffer = ev.buf }
+-- Renomear
+function _G.check_back_space()
+  local col = vim.fn.col(".") - 1
+  return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
+end
 
-    utils.keyset("n", "K", vim.lsp.buf.hover, opts)
-    utils.keyset("n", "gi", vim.lsp.buf.implementation, opts)
-    utils.keyset("n", "<leader>rn", vim.lsp.buf.rename, opts)
-    utils.keyset({ "n", "v" }, "<leader>lca", vim.lsp.buf.code_action, opts)
-  end,
-})
+utils.keyset("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true })
+
+-- Show documentation
+function _G.show_docs()
+  local cw = vim.fn.expand("<cword>")
+  if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
+    vim.api.nvim_command("h " .. cw)
+  elseif vim.api.nvim_eval("coc#rpc#ready()") then
+    vim.fn.CocActionAsync("doHover")
+  else
+    vim.api.nvim_command("!" .. vim.o.keywordprg .. " " .. cw)
+  end
+end
+utils.keyset("n", "K", "<CMD>lua _G.show_docs()<CR>", { silent = true })

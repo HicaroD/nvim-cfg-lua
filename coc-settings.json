@@ -1,0 +1,7 @@
+{
+  "snippets.priority": 100,
+  "diagnostic.errorSign": "󰅚 ",
+  "diagnostic.warningSign": "󰀪 ",
+  "diagnostic.infoSign": "󰋽 ",
+  "diagnostic.hintSign": "󰌶 "
+}
