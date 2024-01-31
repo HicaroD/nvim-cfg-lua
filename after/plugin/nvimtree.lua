@@ -15,6 +15,7 @@ nvimtree.setup({
     local function opts(desc)
       return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
     end
+
     api.config.mappings.default_on_attach(bufnr)
     utils.keyset("n", "<space>", api.node.open.tab_drop, opts("Open"))
   end,
