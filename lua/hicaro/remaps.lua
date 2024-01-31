@@ -16,15 +16,18 @@ utils.keyset("n", "<leader>c", function()
   vim.cmd(":bwipeout!")
 end)
 
--- <leader>e for opening Neotree
+-- <leader>e for opening NvimTree
 utils.keyset("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Navigate between tabs
-utils.keyset("n", "<C-h>", ":tabp<CR>")
-utils.keyset("n", "<C-l>", ":tabn<CR>")
-
--- <leader>t for opening the terminal (see terminal settings at lua/hicaro/term.lua)
-utils.keyset("n", "<leader>t", ":split<CR>:resize -5<CR>:term<CR>")
+utils.keyset("n", "<C-h>", function()
+  utils.close_tree_if_open()
+  vim.cmd(":tabp")
+end)
+utils.keyset("n", "<C-l>", function()
+  utils.close_tree_if_open()
+  vim.cmd(":tabn")
+end)
 
 -- Move selected lines up with K and down with J
 utils.keyset("v", "J", ":m '>+1<CR>gv=gv")
