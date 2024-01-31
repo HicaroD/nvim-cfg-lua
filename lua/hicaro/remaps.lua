@@ -11,7 +11,7 @@ utils.keyset("n", "J", "mzJ`z")
 utils.keyset({ "n", "v" }, "<leader>y", [["+y]])
 utils.keyset("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set("n", "<leader>c", function()
+utils.keyset("n", "<leader>c", function()
   utils.close_tree_if_open()
   vim.cmd(":bwipeout!")
 end)
@@ -20,8 +20,8 @@ end)
 utils.keyset("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Navigate between tabs
-utils.keyset("n", "<C-h>", ":bp<CR>")
-utils.keyset("n", "<C-l>", ":bn<CR>")
+utils.keyset("n", "<C-h>", ":tabp<CR>")
+utils.keyset("n", "<C-l>", ":tabn<CR>")
 
 -- <leader>t for opening the terminal (see terminal settings at lua/hicaro/term.lua)
 utils.keyset("n", "<leader>t", ":split<CR>:resize -5<CR>:term<CR>")
