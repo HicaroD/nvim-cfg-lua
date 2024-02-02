@@ -25,3 +25,5 @@ vim.opt.listchars = { precedes = "←", extends = "→" }
 -- For enabling mouse ("a" - on / "" - off):
 vim.opt.mouse = "a"
 -- vim.opt.smartcase = true
+vim.opt.wildmenu = true
+vim.opt.wildmode = "longest:full"
