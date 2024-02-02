@@ -11,9 +11,10 @@ utils.keyset("n", "J", "mzJ`z")
 utils.keyset({ "n", "v" }, "<leader>y", [["+y]])
 utils.keyset("n", "<leader>Y", [["+Y]])
 
+-- :tabc closes the current tab including the tree if open
+-- And it does not close the last tab
 utils.keyset("n", "<leader>c", function()
-  utils.close_tree_if_open()
-  vim.cmd(":bwipeout!")
+  vim.cmd(":tabc")
 end)
 
 -- <leader>e for opening NvimTree

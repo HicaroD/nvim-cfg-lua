@@ -16,8 +16,8 @@ telescope.setup({
       i = {
         ["<cr>"] = function(bufnr)
           telescope_set.edit(bufnr, "tab drop")
-        end
-      }
+        end,
+      },
     },
     layout_config = {
       horizontal = { width = 0.9 },
