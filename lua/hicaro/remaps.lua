@@ -14,21 +14,16 @@ utils.keyset("n", "<leader>Y", [["+Y]])
 -- :tabc closes the current tab including the tree if open
 -- And it does not close the last tab
 utils.keyset("n", "<leader>c", function()
-  vim.cmd(":tabc")
+  utils.close_tree_if_open()
+  vim.cmd(":bd")
 end)
 
 -- <leader>e for opening NvimTree
 utils.keyset("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Navigate between tabs
-utils.keyset("n", "<C-h>", function()
-  utils.close_tree_if_open()
-  vim.cmd(":tabp")
-end)
-utils.keyset("n", "<C-l>", function()
-  utils.close_tree_if_open()
-  vim.cmd(":tabn")
-end)
+utils.keyset("n", "<C-h>", ":bp<CR>")
+utils.keyset("n", "<C-l>", ":bn<CR>")
 
 -- Move selected lines up with K and down with J
 utils.keyset("v", "J", ":m '>+1<CR>gv=gv")

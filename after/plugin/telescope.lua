@@ -8,17 +8,9 @@ end
 
 -- General configuration
 local telescope = require("telescope")
-local telescope_set = require("telescope.actions.set")
 
 telescope.setup({
   defaults = {
-    mappings = {
-      i = {
-        ["<cr>"] = function(bufnr)
-          telescope_set.edit(bufnr, "tab drop")
-        end,
-      },
-    },
     layout_config = {
       horizontal = { width = 0.9 },
     },

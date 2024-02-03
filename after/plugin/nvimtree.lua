@@ -11,13 +11,11 @@ local nvimtree = require("nvim-tree")
 nvimtree.setup({
   on_attach = function(bufnr)
     local api = require("nvim-tree.api")
-
     local function opts(desc)
       return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
     end
-
     api.config.mappings.default_on_attach(bufnr)
-    utils.keyset("n", "<space>", api.node.open.tab_drop, opts("Open"))
+    utils.keyset("n", "<space>", api.node.open.edit, opts("Open"))
   end,
   update_focused_file = {
     enable = true,
