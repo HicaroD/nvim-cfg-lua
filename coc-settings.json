@@ -1,5 +1,9 @@
 {
   "snippets.priority": 100,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "diagnostic.refreshOnInsertMode": true,
+  "diagnostic.virtualTextPrefix": "■ ",
   "diagnostic.errorSign": "󰅚 ",
   "diagnostic.warningSign": "󰀪 ",
   "diagnostic.infoSign": "󰋽 ",
