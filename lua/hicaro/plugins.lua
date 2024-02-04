@@ -47,6 +47,7 @@ return packer.startup(function(use)
       bufferline.setup({})
     end,
   })
+  use("nvim-treesitter/nvim-treesitter-context")
 
   -- Others
   use("mhartington/formatter.nvim")
