@@ -11,8 +11,7 @@ utils.keyset("n", "J", "mzJ`z")
 utils.keyset({ "n", "v" }, "<leader>y", [["+y]])
 utils.keyset("n", "<leader>Y", [["+Y]])
 
--- :tabc closes the current tab including the tree if open
--- And it does not close the last tab
+-- Close current buffer with ":bd"
 utils.keyset("n", "<leader>c", function()
   utils.close_tree_if_open()
   vim.cmd(":bd")

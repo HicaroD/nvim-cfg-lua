@@ -14,9 +14,11 @@ end
 
 function utils.close_tree_if_open()
   local tree = require("nvim-tree.view")
+  local is_visible = tree.is_visible()
   if tree.is_visible() then
     tree.close()
   end
+  return is_visible
 end
 
 return utils

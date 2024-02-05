@@ -32,7 +32,7 @@ nvimtree.setup({
     width = 30,
     side = "left",
     float = {
-      quit_on_focus_loss = true,
+      quit_on_focus_loss = false,
     },
   },
   actions = {
