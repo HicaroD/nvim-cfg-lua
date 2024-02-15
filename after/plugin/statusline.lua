@@ -24,7 +24,7 @@ lualine.setup({
       {
         "diagnostics",
         sources = { "nvim_workspace_diagnostic", "coc" },
-        update_in_insert = true,
+        update_in_insert = false,
       },
     },
   },

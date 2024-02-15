@@ -3,7 +3,7 @@
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextFormat": "%message ",
   "diagnostic.virtualTextCurrentLineOnly": false,
-  "diagnostic.refreshOnInsertMode": true,
+  "diagnostic.refreshOnInsertMode": false,
   "diagnostic.virtualTextPrefix": "■ ",
   "diagnostic.errorSign": "󰅚 ",
   "diagnostic.warningSign": "󰀪 ",
