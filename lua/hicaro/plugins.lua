@@ -42,10 +42,6 @@ return packer.startup(function(use)
   use({
     "akinsho/bufferline.nvim",
     tag = "*",
-    config = function()
-      local bufferline = require("bufferline")
-      bufferline.setup({})
-    end,
   })
   use("nvim-treesitter/nvim-treesitter-context")
 

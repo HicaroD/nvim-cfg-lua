@@ -14,7 +14,7 @@ telescope.setup({
     layout_config = {
       horizontal = { width = 0.9 },
     },
-    preview = false,
+    preview = true,
     file_ignore_patterns = {
       "^.git/",
     },
