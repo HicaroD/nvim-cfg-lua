@@ -39,3 +39,5 @@ vim.opt.mouse = "a"
 -- Wild menu
 vim.opt.wildmenu = true
 vim.opt.wildmode = "longest:full"
+
+vim.opt.modifiable = true

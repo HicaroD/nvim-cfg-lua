@@ -13,8 +13,15 @@ utils.keyset("n", "<leader>Y", [["+Y]])
 
 -- Close current buffer with ":bd"
 utils.keyset("n", "<leader>c", function()
-  utils.close_tree_if_open()
+  local tree_was_visible = utils.close_tree_if_open()
+
   vim.cmd(":bd")
+
+  if tree_was_visible then
+    local tree = require("nvim-tree.view")
+    tree.open()
+    -- TODO: if tree is the focus, focus back on the file
+  end
 end)
 
 -- <leader>e for opening NvimTree

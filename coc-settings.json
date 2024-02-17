@@ -11,5 +11,5 @@
   "diagnostic.hintSign": "󰌶 ",
   "diagnostic.showDeprecated": true,
   "snippets.ultisnips.pythonPrompt": false,
-  "coc.preferences.jumpCommand": "tab drop"
+  "rust-analyzer.server.path": "/home/hicaro/.cargo/bin/rust-analyzer"
 }
