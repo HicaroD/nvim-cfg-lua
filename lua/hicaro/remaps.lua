@@ -11,18 +11,10 @@ utils.keyset("n", "J", "mzJ`z")
 utils.keyset({ "n", "v" }, "<leader>y", [["+y]])
 utils.keyset("n", "<leader>Y", [["+Y]])
 
--- Close current buffer with ":bd"
-utils.keyset("n", "<leader>c", function()
-  local tree_was_visible = utils.close_tree_if_open()
+-- Close current buffer with the plugin "nvim-bufdel"
+utils.keyset("n", "<leader>c", ":BufDel<CR>")
 
-  vim.cmd(":bd")
-
-  if tree_was_visible then
-    local tree = require("nvim-tree.view")
-    tree.open()
-    -- TODO: if tree is the focus, focus back on the file
-  end
-end)
+utils.keyset("n", "<leader>a", function() end)
 
 -- <leader>e for opening NvimTree
 utils.keyset("n", "<leader>e", ":NvimTreeToggle<CR>")

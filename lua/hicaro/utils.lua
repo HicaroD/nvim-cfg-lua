@@ -21,4 +21,8 @@ function utils.close_tree_if_open()
   return is_visible
 end
 
+function utils.string_endswith(str, pattern)
+  return pattern == "" or str:sub(-#pattern) == pattern
+end
+
 return utils

@@ -9,6 +9,7 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 vim.opt.wrap = false
+vim.opt.modifiable = true
 
 -- Swap and backup files
 vim.opt.swapfile = false
@@ -40,4 +41,4 @@ vim.opt.mouse = "a"
 vim.opt.wildmenu = true
 vim.opt.wildmode = "longest:full"
 
-vim.opt.modifiable = true
+vim.g.python3_host_prog = "/usr/bin/python3.11"

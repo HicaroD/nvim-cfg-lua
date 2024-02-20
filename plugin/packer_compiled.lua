@@ -100,6 +100,11 @@ local no_errors, error_msg = pcall(function()
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/lualine.nvim",
       url = "https://github.com/nvim-lualine/lualine.nvim",
     },
+    ["nvim-bufdel"] = {
+      loaded = true,
+      path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/nvim-bufdel",
+      url = "https://github.com/ojroques/nvim-bufdel",
+    },
     ["nvim-tree.lua"] = {
       loaded = true,
       path = "/home/hicaro/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",

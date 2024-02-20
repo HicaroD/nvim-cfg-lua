@@ -47,6 +47,7 @@ return packer.startup(function(use)
 
   -- Others
   use("mhartington/formatter.nvim")
+  use("ojroques/nvim-bufdel")
 
   if packer_bootstrap then
     packer.sync()

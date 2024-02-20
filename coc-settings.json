@@ -1,8 +1,8 @@
 {
   "snippets.priority": 100,
-  "diagnostic.virtualText": true,
-  "diagnostic.virtualTextFormat": "%message ",
-  "diagnostic.virtualTextCurrentLineOnly": false,
+  // "diagnostic.virtualText": false,
+  // "diagnostic.virtualTextFormat": "%message ",
+  // "diagnostic.virtualTextCurrentLineOnly": false,
   "diagnostic.refreshOnInsertMode": false,
   "diagnostic.virtualTextPrefix": "■ ",
   "diagnostic.errorSign": "󰅚 ",
