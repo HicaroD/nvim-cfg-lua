@@ -11,5 +11,7 @@
   "diagnostic.hintSign": "󰌶 ",
   "diagnostic.showDeprecated": true,
   "snippets.ultisnips.pythonPrompt": false,
-  "rust-analyzer.server.path": "/home/hicaro/.cargo/bin/rust-analyzer"
+  "rust-analyzer.server.path": "/home/hicaro/.cargo/bin/rust-analyzer",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
