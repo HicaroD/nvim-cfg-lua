@@ -31,6 +31,5 @@ function _G.show_docs()
 end
 utils.keyset("n", "K", "<CMD>lua _G.show_docs()<CR>", { silent = true })
 
-
 -- Rename current file and update all references
 utils.keyset("n", "<leader>rf", ":CocCommand workspace.renameCurrentFile<CR>")
