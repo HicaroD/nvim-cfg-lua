@@ -35,7 +35,7 @@ vim.opt.ignorecase = true
 vim.opt.showmode = false
 
 -- For enabling mouse ("a" - on / "" - off):
-vim.opt.mouse = "a"
+vim.opt.mouse = ""
 
 -- Wild menu
 vim.opt.wildmenu = true
