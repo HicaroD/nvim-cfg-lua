@@ -18,7 +18,6 @@ return packer.startup(function(use)
   -- Style
   use("Mofiqul/vscode.nvim")
   use("nvim-tree/nvim-web-devicons")
-  use("nvim-lualine/lualine.nvim")
   use({
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
@@ -39,15 +38,10 @@ return packer.startup(function(use)
     branch = "master",
     requires = { "nvim-lua/plenary.nvim", "fannheyward/telescope-coc.nvim" },
   })
-  use({
-    "akinsho/bufferline.nvim",
-    tag = "*",
-  })
   use("nvim-treesitter/nvim-treesitter-context")
 
   -- Others
   use("mhartington/formatter.nvim")
-  use("ojroques/nvim-bufdel")
 
   if packer_bootstrap then
     packer.sync()
