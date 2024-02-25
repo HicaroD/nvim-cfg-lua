@@ -15,7 +15,7 @@ set statusline=
 " Show current mode
 set statusline+=[%{g:currentmode[mode()]}]
 " show full file path
-set statusline+=\ [%F]
+set statusline+=\ [%{expand('%:~:.')}]
 " show modified
 set statusline+=\ %m
 " show read-only
