@@ -16,6 +16,7 @@ nvimtree.setup({
     end
     api.config.mappings.default_on_attach(bufnr)
     utils.keyset("n", "<space>", api.node.open.edit, opts("Open"))
+    utils.keyset("n", "<c-t>", api.node.open.tab_drop, opts("Open"))
   end,
   update_focused_file = {
     enable = true,
