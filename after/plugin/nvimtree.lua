@@ -32,12 +32,15 @@ nvimtree.setup({
     width = 30,
     side = "left",
     float = {
-      quit_on_focus_loss = false,
+      quit_on_focus_loss = true,
     },
   },
   actions = {
     open_file = {
       quit_on_open = true,
+    },
+    remove_file = {
+      close_window = true,
     },
   },
 })
