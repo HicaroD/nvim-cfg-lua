@@ -1,8 +1,6 @@
 {
   "snippets.priority": 100,
-  // "diagnostic.virtualText": false,
-  // "diagnostic.virtualTextFormat": "%message ",
-  // "diagnostic.virtualTextCurrentLineOnly": false,
+  "coc.preferences.jumpCommand": "tab drop",
   "diagnostic.refreshOnInsertMode": false,
   "diagnostic.virtualTextPrefix": "■ ",
   "diagnostic.errorSign": "󰅚 ",
