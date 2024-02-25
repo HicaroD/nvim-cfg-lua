@@ -12,16 +12,14 @@ utils.keyset({ "n", "v" }, "<leader>y", [["+y]])
 utils.keyset("n", "<leader>Y", [["+Y]])
 
 -- Close current buffer with the plugin "nvim-bufdel"
-utils.keyset("n", "<leader>c", ":BufDel<CR>")
-
-utils.keyset("n", "<leader>a", function() end)
+utils.keyset("n", "<leader>c", ":q<CR>")
 
 -- <leader>e for opening NvimTree
 utils.keyset("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Navigate between tabs
-utils.keyset("n", "<C-h>", ":bp<CR>")
-utils.keyset("n", "<C-l>", ":bn<CR>")
+utils.keyset("n", "<C-h>", ":tabp<CR>")
+utils.keyset("n", "<C-l>", ":tabn<CR>")
 
 -- Move selected lines up with K and down with J
 utils.keyset("v", "J", ":m '>+1<CR>gv=gv")
