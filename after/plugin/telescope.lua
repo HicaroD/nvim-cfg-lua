@@ -18,6 +18,14 @@ telescope.setup({
     file_ignore_patterns = {
       "^.git/",
     },
+    mappings = {
+      i = {
+        ["<c-t>"] = function(bufnr)
+          local action_set = require("telescope.actions.set")
+          action_set.edit(bufnr, "tab drop")
+        end,
+      },
+    },
   },
   pickers = {
     find_files = {
