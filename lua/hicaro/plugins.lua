@@ -22,6 +22,7 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   })
+  use("nvim-lualine/lualine.nvim")
 
   -- LSP
   use({
@@ -29,7 +30,7 @@ return packer.startup(function(use)
     branch = "release",
   })
 
-  -- File navigation
+  -- File navigation (Tree explorer, fuzzy finder and cursor context)
   use("nvim-tree/nvim-tree.lua")
   use({
     "nvim-telescope/telescope.nvim",
@@ -38,7 +39,7 @@ return packer.startup(function(use)
   })
   use("nvim-treesitter/nvim-treesitter-context")
 
-  -- Others
+  -- Others (code formatters)
   use("mhartington/formatter.nvim")
 
   if packer_bootstrap then
