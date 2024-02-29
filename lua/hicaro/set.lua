@@ -34,6 +34,9 @@ vim.opt.signcolumn = "yes"
 vim.opt.ignorecase = true
 vim.opt.showmode = false
 
+-- Buffers
+vim.opt.splitright = true
+
 -- For enabling mouse ("a" - on / "" - off):
 vim.opt.mouse = ""
 
