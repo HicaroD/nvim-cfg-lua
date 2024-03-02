@@ -28,7 +28,7 @@ return {
         cpp = {
           function()
             local version = vim.fn.input(
-            "Which clang-format version?\n(1) 9.0.0\n\n(2 or else): Any version available in my OS\n\nChoice: "
+              "Which clang-format version?\n(1) 9.0.0\n\n(2 or else): Any version available in my OS\n\nChoice: "
             )
 
             local clang_format_executable_path = ""
@@ -95,5 +95,5 @@ return {
     -- TODO: add formatter for XML
     -- I found a Vim command for formatting it: :%!xmllint --format %
     utils.keyset("n", "<C-i>", ":FormatWrite<CR>", { silent = true, noremap = true })
-  end
+  end,
 }
