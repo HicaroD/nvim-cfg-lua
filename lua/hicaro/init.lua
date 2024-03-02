@@ -1,5 +1,5 @@
-require("hicaro.plugins")
 require("hicaro.remaps")
 require("hicaro.set")
 require("hicaro.term")
 require("hicaro.utils")
+require("hicaro.lazy_init")
