@@ -3,7 +3,6 @@ return {
   branch = "master",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "fannheyward/telescope-coc.nvim",
     "nvim-tree/nvim-web-devicons",
   },
   config = function()
@@ -41,13 +40,9 @@ return {
     utils.keyset("n", "<leader>lb", builtin.buffers, {})
     utils.keyset("n", "<leader>ff", builtin.find_files, {})
     utils.keyset("n", "<leader>ps", builtin.live_grep, {})
-
-    -- Related to telescope-coc.nvim extension
-    telescope.load_extension("coc")
-    utils.keyset("n", "gi", ":Telescope coc implementations<CR>")
-    utils.keyset("n", "<leader>lr", ":Telescope coc references<CR>")
-    utils.keyset("n", "<leader>gi", ":Telescope coc implementations<CR>", {})
-    utils.keyset("n", "<leader>ld", ":Telescope coc workspace_diagnostics<CR>", {})
-    utils.keyset("n", "<leader>ls", ":Telescope coc document_symbols<CR>", {})
+    utils.keyset("n", "<leader>lr", builtin.lsp_references, {})
+    utils.keyset("n", "<leader>gi", builtin.lsp_implementations, {})
+    utils.keyset("n", "<leader>ld", builtin.diagnostics, {})
+    utils.keyset("n", "<leader>ls", builtin.lsp_document_symbols, {})
   end,
 }
