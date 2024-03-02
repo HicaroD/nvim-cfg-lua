@@ -50,9 +50,7 @@ return {
         "lua_ls", -- Lua
         -- "dartls", -- Dart / Flutter
       },
-      handlers = {
-        default_setup,
-      },
+      handlers = { default_setup },
     })
 
     -- CMP configuration
