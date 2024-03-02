@@ -27,6 +27,7 @@ return {
 
     local lspconfig = require("lspconfig")
     local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
+
     local default_setup = function(server)
       lspconfig[server].setup({
         capabilities = lsp_capabilities,
@@ -55,6 +56,7 @@ return {
 
     -- CMP configuration
     local cmp = require("cmp")
+
     cmp.setup({
       sources = {
         { name = "nvim_lsp" },
