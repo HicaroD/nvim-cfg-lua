@@ -18,7 +18,7 @@ return {
         lualine_c = {
           {
             "diagnostics",
-            sources = { "nvim_workspace_diagnostic", "coc" },
+            sources = { "nvim_workspace_diagnostic" },
             update_in_insert = false,
           },
         },
