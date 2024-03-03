@@ -36,6 +36,11 @@ vim.opt.showmode = false
 
 -- Buffers
 vim.opt.splitright = true
+vim.opt.list = true
+vim.opt.listchars = {
+  tab = "→ ",
+  extends = "»",
+}
 
 -- For enabling mouse ("a" - on / "" - off):
 vim.opt.mouse = ""
