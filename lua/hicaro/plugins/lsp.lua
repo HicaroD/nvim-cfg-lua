@@ -6,6 +6,7 @@ return {
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
     "L3MON4D3/LuaSnip",
+    "hrsh7th/cmp-path",
   },
   config = function()
     local utils = require("hicaro.utils")
@@ -61,6 +62,7 @@ return {
       sources = {
         { name = "nvim_lsp" },
         { name = "luasnip" },
+        { name = "path" },
       },
       mapping = cmp.mapping.preset.insert({
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
