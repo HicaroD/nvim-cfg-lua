@@ -22,6 +22,7 @@ return {
         utils.keyset("n", "gd", ":vsp<cr> :lua vim.lsp.buf.definition()<CR>", opts)
         utils.keyset("n", "K", vim.lsp.buf.hover, opts)
         utils.keyset("n", "<leader>r", vim.lsp.buf.rename, opts)
+        utils.keyset("n", "<C-i>", vim.lsp.buf.format, opts)
         utils.keyset({ "n", "v" }, "<leader>lca", vim.lsp.buf.code_action, opts)
       end,
     })
