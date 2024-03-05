@@ -3,6 +3,7 @@ return {
   config = function()
     local lualine = require("lualine")
     lualine.setup({
+      globalstatus = true,
       options = {
         component_separators = "│",
         section_separators = "",
