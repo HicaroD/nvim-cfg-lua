@@ -1,29 +1,17 @@
 return {
-  "stevearc/conform.nvim",
+  "nvimtools/none-ls.nvim",
+  lazy = false,
   opts = function()
-    local conform = require("conform")
-    conform.setup({
-      formatters_by_ft = {
-        python = { "black" },
-        rust = { "rustfmt" },
-        c = { "clang_format" },
-        cpp = { "clang_format" },
-        go = { "gofmt" },
-        lua = { "stylua" },
-        dart = { "dart_format" },
-        javascript = { { "prettierd", "prettier" }, "eslint_d" },
-        typescript = { { "prettierd", "prettier" }, "eslint_d" },
-        markdown = { { "prettierd", "prettier" } },
-        html = { { "prettierd", "prettier" } },
-        css = { { "prettierd", "prettier" } },
-        json = { { "prettierd", "prettier" } },
-        yaml = { { "prettierd", "prettier" } },
-      },
-      format_on_save = {
-        lsp_fallback = false,
-      },
-      format_after_save = {
-        lsp_fallback = false,
+    local null_ls = require("null-ls")
+    null_ls.setup({
+      sources = {
+        null_ls.builtins.formatting.stylua,       -- Lua
+        null_ls.builtins.formatting.black,        -- Python
+        null_ls.builtins.formatting.clang_format, -- C / CPP and more
+        null_ls.builtins.formatting.gofmt,        -- Go
+        null_ls.builtins.formatting.markdownlint, -- Markdown
+        null_ls.builtins.formatting.prettierd,    -- Prettier Daemon
+        null_ls.builtins.formatting.shfmt,        -- Shell
       },
     })
   end,
