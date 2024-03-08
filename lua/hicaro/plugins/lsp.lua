@@ -20,6 +20,7 @@ return {
       callback = function(event)
         local opts = { buffer = event.buf }
         utils.keyset("n", "gd", ":vsp<cr> :lua vim.lsp.buf.definition()<CR>", opts)
+        utils.keyset("n", "<leader>d", vim.lsp.buf.definition, opts)
         utils.keyset("n", "K", vim.lsp.buf.hover, opts)
         utils.keyset("n", "<leader>r", vim.lsp.buf.rename, opts)
         utils.keyset({ "n", "v" }, "<leader>lca", vim.lsp.buf.code_action, opts)
