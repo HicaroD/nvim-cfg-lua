@@ -13,6 +13,8 @@ return {
         "java",
         "prisma",
         "yaml",
+        "html",
+        "css",
         "dart",
         "gitcommit",
         "go",

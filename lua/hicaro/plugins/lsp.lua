@@ -48,9 +48,10 @@ return {
         "jdtls", -- Java
         "eslint", -- Typescript / Javascript (Linter)
         "gopls", -- Golang
-        "emmet_ls", -- Emmet
         "pyright", -- Python
         "lua_ls", -- Lua
+        "emmet_ls", -- Emmet
+        "cssls", -- CSS,
         -- "dartls", -- Dart / Flutter
       },
       handlers = { default_setup },
