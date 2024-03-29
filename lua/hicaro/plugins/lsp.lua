@@ -47,7 +47,8 @@ return {
         "tsserver", -- Typescript / Javascript
         "jdtls", -- Java
         "eslint", -- Typescript / Javascript (Linter)
-        "gopls", -- Golang
+        -- "gopls", -- Golang
+        "golangci_lint_ls", -- Golang
         "pyright", -- Python
         "lua_ls", -- Lua
         "emmet_ls", -- Emmet
