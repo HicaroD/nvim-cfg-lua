@@ -11,6 +11,13 @@ My Neovim (`0.9.4`) configuration built from scratch with Lua.
 4. Treesitter for nice text highlighting.
 5. LazyNvim as package manager.
 
+## Packages
+
+```
+sudo pacman -S stylua # Code formatting
+sudo pacman -S ripgrep # Fuzzy finder
+```
+
 ## License
 
 This project is licensed under the MIT license. See [LICENSE](./LICENSE).

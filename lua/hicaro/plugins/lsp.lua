@@ -48,7 +48,7 @@ return {
         "jdtls", -- Java
         "eslint", -- Typescript / Javascript (Linter)
         "golangci_lint_ls", -- Golang
-        -- "gopls", -- Golang
+        "gopls", -- Golang
         "pyright", -- Python
         "lua_ls", -- Lua
         "emmet_ls", -- Emmet

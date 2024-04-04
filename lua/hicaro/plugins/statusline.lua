@@ -4,7 +4,7 @@ return {
     local lualine = require("lualine")
     lualine.setup({
       options = {
-      globalstatus = true,
+        globalstatus = true,
         component_separators = "│",
         section_separators = "",
       },
