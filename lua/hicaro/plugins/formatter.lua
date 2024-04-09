@@ -19,43 +19,14 @@ return {
         typescriptreact = {
           require("formatter.filetypes.typescriptreact").prettier,
         },
-        c = {
-          require("formatter.filetypes.c").clangformat,
-        },
         lua = {
           require("formatter.filetypes.lua").stylua,
         },
+        c = {
+          require("formatter.filetypes.c").clangformat,
+        },
         cpp = {
-          function()
-            local version = vim.fn.input(
-              "Which clang-format version?\n(1) 9.0.0\n\n(2 or else): Any version available in my OS\n\nChoice: "
-            )
-
-            local clang_format_executable_path = ""
-
-            if version == "1" then
-              clang_format_executable_path = "/home/hicaro/Documentos/Development/clang_llvm_9.0.0/bin/clang-format"
-
-              local clang_format_file = io.open(clang_format_executable_path, "r")
-
-              if clang_format_file == nil then
-                print(clang_format_executable_path .. " is an invalid path for an executable")
-                return
-              end
-
-              io.close(clang_format_file)
-            else
-              -- TODO: identify the version avaiable in the OS
-              -- TODO: check for errors, such as cases where "clang-format" is not available
-              clang_format_executable_path = "clang-format"
-            end
-
-            print("\nFormatting...")
-            return {
-              exe = clang_format_executable_path,
-              stdin = true,
-            }
-          end,
+          require("formatter.filetypes.cpp").clangformat,
         },
         go = {
           require("formatter.filetypes.go").gofmt,
@@ -67,6 +38,9 @@ return {
           require("formatter.filetypes.json").prettier,
         },
         html = {
+          require("formatter.filetypes.html").prettier,
+        },
+        ejs = {
           require("formatter.filetypes.html").prettier,
         },
         css = {
