@@ -50,3 +50,6 @@ vim.opt.wildmenu = true
 vim.opt.wildmode = "longest:full"
 
 vim.g.python3_host_prog = "/usr/bin/python3.11"
+
+-- Colorscheme
+vim.cmd("colorscheme codedark")
