@@ -43,7 +43,7 @@ vim.opt.listchars = {
 }
 
 -- For enabling mouse ("a" - on / "" - off):
-vim.opt.mouse = ""
+vim.opt.mouse = "a"
 
 -- Wild menu
 vim.opt.wildmenu = true
