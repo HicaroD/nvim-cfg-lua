@@ -1,12 +1,15 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
+    -- Mason
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
+
+    -- nvim-cmp
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
-    "L3MON4D3/LuaSnip",
     "hrsh7th/cmp-path",
+    "hrsh7th/cmp-buffer",
   },
   config = function()
     local utils = require("hicaro.utils")
@@ -63,9 +66,9 @@ return {
 
     cmp.setup({
       sources = {
-        { name = "nvim_lsp" },
-        { name = "luasnip" },
-        { name = "path" },
+        { name = "nvim_lsp", priority = 30 },
+        { name = "buffer", priority = 20 },
+        { name = "path", priority = 10 },
       },
       mapping = cmp.mapping.preset.insert({
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -74,10 +77,7 @@ return {
         ["<Tab>"] = cmp.mapping.confirm({ select = true }),
       }),
       snippet = {
-        expand = function(args)
-          local luasnip = require("luasnip")
-          luasnip.lsp_expand(args.body)
-        end,
+        expand = false,
       },
     })
   end,
