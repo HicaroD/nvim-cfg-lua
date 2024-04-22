@@ -32,12 +32,12 @@ return {
 
     local lspconfig = require("lspconfig")
     local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-
     local default_setup = function(server)
       lspconfig[server].setup({
         capabilities = lsp_capabilities,
       })
     end
+    lsp_capabilities.textDocument.completion.completionItem.snippetSupport = false
 
     local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
@@ -76,9 +76,7 @@ return {
         ["<C-e>"] = cmp.mapping.abort(),
         ["<Tab>"] = cmp.mapping.confirm({ select = true }),
       }),
-      snippet = {
-        expand = false,
-      },
+      snippet = false,
     })
   end,
 }
