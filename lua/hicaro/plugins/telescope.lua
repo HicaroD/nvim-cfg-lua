@@ -4,10 +4,10 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
+    "fannheyward/telescope-coc.nvim",
   },
   config = function()
     local utils = require("hicaro.utils")
-
     local telescope = require("telescope")
     telescope.setup({
       defaults = {
@@ -33,6 +33,7 @@ return {
         },
       },
     })
+    telescope.load_extension("coc")
 
     -- Built-in configurations
     local builtin = require("telescope.builtin")
@@ -41,9 +42,10 @@ return {
     utils.keyset("n", "<leader>ff", builtin.find_files, {})
     utils.keyset("n", "<leader>ps", builtin.live_grep, {})
     utils.keyset("n", "<leader>pcs", builtin.current_buffer_fuzzy_find, {})
-    utils.keyset("n", "<leader>lr", builtin.lsp_references, {})
-    utils.keyset("n", "<leader>gi", builtin.lsp_implementations, {})
-    utils.keyset("n", "<leader>ld", builtin.diagnostics, {})
-    utils.keyset("n", "<leader>ls", builtin.lsp_document_symbols, {})
+    utils.keyset("n", "<leader>lr", ":Telescope coc references<CR>", {})
+    utils.keyset("n", "<leader>gi", ":Telescope coc implementations<CR>", {})
+    utils.keyset("n", "<leader>ld", ":Telescope coc diagnostics<CR>", {})
+    utils.keyset("n", "<leader>ls", ":Telescope coc document_symbols<CR>", {})
+    utils.keyset("n", "<leader>lca", ":Telescope coc code_actions<CR>", {})
   end,
 }

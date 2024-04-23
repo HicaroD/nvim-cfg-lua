@@ -1,82 +1,27 @@
 return {
-  "neovim/nvim-lspconfig",
-  dependencies = {
-    -- Mason
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-
-    -- nvim-cmp
-    "hrsh7th/nvim-cmp",
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-path",
-    "hrsh7th/cmp-buffer",
-  },
+  "neoclide/coc.nvim",
+  branch = "release",
+  dependencies = {},
   config = function()
     local utils = require("hicaro.utils")
 
-    utils.keyset("n", "<C-e>", vim.diagnostic.open_float)
-    utils.keyset("n", "[d", vim.diagnostic.goto_prev)
-    utils.keyset("n", "]d", vim.diagnostic.goto_next)
-
-    vim.api.nvim_create_autocmd("LspAttach", {
-      desc = "LSP actions",
-      callback = function(event)
-        local opts = { buffer = event.buf }
-        utils.keyset("n", "gd", ":vsp<cr> :lua vim.lsp.buf.definition()<CR>", opts)
-        utils.keyset("n", "<leader>d", vim.lsp.buf.definition, opts)
-        utils.keyset("n", "K", vim.lsp.buf.hover, opts)
-        utils.keyset("n", "<leader>r", vim.lsp.buf.rename, opts)
-        utils.keyset({ "n", "v" }, "<leader>lca", vim.lsp.buf.code_action, opts)
-      end,
-    })
-
-    local lspconfig = require("lspconfig")
-    local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-    local default_setup = function(server)
-      lspconfig[server].setup({
-        capabilities = lsp_capabilities,
-      })
+    function _G.show_docs()
+      local cw = vim.fn.expand("<cword>")
+      if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
+        vim.api.nvim_command("h " .. cw)
+      elseif vim.api.nvim_eval("coc#rpc#ready()") then
+        vim.fn.CocActionAsync("doHover")
+      else
+        vim.api.nvim_command("!" .. vim.o.keywordprg .. " " .. cw)
+      end
     end
-    lsp_capabilities.textDocument.completion.completionItem.snippetSupport = false
+    utils.keyset("n", "K", "<CMD>lua _G.show_docs()<CR>", { silent = true })
 
-    local mason = require("mason")
-    local mason_lspconfig = require("mason-lspconfig")
-    mason.setup({})
-    mason_lspconfig.setup({
-      -- Servers
-      ensure_installed = {
-        "clangd", -- C / C++
-        "rust_analyzer", -- Rust
-        "tsserver", -- Typescript / Javascript
-        "jdtls", -- Java
-        "eslint", -- Typescript / Javascript (Linter)
-        "golangci_lint_ls", -- Golang
-        "gopls", -- Golang
-        "pyright", -- Python
-        "lua_ls", -- Lua
-        "emmet_ls", -- Emmet
-        "cssls", -- CSS,
-        -- "dartls", -- Dart / Flutter
-      },
-      handlers = { default_setup },
-    })
+    utils.keyset("n", "[d", "<Plug>(coc-diagnostic-prev)", { silent = true })
+    utils.keyset("n", "]d", "<Plug>(coc-diagnostic-next)", { silent = true })
 
-    -- CMP configuration
-    local cmp = require("cmp")
-
-    cmp.setup({
-      sources = {
-        { name = "nvim_lsp", priority = 30 },
-        { name = "buffer", priority = 20 },
-        { name = "path", priority = 10 },
-      },
-      mapping = cmp.mapping.preset.insert({
-        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-e>"] = cmp.mapping.abort(),
-        ["<Tab>"] = cmp.mapping.confirm({ select = true }),
-      }),
-      snippet = false,
-    })
+    utils.keyset("n", "gd", ":vsp<CR> <Plug>(coc-definition)", { silent = true })
+    utils.keyset("n", "<leader>d", "<Plug>(coc-definition)", { silent = true })
+    utils.keyset("n", "<leader>r", "<Plug>(coc-rename)", { silent = true })
   end,
 }
