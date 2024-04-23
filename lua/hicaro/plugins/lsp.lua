@@ -23,5 +23,25 @@ return {
     utils.keyset("n", "gd", ":vsp<CR> <Plug>(coc-definition)", { silent = true })
     utils.keyset("n", "<leader>d", "<Plug>(coc-definition)", { silent = true })
     utils.keyset("n", "<leader>r", "<Plug>(coc-rename)", { silent = true })
+
+    function _G.check_back_space()
+      local col = vim.fn.col(".") - 1
+      return col == 0 or vim.fn.getline("."):sub(col, col):match("%s") ~= nil
+    end
+    local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
+    utils.keyset(
+      "i",
+      "<c-n>",
+      'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()',
+      opts
+    )
+    utils.keyset("i", "<c-p>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
+
+    utils.keyset(
+      "i",
+      "<TAB>",
+      [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]],
+      opts
+    )
   end,
 }
