@@ -44,7 +44,8 @@ return {
     utils.keyset("n", "<leader>pcs", builtin.current_buffer_fuzzy_find, {})
     utils.keyset("n", "<leader>lr", ":Telescope coc references<CR>", {})
     utils.keyset("n", "<leader>gi", ":Telescope coc implementations<CR>", {})
-    utils.keyset("n", "<leader>ld", ":Telescope coc diagnostics<CR>", {})
+    utils.keyset("n", "<leader>lcd", ":Telescope coc diagnostics<CR>", {})
+    utils.keyset("n", "<leader>ld", ":Telescope coc workspace_diagnostics<CR>", {})
     utils.keyset("n", "<leader>ls", ":Telescope coc document_symbols<CR>", {})
     utils.keyset("n", "<leader>lca", ":Telescope coc code_actions<CR>", {})
   end,
