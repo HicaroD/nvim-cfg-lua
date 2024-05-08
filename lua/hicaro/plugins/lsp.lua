@@ -1,7 +1,6 @@
 return {
   "neoclide/coc.nvim",
   branch = "release",
-  dependencies = {},
   config = function()
     local utils = require("hicaro.utils")
 
