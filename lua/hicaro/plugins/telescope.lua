@@ -14,7 +14,7 @@ return {
         layout_config = {
           horizontal = { width = 0.9 },
         },
-        preview = true,
+        preview = false,
         file_ignore_patterns = {
           "^.git/",
         },
