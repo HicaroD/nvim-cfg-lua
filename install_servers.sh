@@ -11,6 +11,7 @@ declare -a servers=(
   "coc-html"          # HTML
   "coc-css"           # CSS
   "coc-emmet"         # Emmet
+  "coc-flutter"       # Flutter
 )
 
 for i in "${servers[@]}"
@@ -19,3 +20,5 @@ do
    COMMAND=""
    nvim --headless +"CocInstall -sync $i" +"qall"
 done
+
+echo "Done."
