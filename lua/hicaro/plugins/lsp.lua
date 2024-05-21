@@ -39,6 +39,26 @@ return {
     end
     lsp_capabilities.textDocument.completion.completionItem.snippetSupport = false
 
+    lspconfig.dartls.setup({
+      cmd = { "dart", "language-server", "--protocol=lsp" },
+      filetypes = { "dart" },
+      init_options = {
+        closingLabels = true,
+        flutterOutline = true,
+        onlyAnalyzeProjectsWithOpenFiles = true,
+        outline = true,
+        suggestFromUnimportedLibraries = true,
+      },
+      -- root_dir = root_pattern("pubspec.yaml"),
+      settings = {
+        dart = {
+          completeFunctionCalls = true,
+          showTodos = true,
+        },
+      },
+      on_attach = function(client, bufnr) end,
+    })
+
     local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
     mason.setup({})
