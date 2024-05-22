@@ -10,7 +10,7 @@ return {
         javascript = { { "prettierd", "prettier" } },
         typescript = { { "prettierd", "prettier" } },
         typescriptreact = { { "prettierd", "prettier" } },
-        dart = { "dart_format " },
+        dart = { "dart_format" },
         c = { "clang-format" },
         cpp = { "clang-format" },
         java = { "clang-format" },
