@@ -28,8 +28,6 @@ return {
     })
 
     local utils = require("hicaro.utils")
-    utils.keyset("n", "<C-i>", function()
-      conform.format({ bufnr = vim.fn.bufnr(0) })
-    end, {})
+    utils.keyset("n", "<C-i>", conform.format, {})
   end,
 }

@@ -12,6 +12,7 @@ declare -a servers=(
   "coc-css"           # CSS
   "coc-emmet"         # Emmet
   "coc-flutter"       # Flutter
+  "coc-snippets"      # Snippets
 )
 
 for i in "${servers[@]}"

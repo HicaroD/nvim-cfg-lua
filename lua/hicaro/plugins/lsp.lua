@@ -1,5 +1,8 @@
 return {
   "neoclide/coc.nvim",
+  dependencies = {
+    "honza/vim-snippets",
+  },
   branch = "release",
   config = function()
     local utils = require("hicaro.utils")
