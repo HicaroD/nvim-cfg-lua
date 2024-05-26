@@ -1,71 +1,32 @@
 return {
-  "mhartington/formatter.nvim",
+  "stevearc/conform.nvim",
+  opts = {},
   config = function()
-    local utils = require("hicaro.utils")
-    local formatter = require("formatter")
-
-    formatter.setup({
-      logging = false,
-      filetype = {
-        dart = {
-          require("formatter.filetypes.dart").dartformat,
-        },
-        javascript = {
-          require("formatter.filetypes.javascript").prettier,
-        },
-        typescript = {
-          require("formatter.filetypes.typescript").prettier,
-        },
-        typescriptreact = {
-          require("formatter.filetypes.typescriptreact").prettier,
-        },
-        lua = {
-          require("formatter.filetypes.lua").stylua,
-        },
-        c = {
-          require("formatter.filetypes.c").clangformat,
-        },
-        cpp = {
-          require("formatter.filetypes.cpp").clangformat,
-        },
-        go = {
-          require("formatter.filetypes.go").gofmt,
-        },
-        yaml = {
-          require("formatter.filetypes.yaml").prettier,
-        },
-        json = {
-          require("formatter.filetypes.json").prettier,
-        },
-        html = {
-          require("formatter.filetypes.html").prettier,
-        },
-        ejs = {
-          require("formatter.filetypes.html").prettier,
-        },
-        css = {
-          require("formatter.filetypes.css").prettier,
-        },
-        markdown = {
-          require("formatter.filetypes.markdown").prettier,
-        },
-        python = {
-          require("formatter.filetypes.python").black,
-        },
-        rust = {
-          require("formatter.filetypes.rust").rustfmt,
-        },
-        java = {
-          require("formatter.filetypes.java").clangformat,
-        },
-        sh = {
-          require("formatter.filetypes.sh").shfmt,
-        },
-        ["*"] = {
-          require("formatter.filetypes.any").remove_trailing_whitespace,
-        },
+    local conform = require("conform")
+    conform.setup({
+      formatters_by_ft = {
+        lua = { "stylua" },
+        python = { "isort", "black" },
+        javascript = { { "prettierd", "prettier" } },
+        typescript = { { "prettierd", "prettier" } },
+        typescriptreact = { { "prettierd", "prettier" } },
+        dart = { "dart_format" },
+        c = { "clang-format" },
+        cpp = { "clang-format" },
+        java = { "clang-format" },
+        go = { "gofmt", "golines" },
+        yaml = { { "prettier", "prettier" } },
+        json = { { "prettier", "prettier" } },
+        html = { { "prettier", "prettier" } },
+        ejs = { { "prettier", "prettier" } },
+        css = { { "prettier", "prettier" } },
+        markdown = { { "prettier", "prettier" } },
+        rust = { "rustfmt" },
+        sh = { "shfmt" },
       },
     })
-    utils.keyset("n", "<C-i>", ":FormatWrite<CR>", { silent = true, noremap = true })
+
+    local utils = require("hicaro.utils")
+    utils.keyset("n", "<C-i>", conform.format, {})
   end,
 }
