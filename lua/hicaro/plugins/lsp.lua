@@ -5,8 +5,7 @@ return {
     { "ms-jpq/coq.artifacts", branch = "artifacts" },
   },
   config = function()
-    local lspconfig = require("lspconfig")
-    local coq = require("coq")
+    vim.cmd([[COQnow -s]])
 
     local servers = {
       "clangd", -- C / C++
@@ -22,6 +21,9 @@ return {
       "cssls", -- CSS,
       "dartls", -- Dart / Flutter
     }
+
+    local lspconfig = require("lspconfig")
+    local coq = require("coq")
 
     for _, server in pairs(servers) do
       lspconfig[server].setup(coq.lsp_ensure_capabilities({}))
@@ -62,6 +64,5 @@ return {
         utils.keyset({ "n", "v" }, "<leader>lca", vim.lsp.buf.code_action, opts)
       end,
     })
-    vim.cmd([[COQnow -s]])
   end,
 }
