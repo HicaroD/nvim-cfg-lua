@@ -1,12 +1,25 @@
 return {
   "neovim/nvim-lspconfig",
+  lazy = false,
   dependencies = {
     { "ms-jpq/coq_nvim", branch = "coq" },
     { "ms-jpq/coq.artifacts", branch = "artifacts" },
   },
+  init = function()
+    vim.g.coq_settings = {
+      auto_start = "shut-up",
+      completion = {
+        always = true,
+        skip_after = { "{", "}", "[", "]" },
+        smart = true,
+      },
+      keymap = {
+        recommended = false,
+        pre_select = true,
+      },
+    }
+  end,
   config = function()
-    vim.cmd([[COQnow -s]])
-
     local servers = {
       "clangd", -- C / C++
       "rust_analyzer", -- Rust
@@ -28,17 +41,6 @@ return {
     for _, server in pairs(servers) do
       lspconfig[server].setup(coq.lsp_ensure_capabilities({}))
     end
-
-    vim.g.coq_settings = {
-      auto_start = true,
-      completion = {
-        always = true,
-      },
-      keymap = {
-        recommended = false,
-        pre_select = true,
-      },
-    }
 
     vim.api.nvim_set_keymap(
       "i",
