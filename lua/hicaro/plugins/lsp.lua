@@ -7,15 +7,23 @@ return {
   },
   init = function()
     vim.g.coq_settings = {
+      clients = {
+        tree_sitter = {
+          enabled = false,
+        },
+      },
       auto_start = "shut-up",
       completion = {
-        always = true,
-        skip_after = { "{", "}", "[", "]" },
+        always = false,
+        skip_after = { "{", "}", "[", "]", " " },
         smart = true,
       },
       keymap = {
         recommended = false,
         pre_select = true,
+      },
+      limits = {
+        completion_auto_timeout = 0,
       },
     }
   end,
