@@ -2,31 +2,31 @@ return {
   "neovim/nvim-lspconfig",
   lazy = false,
   dependencies = {
-    { "ms-jpq/coq_nvim", branch = "coq" },
-    { "ms-jpq/coq.artifacts", branch = "artifacts" },
+    -- { "ms-jpq/coq_nvim", branch = "coq" },
+    -- { "ms-jpq/coq.artifacts", branch = "artifacts" },
   },
-  init = function()
-    vim.g.coq_settings = {
-      clients = {
-        tree_sitter = {
-          enabled = false,
-        },
-      },
-      auto_start = "shut-up",
-      completion = {
-        always = false,
-        skip_after = { "{", "}", "[", "]", " " },
-        smart = true,
-      },
-      keymap = {
-        recommended = false,
-        pre_select = true,
-      },
-      limits = {
-        completion_auto_timeout = 0,
-      },
-    }
-  end,
+  -- init = function()
+  --   vim.g.coq_settings = {
+  --     clients = {
+  --       tree_sitter = {
+  --         enabled = false,
+  --       },
+  --     },
+  --     auto_start = "shut-up",
+  --     completion = {
+  --       always = false,
+  --       skip_after = { "{", "}", "[", "]", " " },
+  --       smart = true,
+  --     },
+  --     keymap = {
+  --       recommended = false,
+  --       pre_select = true,
+  --     },
+  --     limits = {
+  --       completion_auto_timeout = 0,
+  --     },
+  --   }
+  -- end,
   config = function()
     local servers = {
       "clangd", -- C / C++
@@ -44,18 +44,19 @@ return {
     }
 
     local lspconfig = require("lspconfig")
-    local coq = require("coq")
+    -- local coq = require("coq")
 
     for _, server in pairs(servers) do
-      lspconfig[server].setup(coq.lsp_ensure_capabilities({}))
+      -- lspconfig[server].setup(coq.lsp_ensure_capabilities({}))
+      lspconfig[server].setup({})
     end
 
-    vim.api.nvim_set_keymap(
-      "i",
-      "<tab>",
-      [[pumvisible() ? (complete_info().selected == -1 ? "\<C-e><CR>" : "\<C-y>") : "\<CR>"]],
-      { expr = true, silent = true }
-    )
+    -- vim.api.nvim_set_keymap(
+    --   "i",
+    --   "<tab>",
+    --   [[pumvisible() ? (complete_info().selected == -1 ? "\<C-e><CR>" : "\<C-y>") : "\<CR>"]],
+    --   { expr = true, silent = true }
+    -- )
 
     local utils = require("hicaro.utils")
 
