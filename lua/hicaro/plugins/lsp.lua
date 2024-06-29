@@ -4,7 +4,6 @@ return {
   dependencies = {
     { "ms-jpq/coq_nvim", branch = "coq" },
     { "ms-jpq/coq.artifacts", branch = "artifacts" },
-    "honza/vim-snippets",
   },
   init = function()
     vim.g.coq_settings = {
