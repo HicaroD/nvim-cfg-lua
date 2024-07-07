@@ -17,10 +17,6 @@ utils.keyset("n", "<leader>c", ":q<CR>")
 -- <leader>e for opening NvimTree
 utils.keyset("n", "<leader>e", ":NvimTreeToggle<CR>")
 
--- Navigate between tabs
-utils.keyset("n", "<C-h>", ":tabp<CR>")
-utils.keyset("n", "<C-l>", ":tabn<CR>")
-
 -- Move selected lines up with K and down with J
 utils.keyset("v", "J", ":m '>+1<CR>gv=gv")
 utils.keyset("v", "K", ":m '<-2<CR>gv=gv")
