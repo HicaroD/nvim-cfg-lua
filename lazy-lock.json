@@ -3,7 +3,7 @@
   "conform.nvim": { "branch": "master", "commit": "cd75be867f2331b22905f47d28c0c270a69466aa" },
   "fidget.nvim": { "branch": "main", "commit": "c12f8a58ee472ce5983c3a3f3aad0ff6c49a6a83" },
   "lazy.nvim": { "branch": "main", "commit": "159036c5762a97246689299e61311fc88523a8fa" },
-  "mini.nvim": { "branch": "main", "commit": "072ef026a538cf4a9dedba56ad8eecffa9e9abb6" },
+  "mini.completion": { "branch": "main", "commit": "f59f187443cc26371d82a59d4e7490dd028e03c1" },
   "nvim-lspconfig": { "branch": "master", "commit": "cf97d2485fc3f6d4df1b79a3ea183e24c272215e" },
   "nvim-tree.lua": { "branch": "master", "commit": "12a9a995a455d2c2466e47140663275365a5d2fc" },
   "nvim-treesitter": { "branch": "master", "commit": "c1ad655b6a0c83ab48e55240f367e2bc0c15af31" },

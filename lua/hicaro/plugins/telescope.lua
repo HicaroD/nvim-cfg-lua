@@ -46,5 +46,9 @@ return {
     utils.keyset("n", "<leader>lti", builtin.lsp_type_definitions, {})
     utils.keyset("n", "<leader>ld", builtin.diagnostics, {})
     utils.keyset("n", "<leader>ls", builtin.lsp_document_symbols, {})
+    utils.keyset("n", "<leader>lws", function()
+      local target_symbol = vim.fn.input("Work. Sym.: ")
+      return builtin.lsp_workspace_symbols({ query = target_symbol })
+    end, {})
   end,
 }
