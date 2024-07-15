@@ -20,8 +20,6 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 -- Style
-vim.opt.termguicolors = true
-vim.cmd("colorscheme hybrid")
 vim.opt.colorcolumn = "80"
 
 vim.opt.scrolloff = 8
