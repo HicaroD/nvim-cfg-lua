@@ -7,13 +7,15 @@ return {
       "clangd", -- C / C++
       "rust_analyzer", -- Rust
       "tsserver", -- Typescript / Javascript
-      "jdtls", -- Java
       "eslint", -- Typescript / Javascript (Linter)
+      "html", -- HTML,
+      "cssls", -- CSS,
+      "jsonls", -- JSON,
+      "emmet_ls", -- Emmet
+      "jdtls", -- Java
       "golangci_lint_ls", -- Golang
       "gopls", -- Golang
       "pyright", -- Python
-      "emmet_ls", -- Emmet
-      "cssls", -- CSS,
       "dartls", -- Dart / Flutter
     }
     for _, server in pairs(servers) do
