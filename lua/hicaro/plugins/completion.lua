@@ -1,39 +1,53 @@
 return {
-  "echasnovski/mini.completion",
-  version = false,
+  "hrsh7th/nvim-cmp",
+  lazy = false,
+  dependencies = {
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+
+    "dcampos/nvim-snippy",
+    "dcampos/cmp-snippy",
+    "honza/vim-snippets",
+  },
   config = function()
-    local utils = require("hicaro.utils")
+    local cmp = require("cmp")
+    local snippy = require("snippy")
 
-    local completion = require("mini.completion")
-    completion.setup({
-      delay = {
-        completion = 10^7,
-      },
-    })
-
-    -- pre-select the first item
     vim.o.completeopt = "menu,menuone,noinsert"
 
-    local keycode = vim.keycode or function(x)
-      return vim.api.nvim_replace_termcodes(x, true, true, true)
-    end
-
-    local keys = {
-      ["cr"] = keycode("<cr>"),
-      ["tab"] = keycode("<TAB>"),
-      ["ctrl-y"] = keycode("<C-y>"),
-      ["ctrl-y_cr"] = keycode("<C-y><CR>"),
-    }
-
-    _G.tab_action = function()
-      if vim.fn.pumvisible() ~= 0 then
-        local item_selected = vim.fn.complete_info()["selected"] ~= -1
-        return item_selected and keys["ctrl-y"] or keys["ctrl-y_cr"]
-      else
-        return keys["cr"]
-      end
-    end
-
-    vim.keymap.set("i", "<TAB>", "v:lua._G.tab_action()", { expr = true })
+    cmp.setup({
+      completion = {
+        autocomplete = false,
+      },
+      snippet = {
+        expand = function(args)
+          snippy.expand_snippet(args.body)
+        end,
+      },
+      mapping = cmp.mapping.preset.insert({
+        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+        ["<C-e>"] = cmp.mapping.abort(),
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.confirm({ select = true })
+          elseif snippy.can_expand_or_advance() then
+            snippy.expand_or_advance()
+          elseif has_words_before() then
+            cmp.complete()
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+      }),
+      sources = cmp.config.sources({
+        { name = "nvim_lsp" },
+        { name = "snippy" },
+        {
+          name = "buffer",
+        },
+      }),
+    })
   end,
 }

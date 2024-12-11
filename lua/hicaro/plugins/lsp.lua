@@ -19,8 +19,13 @@ return {
       "dartls", -- Dart / Flutter
       "tailwindcss", -- TailwindCSS
     }
+
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    print("Hello, world!")
     for _, server in pairs(servers) do
-      lspconfig[server].setup({})
+      lspconfig[server].setup({
+        capabilities = capabilities,
+      })
     end
 
     local utils = require("hicaro.utils")
