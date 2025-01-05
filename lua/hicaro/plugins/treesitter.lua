@@ -22,6 +22,7 @@ return {
         "tsx",
         "markdown",
         "lua",
+        "odin",
       },
       sync_install = false,
       auto_install = false,
