@@ -4,14 +4,9 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
-
-    "dcampos/nvim-snippy",
-    "dcampos/cmp-snippy",
-    "honza/vim-snippets",
   },
   config = function()
     local cmp = require("cmp")
-    local snippy = require("snippy")
 
     local has_words_before = function()
       unpack = unpack or table.unpack
@@ -27,7 +22,7 @@ return {
       },
       snippet = {
         expand = function(args)
-          snippy.expand_snippet(args.body)
+          vim.snippet.expand(args.body)
         end,
       },
       mapping = cmp.mapping.preset.insert({
@@ -38,8 +33,6 @@ return {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.confirm({ select = true })
-          elseif snippy.can_expand_or_advance() then
-            snippy.expand_or_advance()
           elseif has_words_before() then
             cmp.complete()
           else
@@ -49,10 +42,7 @@ return {
       }),
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { name = "snippy" },
-        {
-          name = "buffer",
-        },
+        { name = "buffer" },
       }),
     })
   end,
