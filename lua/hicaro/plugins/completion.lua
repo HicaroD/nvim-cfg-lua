@@ -17,9 +17,6 @@ return {
     vim.o.completeopt = "menu,menuone,noinsert"
 
     cmp.setup({
-      completion = {
-        autocomplete = false,
-      },
       snippet = {
         expand = function(args)
           vim.snippet.expand(args.body)
@@ -32,7 +29,7 @@ return {
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
-            cmp.confirm({ select = true })
+            cmp.confirm({ select = true, behavior = cmp.ConfirmBehavior.Insert })
           elseif has_words_before() then
             cmp.complete()
           else

@@ -1,5 +1,8 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  dependencies = {
+    "andymass/vim-matchup",
+  },
   config = function()
     local treesitter = require("nvim-treesitter.configs")
     treesitter.setup({
@@ -29,6 +32,9 @@ return {
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
+      },
+      matchup = {
+        enable = true,
       },
     })
   end,
