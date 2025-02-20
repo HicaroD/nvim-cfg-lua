@@ -18,6 +18,7 @@ return {
       "pyright", -- Python
       "dartls", -- Dart / Flutter
       "tailwindcss", -- TailwindCSS
+      "svelte", -- Svelte
     }
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -42,7 +43,6 @@ return {
         utils.keyset("n", "K", vim.lsp.buf.hover, opts)
         utils.keyset("n", "<leader>r", vim.lsp.buf.rename, opts)
         utils.keyset({ "n", "v" }, "<leader>lca", vim.lsp.buf.code_action, opts)
-        utils.keyset({ "n", "v" }, "<leader>li", vim.lsp.buf.lsp_implementations, opts)
       end,
     })
   end,
