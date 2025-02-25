@@ -43,6 +43,12 @@ return {
         utils.keyset("n", "K", vim.lsp.buf.hover, opts)
         utils.keyset("n", "<leader>r", vim.lsp.buf.rename, opts)
         utils.keyset({ "n", "v" }, "<leader>lca", vim.lsp.buf.code_action, opts)
+        utils.keyset(
+          "n",
+          "<leader>oi",
+          'vim.lsp.buf.execute_command({command = "_typescript.organizeImports", arguments = {vim.fn.expand("%:p")}})<CR>',
+          opts
+        )
       end,
     })
   end,
