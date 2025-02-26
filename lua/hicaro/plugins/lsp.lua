@@ -46,7 +46,7 @@ return {
         utils.keyset(
           "n",
           "<leader>oi",
-          'vim.lsp.buf.execute_command({command = "_typescript.organizeImports", arguments = {vim.fn.expand("%:p")}})<CR>',
+          ':lua vim.lsp.buf.execute_command({command = "_typescript.organizeImports", arguments = {vim.fn.expand("%:p")}})<CR>',
           opts
         )
       end,
