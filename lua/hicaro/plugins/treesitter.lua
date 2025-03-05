@@ -26,6 +26,7 @@ return {
         "markdown",
         "lua",
         "odin",
+        "svelte",
       },
       sync_install = false,
       auto_install = false,
