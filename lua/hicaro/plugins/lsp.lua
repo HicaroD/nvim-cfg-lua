@@ -13,12 +13,11 @@ return {
       "jsonls", -- JSON,
       "emmet_ls", -- Emmet
       "jdtls", -- Java
-      "golangci_lint_ls", -- Golang
       "gopls", -- Golang
       "pyright", -- Python
       "dartls", -- Dart / Flutter
       "tailwindcss", -- TailwindCSS
-      "svelte", -- Svelte
+      -- "svelte", -- Svelte (too slow)
     }
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
