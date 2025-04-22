@@ -1,7 +1,17 @@
 return {
-  "HicaroD/codedark.vim",
+  "Mofiqul/vscode.nvim",
   config = function()
-    vim.cmd("set termguicolors")
-    vim.cmd("colorscheme codedark")
+    vim.o.termguicolors = true
+
+    local vscode = require("vscode")
+    vscode.setup({
+      disable_nvimtree_bg = true,
+      transparent = false,
+      color_overrides = {
+        -- vscBack = "#181818",
+      },
+    })
+    vscode.load()
+    vim.cmd.colorscheme("vscode")
   end,
 }

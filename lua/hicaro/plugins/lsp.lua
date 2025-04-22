@@ -7,7 +7,6 @@ return {
       "clangd", -- C / C++
       "rust_analyzer", -- Rust
       "ts_ls", -- Typescript / Javascript
-      "eslint", -- Typescript / Javascript (Linter)
       "html", -- HTML,
       "cssls", -- CSS,
       "jsonls", -- JSON,
@@ -17,7 +16,7 @@ return {
       "pyright", -- Python
       "dartls", -- Dart / Flutter
       "tailwindcss", -- TailwindCSS
-      -- "svelte", -- Svelte (too slow)
+      "svelte", -- Svelte
     }
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
