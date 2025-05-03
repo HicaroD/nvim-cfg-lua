@@ -38,8 +38,9 @@ return {
         end, { "i", "s" }),
       }),
       sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = "buffer" },
+        { name = "supermaven", priority = 3 },
+        { name = "nvim_lsp", priority = 2 },
+        { name = "buffer", priority = 1 },
       }),
     })
   end,
