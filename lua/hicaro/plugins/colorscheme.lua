@@ -7,9 +7,7 @@ return {
     vscode.setup({
       disable_nvimtree_bg = true,
       transparent = false,
-      color_overrides = {
-        -- vscBack = "#181818",
-      },
+      color_overrides = { vscBack = "#181818" },
     })
     vscode.load()
     vim.cmd.colorscheme("vscode")
