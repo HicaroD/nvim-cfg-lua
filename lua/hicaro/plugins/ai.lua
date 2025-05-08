@@ -2,8 +2,27 @@ return {
   "supermaven-inc/supermaven-nvim",
   config = function()
     require("supermaven-nvim").setup({
-       disable_keymaps = true,
-       disable_inline_completion = true, -- to work with nvim-cmp
+      disable_inline_completion = false,
+      disable_keymaps = true,
+    })
+
+    local suggestion = require("supermaven-nvim.completion_preview")
+
+    local function alt_x(fallback)
+      if suggestion.has_suggestion() then
+        vim.schedule(function()
+          suggestion.on_accept_suggestion()
+        end)
+        return ""
+      end
+
+      return fallback()
+    end
+
+    vim.keymap.set("i", "<M-x>", alt_x, {
+      silent = true,
+      expr = true,
+      desc = "Supermaven: accept suggestion or fallback",
     })
   end,
 }
