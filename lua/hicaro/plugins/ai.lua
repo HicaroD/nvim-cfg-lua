@@ -17,7 +17,9 @@ return {
         return ""
       end
 
-      return fallback()
+      if fallback then
+        return fallback()
+      end
     end
 
     vim.keymap.set("i", "<M-x>", alt_x, {
