@@ -2,6 +2,7 @@ return {
   "supermaven-inc/supermaven-nvim",
   config = function()
     require("supermaven-nvim").setup({
+      color = { suggestion_color = "#5C6370", cterm = 59 },
       disable_inline_completion = false,
       disable_keymaps = true,
     })
