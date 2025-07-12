@@ -17,6 +17,7 @@ return {
       "dartls", -- Dart / Flutter
       "tailwindcss", -- TailwindCSS
       "svelte", -- Svelte
+      "templ", -- Templ
     }
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()

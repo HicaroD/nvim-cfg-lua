@@ -1,6 +1,5 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  dependencies = { "andymass/vim-matchup" },
   config = function()
     local treesitter = require("nvim-treesitter.configs")
     treesitter.setup({
@@ -25,6 +24,7 @@ return {
         "lua",
         "odin",
         "svelte",
+        "templ",
       },
       sync_install = false,
       auto_install = false,
@@ -32,9 +32,9 @@ return {
         enable = true,
         additional_vim_regex_highlighting = false,
       },
-      matchup = {
-        enable = true,
-      },
+      -- matchup = {
+      --   enable = true, -- make sure vim-matchup is installed
+      -- },
     })
   end,
 }

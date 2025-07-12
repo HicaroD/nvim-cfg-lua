@@ -24,6 +24,7 @@ return {
         markdown = { "prettier", "prettierd", stop_after_first = true },
         rust = { "rustfmt" },
         sh = { "shfmt" },
+        templ = { "templ" },
       },
     })
 
