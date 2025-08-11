@@ -32,9 +32,9 @@ return {
         enable = true,
         additional_vim_regex_highlighting = false,
       },
-      -- matchup = {
-      --   enable = true, -- make sure vim-matchup is installed
-      -- },
+      matchup = {
+        enable = true, -- make sure vim-matchup is installed
+      },
     })
   end,
 }
