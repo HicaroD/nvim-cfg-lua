@@ -2,7 +2,8 @@ return {
   "neovim/nvim-lspconfig",
   lazy = false,
   config = function()
-    local lspconfig = require("lspconfig")
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
     local servers = {
       "clangd", -- C / C++
       "rust_analyzer", -- Rust
@@ -11,7 +12,6 @@ return {
       "cssls", -- CSS,
       "jsonls", -- JSON,
       "emmet_ls", -- Emmet
-      "jdtls", -- Java
       "gopls", -- Golang
       "pyright", -- Python
       "dartls", -- Dart / Flutter
@@ -20,11 +20,11 @@ return {
       "templ", -- Templ
     }
 
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
     for _, server in pairs(servers) do
-      lspconfig[server].setup({
+      vim.lsp.config(server, {
         capabilities = capabilities,
       })
+      vim.lsp.enable(server)
     end
 
     local utils = require("hicaro.utils")
