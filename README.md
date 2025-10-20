@@ -1,6 +1,6 @@
 # nvim
 
-My Neovim (`0.10.1`) configuration built from scratch with Lua.
+My Neovim (`0.11.x`) configuration built from scratch with Lua.
 
 ## Tools
 
