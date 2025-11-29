@@ -30,6 +30,11 @@ return {
       auto_install = false,
       highlight = {
         enable = true,
+        disable = function(lang, bufnr)
+          local line_count_threshold = 1000
+          local current_file_line_count = vim.api.nvim_buf_line_count(bufnr)
+          return current_file_line_count > line_count_threshold
+        end,
         additional_vim_regex_highlighting = false,
       },
       matchup = {
