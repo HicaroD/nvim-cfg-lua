@@ -9,7 +9,7 @@ return {
 
     local suggestion = require("supermaven-nvim.completion_preview")
 
-    local function alt_x(fallback)
+    local function ctrl_x(fallback)
       if suggestion.has_suggestion() then
         vim.schedule(function()
           suggestion.on_accept_suggestion()
@@ -22,10 +22,6 @@ return {
       end
     end
 
-    vim.keymap.set("i", "<M-x>", alt_x, {
-      silent = true,
-      expr = true,
-      desc = "Supermaven: accept suggestion or fallback",
-    })
+    vim.keymap.set("i", "<C-x>", ctrl_x, { desc = "Supermaven: accept suggestion or fallback" })
   end,
 }
