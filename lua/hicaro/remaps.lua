@@ -11,6 +11,9 @@ utils.keyset("n", "J", "mzJ`z")
 utils.keyset({ "n", "v" }, "<leader>y", [["+y]])
 utils.keyset("n", "<leader>Y", [["+Y]])
 
+-- <leader>p for pasting from the system clipboard
+utils.keyset("n", "<leader>p", [["+p]])
+
 -- Close current buffer with the plugin "nvim-bufdel"
 utils.keyset("n", "<leader>c", ":q<CR>")
 

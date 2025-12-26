@@ -13,6 +13,7 @@ return {
         java = { "clang-format" },
         go = { "gofmt", "golines" },
         javascript = { "prettier", "prettierd", stop_after_first = true },
+        svelte = { "prettier", "prettierd", stop_after_first = true },
         typescript = { "prettier", "prettierd", stop_after_first = true },
         typescriptreact = { "prettier", "prettierd", stop_after_first = true },
         yaml = { "prettier", "prettierd", stop_after_first = true },
@@ -23,6 +24,7 @@ return {
         markdown = { "prettier", "prettierd", stop_after_first = true },
         rust = { "rustfmt" },
         sh = { "shfmt" },
+        templ = { "templ" },
       },
     })
 

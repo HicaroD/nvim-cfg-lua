@@ -20,11 +20,18 @@ return {
         },
       },
       pickers = {
+        live_grep = {
+          additional_args = function(opts)
+            return { "--hidden" }
+          end,
+        },
         find_files = {
           hidden = true,
         },
       },
     })
+
+    local symbol_width = 100
 
     -- Built-in configurations
     local builtin = require("telescope.builtin")
@@ -37,10 +44,17 @@ return {
     utils.keyset("n", "<leader>li", builtin.lsp_implementations, {})
     utils.keyset("n", "<leader>lti", builtin.lsp_type_definitions, {})
     utils.keyset("n", "<leader>ld", builtin.diagnostics, {})
-    utils.keyset("n", "<leader>ls", builtin.lsp_document_symbols, {})
+    utils.keyset("n", "<leader>ls", function()
+      return builtin.lsp_document_symbols({
+        symbol_width = symbol_width,
+      })
+    end, {})
     utils.keyset("n", "<leader>lws", function()
       local target_symbol = vim.fn.input("Work. Sym.: ")
-      return builtin.lsp_workspace_symbols({ query = target_symbol })
+      return builtin.lsp_workspace_symbols({
+        query = target_symbol,
+        symbol_width = symbol_width,
+      })
     end, {})
   end,
 }

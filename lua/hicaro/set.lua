@@ -52,3 +52,6 @@ vim.g.python3_host_prog = "/usr/bin/python3.11"
 
 -- External plugins
 vim.api.nvim_command("packadd cfilter")
+
+-- Theme
+vim.cmd([[colorscheme vscode]])
