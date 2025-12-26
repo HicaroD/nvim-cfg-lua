@@ -8,14 +8,12 @@ My Neovim (`0.11.x`) configuration built from scratch with Lua.
 2. Ripgrep for recursively searches directories for a regex pattern efficiently
    while respecting my `.gitignore`.
 3. Native Neovim LSP configuration with `nvim-cmp` and built-in snippet engine.
-4. Treesitter for nice text highlighting.
 5. LazyNvim as package manager.
 
 ## Packages
 
-```
-sudo pacman -S stylua ripgrep
-```
+- stylua
+- ripgrep
 
 ## License
 
