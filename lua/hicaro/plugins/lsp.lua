@@ -7,6 +7,7 @@ return {
     local servers = {
       "clangd", -- C / C++
       "rust_analyzer", -- Rust
+      "ts_ls", -- Typescript / Javascript
       "biome", -- Typescript / Javascript
       "html", -- HTML,
       "cssls", -- CSS,
